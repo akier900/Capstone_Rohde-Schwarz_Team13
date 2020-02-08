@@ -17,24 +17,24 @@
 
 ## Individual Member Tasks (To complete before next meeting with Industry Sponsors)
 ### Eric Aki
- -[x] Complete Microsoft Project Schedule (Gantt Chart)
- -[]Research Digikey Varactors as specified by Industry Sponsors
+- [x] Complete Microsoft Project Schedule (Gantt Chart)
+- [x] Research Digikey Varactors as specified by Industry Sponsors.
 	We have found a few diode models but so far they seem quite limited in bandwidth. The varactor of promise at this moment in time is the SMV1429. Spice models are available direct from the manufacturer (Skyworks Solutions)
- -[]Search for Varactor SPICE models
- -[]Help Juan with modeling of varactor CV curves
- -[]Complete informal project proposal presentation for industry sponsors
+- [ ] Search for Varactor SPICE models
+- [ ] Help Juan with modeling of varactor CV curves
+- [ ] Complete informal project proposal presentation for industry sponsors
 
 ### Juan Rivera
- -[]Begin Modeling of varactors CV curves as specified by industry sponsors (Matlab or ADS)
- -[]Complete informal project proposal presentation for industry sponsors
- -[]Inquire with Dr. Branomir about TeraHertz Lab access
- -[x] Found resources which present a straightforward way to go about characterizing/measuring our chosen varactor. 
+ - [ ] Begin Modeling of varactors CV curves as specified by industry sponsors (Matlab or ADS)
+ - [ ] Complete informal project proposal presentation for industry sponsors
+ - [ ] Inquire with Dr. Branomir about TeraHertz Lab access
+ - [x] Found resources which present a straightforward way to go about characterizing/measuring our chosen varactor.
 
 ### Jianyu Hao
- -[x]Begin Bill of Materials for project including modeling/simulation software and prototyping materials
- -[]Help Eric Research Varactors on Digikey
- -[]Complete informal project proposal presentation for industry sponsors
- -[x]Help Eric with Gantt Chart.
+ - [x] Begin Bill of Materials for project including modeling/simulation software and prototyping materials
+ - [ ] Help Eric Research Varactors on Digikey
+ - [ ] Complete informal project proposal presentation for industry sponsors
+ - [x] Help Eric with Gantt Chart.
 
 
 ## Blocked
