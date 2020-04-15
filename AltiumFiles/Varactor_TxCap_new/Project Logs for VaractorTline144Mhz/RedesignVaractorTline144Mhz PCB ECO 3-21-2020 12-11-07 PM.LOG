@@ -1,0 +1,24 @@
+Removed Pin From Net: NetName=GND Pin=J7-2
+Removed Pin From Net: NetName=GND Pin=J7-3
+Removed Pin From Net: NetName=GND Pin=J7-4
+Removed Pin From Net: NetName=GND Pin=J7-5
+Removed Pin From Net: NetName=GND Pin=J8-2
+Removed Pin From Net: NetName=GND Pin=J8-3
+Removed Pin From Net: NetName=GND Pin=J8-4
+Removed Pin From Net: NetName=GND Pin=J8-5
+Removed Pin From Net: NetName=GND Pin=J9-2
+Removed Pin From Net: NetName=GND Pin=J9-3
+Removed Pin From Net: NetName=GND Pin=J9-4
+Removed Pin From Net: NetName=GND Pin=J9-5
+Removed Pin From Net: NetName=GND Pin=J10-2
+Removed Pin From Net: NetName=GND Pin=J10-3
+Removed Pin From Net: NetName=GND Pin=J10-4
+Removed Pin From Net: NetName=GND Pin=J10-5
+Removed Member From Class: ClassName=VaractorTline144Mhz Member=J7
+Removed Member From Class: ClassName=VaractorTline144Mhz Member=J8
+Removed Member From Class: ClassName=VaractorTline144Mhz Member=J9
+Removed Member From Class: ClassName=VaractorTline144Mhz Member=J10
+Change Class Name : Old Net Name=VaractorTline144Mhz New Net Name=RedisignVaractorTline144Mhz
+Added Member To Class: ClassName=RedisignVaractorTline144Mhz Member=Component L3 0805HP-56NXJRC
+Change Room Name: Old Name=VaractorTline144Mhz New Name=RedisignVaractorTline144Mhz
+Change Room Scope: Old Scope=InComponentClass('VaractorTline144Mhz') New Scope=InComponentClass('RedisignVaractorTline144Mhz')
