@@ -1,0 +1,8 @@
+`include "disciplines.vams"
+`include "constants.vams"
+
+module diode(anode,cathode);
+  electrical anode, cathode;
+  parameter real Area = 1.0 from (0:inf];  // Area scaling factor
+  parameter real Is = 10e-15;                // Saturation Current
+  parameter real Rs = 1e-3 from [0:inf];    //Series resistance
