@@ -24,6 +24,9 @@ module diode(anode,cathode);
       Fcp = Fc*Vj;
       Vd = V(anode,cathode);
       //Intrinsic diode
-      Id = Area * Is * (exp(Vd / (N * $vt - Rs * I(anode,cathode)) / $vt)))-1)l;
-      
+      Id = Area * Is * ((exp(Vd / (N * $vt  - Rs * I(anode, cathode)) / $vt))- 1);
+      // Capacitanc (Junction and Diffusion)
+      if (Vd<=Fcp)
+        Qd = Tt * Id + Area * Cjo * Vj * (1-pow((1 - Vd/Vj),(1 - M)))/(1-M);
+
     end

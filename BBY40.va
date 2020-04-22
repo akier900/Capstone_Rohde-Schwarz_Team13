@@ -1,8 +1,35 @@
 `include "disciplines.vams"
 `include "constants.vams"
 
-module diode(anode,cathode);
+
+// Begin description of BBY40 Diode
+module bby40(anode,cathode);
   electrical anode, cathode;
   parameter real Area = 1.0 from (0:inf];  // Area scaling factor
   parameter real Is = 10e-15;                // Saturation Current
   parameter real Rs = 1e-3 from [0:inf];    //Series resistance
+  parameter real N  = 1.0 from (0:inf);     //Ideality Factor
+  parameter real Tt = 0.0 from (0:inf];     //Transit Time
+  parameter real Cjo  = 58.965513e-12 from (0:inf]; // Junction Capacitance (Zero-Bias)
+  parameter real Vj = 2.527983;             //Junction Potential
+  parameter real M = 1 from [0:inf];    // Grading Coeff
+  parameter real Fc = 500m from [0:1];  // Forward Bias Junction para
+  parameter real Kf = 1,                // Flicker Noise Coeff
+  real Vd, Id, Qd;
+  real f1,f2,f3,Fcp;
+    analog begin
+      f1 = (Vj/(1-M))*(1-pow((1-Fc),1-M))
+      f2 = pow((1-Fc),(1+M))
+      f3 = 1-Fc*(1+M);
+      Fcp = Fc*Vj;
+      Vd = V(anode,cathode);
+      //Intrinsic diode
+      Id = Area * Is * ((limexp(Vd / (N * $vt  - Rs * I(anode, cathode)) / $vt))- 1);
+      // Capacitanc (Junction and Diffusion)
+      if (Vd<=Fcp)
+        Qd = Tt * Id + Area * Cjo * Vj * (1-pow((1 - Vd/Vj),(1 - M)))/(1-M);
+      else
+        Qd = Tt * Id + Area * Cjo * (f1 + (1 / f2) * (f3 * (Vd - Fcp) + (0.5* M / Vj) * (Vd * Vd - Fcp * Fcp)));
+        I(anode,cathode) <+ Id + ddt(Qd);
+    end
+endmodule : bby40
