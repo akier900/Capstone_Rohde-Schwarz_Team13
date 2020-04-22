@@ -10,7 +10,7 @@ module bby40(anode,cathode);
   parameter real Rs = 1e-3 from [0:inf];    //Series resistance
   parameter real N  = 1.0 from (0:inf);     //Ideality Factor
   parameter real Tt = 0.0 from (0:inf];     //Transit Time
-  parameter real Cjo  = 58.965513e-12 from (0:inf]; // Junction Capacitance (Zero-Bias)
+  parameter real Cjo = 58.965513e-12 from (0:inf]; // Junction Capacitance (Zero-Bias)
   parameter real Vj = 2.527983;             //Junction Potential
   parameter real M = 1 from [0:inf];    // Grading Coeff
   parameter real Fc = 500m from [0:1];  // Forward Bias Junction para
