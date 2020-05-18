@@ -7,7 +7,7 @@ Shape Version=11.00
 Screen=2560,1080
 MCAPVersion=12.2.0.3
 Key ID=Demo
-NLCnt=223
+NLCnt=222
 TXCnt=40
 
 [shapedef]
@@ -180,41 +180,8 @@ Pin="1M",0,6,0,-1
 Pin="2P",14,0,-14,13
 Pin="2M",14,6,-14,-1
 
-[TitleBlockDef]
-Name=Default
-Rectangle=-24,-26,520,154
-FColor=None
-Text="Title: #TITLE"
-TextInfo=-17,63,57,79 , -13,0,"Arial"
-Line=-24,58,520,58
-Line=-24,82,520,82
-Line=-24,106,520,106
-Line=-24,130,520,130
-Text="Designed by: #DESIGNED"
-TextInfo=-17,87,138,104 , -13,0,"Arial"
-Text="Checked by: #CHECKED"
-TextInfo=-17,111,131,128 , -13,0,"Arial"
-Text="Approved by: #APPROVED"
-TextInfo=-17,135,144,152 , -13,0,"Arial"
-Text="#COMPANY"
-TextInfo=-16,-18,57,-2 , -13,4,"Arial"
-Line=184,58,184,154
-Text="Desc: #DESCRIPTION"
-TextInfo=191,63,324,80 , -13,0,"Arial"
-Text="Doc No: #DOC_N"
-TextInfo=191,87,296,104 , -13,0,"Arial"
-Text="Date: #DATE"
-TextInfo=191,111,269,128 , -13,0,"Arial"
-Text="Sheet: #SHEET of #MAXSHEET"
-TextInfo=191,135,378,152 , -13,0,"Arial"
-Line=336,82,336,130
-Text="Revision: #Revision"
-TextInfo=343,87,458,104 , -13,0,"Arial"
-Text="Status: #STATUS"
-TextInfo=343,111,446,128 , -13,0,"Arial"
-
 [Circuit]
-Window Placement=2,3, -1,-1, -8,-31, 208,208,2126,760
+Window Placement=2,3, -1,-1, -8,-31, 0,208,1071,760
 Default Object=Color=#000080
 Default Object Font=Height=-32,FStyle=0,Color=#36C25C,Name=Ubuntu Mono
 Default Object Apply Border To Text=No
@@ -271,93 +238,6 @@ Object=Line
 CBorder=#000080
 Px=48,440,696,440
 GridSnap=True
-
-[Object]
-Object=TitleBlock
-CBorder=#000000
-Px=2351,1257,3078,1536
-Rot=0
-KeepAspectRatio=False
-OneTitle=True
-Placement=BottomRight
-
-[Attr]
-ON=0,0,NAME
-V=Default
-Color=#000000
-Font=Arial
-
-[Attr]
-ON=0,0,#TITLE
-V=$Name
-Color=#000000
-Font=Arial
-
-[Attr]
-ON=0,0,#DESCRIPTION
-V
-Color=#000000
-Font=Arial
-
-[Attr]
-ON=0,0,#DESIGNED
-V=$User
-Color=#000000
-Font=Arial
-
-[Attr]
-ON=0,0,#COMPANY
-V=$Company
-Color=#000000
-Font=Arial
-
-[Attr]
-ON=0,0,#CHECKED
-V
-Color=#000000
-Font=Arial
-
-[Attr]
-ON=0,0,#APPROVED
-V
-Color=#000000
-Font=Arial
-
-[Attr]
-ON=0,0,#DOC_N
-V
-Color=#000000
-Font=Arial
-
-[Attr]
-ON=0,0,#DATE
-V=$DateSaved
-Color=#000000
-Font=Arial
-
-[Attr]
-ON=0,0,#MAXSHEET
-V=$MaxSheet
-Color=#000000
-Font=Arial
-
-[Attr]
-ON=0,0,#SHEET
-V=$Sheet
-Color=#000000
-Font=Arial
-
-[Attr]
-ON=0,0,#Revision
-V
-Color=#000000
-Font=Arial
-
-[Attr]
-ON=0,0,#STATUS
-V
-Color=#000000
-Font=Arial
 
 [Wire]
 Pxs=144,72,144,112
@@ -2525,7 +2405,7 @@ CBorder=None
 
 [Grid Text]
 Text="PDT is the power dissipated in the circuit (in Watts)"
-Px=1856,728
+Px=1392,776
 Color=#000000
 GridSnap=True
 JustifyH=Left
@@ -2534,7 +2414,7 @@ CBorder=None
 
 [Grid Text]
 Text="PST is the amount of power stored in the reactive components (in Watts)"
-Px=1856,704
+Px=1392,752
 Color=#000000
 GridSnap=True
 JustifyH=Left
@@ -2823,7 +2703,7 @@ CBorder=None
 
 [Grid Text]
 Text="=Power_dbm_nport"
-Px=1632,832
+Px=1624,880
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -2831,7 +2711,7 @@ CBorder=None
 
 [Grid Text]
 Text=".define Power_dbm_nport dbm(PG(V3))"
-Px=1624,808
+Px=1616,856
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -2843,10 +2723,9 @@ CurrentSection 1=0
 CurrentSection 2=0
 CurrentSection 3=0
 Splitter.xs=0
-Splitter.ys=623
+Splitter.ys=625
 TextQuad=4099
 Scale=1.3333333333333333
-GridType=GraphPaper
 GridUser=10
 ShapeGroups="Main","Euro","Polarity","Main1","Main11","Electrolytic","GroundArrow","DeMorgan"
 CalcRMS=False
@@ -3032,13 +2911,13 @@ Enable=True
 Name=Main
 A.PrintPreview=On,0,0,1,1
 PrinterScale=1
-SB 0=0,242
+SB 0=369,267
 Scale 0=1.3333333333333333
 Scale 1=1
 Scale 2=1
 SB 3=0,32
 Scale 3=1.3333333333333333
-Px=1148,1027
+Px=1700,683
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
@@ -13523,7 +13402,7 @@ WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
 Select Box Color=#000080
-Title=CapstonNTLT_Sparam.cir
+Title=CapstonNTLT_Sparam.cir 1
 AutoTitle=Yes
 Grid Color=#808080
 Grid Weight=1
@@ -13535,10 +13414,10 @@ BaseLine Weight=1
 CurveFit color=#FF0000
 CurveFit Weight=2
 CurveFit Pattern=Dash
-Static Grids=False
+Static Grids=True
 PlusMark=False
 MinorLog25=Off
-LabelMinor=Off
+LabelMinor=On
 DataPoints=False
 Token=False
 Ruler=False
@@ -13550,7 +13429,7 @@ AlignZ=True
 Align Cursors=True
 TagFormatX=3
 TagFormatY=3
-FormulaFormat=2
+FormulaFormat=3
 EndMode=SCALE
 Graph Background=#FFFFFF
 Tracker Intercept=False
@@ -13562,8 +13441,8 @@ Same Y Scales=Yes
 Enable X Scaling=True
 Enable Y Scaling=True
 Keep X Scales The Same=True
-Number of Grids X=5
-Number of Grids Y=5
+Number of Grids X=10
+Number of Grids Y=15
 Cursor Select Color Primary=#C0C0C0
 Cursor Select Color Secondary=#FF0000
 Data Point Labels Color Fore=Height=-15,FStyle=0,Color=#000000,Name=Arial
@@ -13606,6 +13485,7 @@ Num Out Write Tolerance Detail=True
 Num Out Write Noise=True
 Num Out Write Values=True
 Num Out Write Waveform Header=True
+Num Out Column Format="Vertical X,Y Pairs"
 Num Out Allow Dup Y Expr=False
 Num Out Low="FMIN"
 Num Out High="FMAX"
@@ -13613,8 +13493,7 @@ Num Out Font=Height=-15,FStyle=0,Color=#000000,Name=Courier New
 Num Out Format=3
 Num Out HideNonSelected=False
 Num Out UseActualDataPoints=False
-Wav SampleRate=11025
-Wav Nbits=16
+UserFileName="C:\Users\Eric\Documents\GitHub\Capstone_Rohde-Schwarz_Team13\Simulations\S-param\CapstonNTLT_Sparam.USR"
 AutoSaveWave=False
 Wave Format=16E
 State Variables Format=5E
@@ -13949,18 +13828,24 @@ XRng=fmax,fmin
 YRng=10,-40
 Options=LINEARY
 Range Grid Y=10
+WSP Title="db(S11_nport) vs Frequency"
+WSP Checked=False
+WSP NOP=1001
+WSP Save Actual Data=True
+WSP Wav Order=0
+Slope Calculation=dB/Decade
 Enable=Enable
 CS=Normal
 Line Color=#FF0000
-Text Color=#FF0000
-Rainbow=False
-LWdth=2
+Text Color=#000000
+Rainbow=True
+LWdth=3
 VFmtX=3
 VFmtY=3
-ScaleFactorX="None"
-ScaleFactorY="None"
-ScaleUnitsX="Auto"
-ScaleUnitsY="Auto"
+ScaleFactorX="Meg"
+ScaleFactorY="Auto"
+ScaleUnitsX="Hz"
+ScaleUnitsY="dB"
 SFmtX=2
 SFmtY=2
 NOFmtX=3E
@@ -13977,16 +13862,23 @@ XRng=fmax,fmin
 YRng=10,-40
 Options=LINEARY
 Range Grid Y=10
+WSP Title="db(S21_nport) vs T"
+WSP Checked=False
+WSP NOP=0
+WSP Save Actual Data=True
+WSP Wav Order=0
+Slope Calculation=dB/Decade
 Enable=Enable
+CS=Normal
 Line Color=#FF0000
 Text Color=#FF0000
 Rainbow=False
 LWdth=3
 VFmtX=3
 VFmtY=3
-ScaleFactorX="None"
+ScaleFactorX="Meg"
 ScaleFactorY="None"
-ScaleUnitsX="Auto"
+ScaleUnitsX="Hz"
 ScaleUnitsY="Auto"
 SFmtX=2
 SFmtY=2
@@ -14004,16 +13896,22 @@ XRng=fmax,fmin
 YRng=10,-40
 Options=LINEARY
 Range Grid Y=10
+WSP Title="VSWR(in3,V3) vs T"
+WSP Checked=False
+WSP NOP=0
+WSP Save Actual Data=True
+WSP Wav Order=0
 Enable=Enable
+CS=Normal
 Line Color=#FF0000
 Text Color=#FF0000
 Rainbow=False
 LWdth=3
 VFmtX=3
 VFmtY=3
-ScaleFactorX="None"
+ScaleFactorX="Meg"
 ScaleFactorY="None"
-ScaleUnitsX="Auto"
+ScaleUnitsX="Hz"
 ScaleUnitsY="Auto"
 SFmtX=2
 SFmtY=2
@@ -14031,17 +13929,24 @@ XRng=fmax,fmin
 YRng=10,-40
 Options=LINEARY
 Range Grid Y=10
+WSP Title="RetLoss(in3,V3) vs T"
+WSP Checked=False
+WSP NOP=0
+WSP Save Actual Data=True
+WSP Wav Order=0
+Slope Calculation=dB/Octave
 Enable=Enable
+CS=Normal
 Line Color=#FF0000
 Text Color=#FF0000
 Rainbow=False
 LWdth=3
 VFmtX=3
 VFmtY=3
-ScaleFactorX="None"
+ScaleFactorX="Meg"
 ScaleFactorY="None"
-ScaleUnitsX="Auto"
-ScaleUnitsY="Auto"
+ScaleUnitsX="Hz"
+ScaleUnitsY="None"
 SFmtX=2
 SFmtY=2
 NOFmtX=3E
@@ -14058,16 +13963,22 @@ XRng=fmax,fmin
 YRng=10,-40
 Options=LINEARY
 Range Grid Y=10
+WSP Title="Gamma(in3,V3) vs T"
+WSP Checked=False
+WSP NOP=0
+WSP Save Actual Data=True
+WSP Wav Order=0
 Enable=Enable
+CS=Normal
 Line Color=#FF0000
 Text Color=#FF0000
 Rainbow=False
 LWdth=3
 VFmtX=3
 VFmtY=3
-ScaleFactorX="None"
+ScaleFactorX="Meg"
 ScaleFactorY="None"
-ScaleUnitsX="Auto"
+ScaleUnitsX="Hz"
 ScaleUnitsY="Auto"
 SFmtX=2
 SFmtY=2
@@ -14085,16 +13996,22 @@ XRng=fmax,fmin
 YRng=10,-40
 Options=LINEARY
 Range Grid Y=10
+WSP Title="MismatchLoss(in3,V4) vs T"
+WSP Checked=False
+WSP NOP=0
+WSP Save Actual Data=True
+WSP Wav Order=0
 Enable=Enable
+CS=Normal
 Line Color=#FF0000
 Text Color=#FF0000
 Rainbow=False
 LWdth=3
 VFmtX=3
 VFmtY=3
-ScaleFactorX="None"
+ScaleFactorX="Meg"
 ScaleFactorY="None"
-ScaleUnitsX="Auto"
+ScaleUnitsX="Hz"
 ScaleUnitsY="Auto"
 SFmtX=2
 SFmtY=2
@@ -14112,16 +14029,22 @@ XRng=fmax,fmin
 YRng=10,-40
 Options=LINEARY
 Range Grid Y=10
+WSP Title="db(S11) vs T"
+WSP Checked=False
+WSP NOP=0
+WSP Save Actual Data=True
+WSP Wav Order=0
 Enable=Enable
+CS=Normal
 Line Color=#80D154
 Text Color=#80D154
 Rainbow=False
 LWdth=3
 VFmtX=3
 VFmtY=3
-ScaleFactorX="None"
+ScaleFactorX="Meg"
 ScaleFactorY="None"
-ScaleUnitsX="Auto"
+ScaleUnitsX="Hz"
 ScaleUnitsY="Auto"
 SFmtX=2
 SFmtY=2
@@ -14139,16 +14062,22 @@ XRng=fmax,fmin
 YRng=10,-40
 Options=LINEARY
 Range Grid Y=10
+WSP Title="db(S21) vs T"
+WSP Checked=False
+WSP NOP=0
+WSP Save Actual Data=True
+WSP Wav Order=0
 Enable=Enable
+CS=Normal
 Line Color=#80D154
 Text Color=#80D154
 Rainbow=False
 LWdth=3
 VFmtX=3
 VFmtY=3
-ScaleFactorX="None"
+ScaleFactorX="Meg"
 ScaleFactorY="None"
-ScaleUnitsX="Auto"
+ScaleUnitsX="Hz"
 ScaleUnitsY="Auto"
 SFmtX=2
 SFmtY=2
@@ -14166,16 +14095,22 @@ XRng=fmax,fmin
 YRng=1000
 Options=LINEARY
 Range Grid Y=200
+WSP Title="VSWR(in1,V1) vs T"
+WSP Checked=False
+WSP NOP=0
+WSP Save Actual Data=True
+WSP Wav Order=0
 Enable=Enable
+CS=Normal
 Line Color=#80D154
 Text Color=#80D154
 Rainbow=True
 LWdth=3
 VFmtX=3
 VFmtY=3
-ScaleFactorX="None"
+ScaleFactorX="Meg"
 ScaleFactorY="None"
-ScaleUnitsX="Auto"
+ScaleUnitsX="Hz"
 ScaleUnitsY="Auto"
 SFmtX=2
 SFmtY=2
@@ -14193,16 +14128,22 @@ XRng=fmax,fmin
 YRng=1000
 Options=LINEARY
 Range Grid Y=200
+WSP Title="RetLoss(in1,V1) vs T"
+WSP Checked=False
+WSP NOP=0
+WSP Save Actual Data=True
+WSP Wav Order=0
 Enable=Enable
+CS=Normal
 Line Color=#80D154
 Text Color=#80D154
 Rainbow=True
 LWdth=2
 VFmtX=3
 VFmtY=3
-ScaleFactorX="None"
+ScaleFactorX="Meg"
 ScaleFactorY="None"
-ScaleUnitsX="Auto"
+ScaleUnitsX="Hz"
 ScaleUnitsY="Auto"
 SFmtX=2
 SFmtY=2
@@ -14220,6 +14161,11 @@ XRng=fmax,fmin
 YRng=60
 Options=LINEARY
 Range Grid Y=12
+WSP Title="Gamma(in1,V1) vs T"
+WSP Checked=False
+WSP NOP=0
+WSP Save Actual Data=True
+WSP Wav Order=0
 Enable=Enable
 CS=Normal
 Line Color=#80D154
@@ -14228,9 +14174,9 @@ Rainbow=False
 LWdth=2
 VFmtX=3
 VFmtY=3
-ScaleFactorX="None"
+ScaleFactorX="Meg"
 ScaleFactorY="None"
-ScaleUnitsX="Auto"
+ScaleUnitsX="Hz"
 ScaleUnitsY="Auto"
 SFmtX=2
 SFmtY=2
@@ -14248,16 +14194,22 @@ XRng=fmax,fmin
 YRng=60
 Options=LINEARY
 Range Grid Y=12
+WSP Title="MismatchLoss(in1,V1) vs T"
+WSP Checked=False
+WSP NOP=0
+WSP Save Actual Data=True
+WSP Wav Order=0
 Enable=Enable
+CS=Normal
 Line Color=#80D154
 Text Color=#80D154
 Rainbow=True
 LWdth=2
 VFmtX=3
 VFmtY=3
-ScaleFactorX="None"
+ScaleFactorX="Meg"
 ScaleFactorY="None"
-ScaleUnitsX="Auto"
+ScaleUnitsX="Hz"
 ScaleUnitsY="Auto"
 SFmtX=2
 SFmtY=2
@@ -14285,7 +14237,7 @@ CurrentPage 0="MAIN"
 
 [Pane]
 Analysis=AC
-CurrentPage 0="1"
+CurrentPage 0="2"
 
 [Pane]
 Analysis=DC
@@ -14348,7 +14300,7 @@ StepSize="10%"
 MRUDockID=59421
 Floating=False
 LocalOffset=True
-Rect=298,-2,399,158
+Rect=181,-2,282,158
 
 [Slider]
 Analysis=AC
@@ -14364,7 +14316,7 @@ StepSize=".1%"
 MRUDockID=59421
 Floating=False
 LocalOffset=True
-Rect=181,1,300,161
+Rect=181,156,300,316
 
 [Slider]
 Analysis=AC
