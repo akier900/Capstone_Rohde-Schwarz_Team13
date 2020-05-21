@@ -7,8 +7,8 @@ Shape Version=11.00
 Screen=2560,1080
 MCAPVersion=12.2.0.3
 Key ID=Demo
-NLCnt=874
-TXCnt=23
+NLCnt=856
+TXCnt=25
 
 [shapedef]
 Name=Ground
@@ -100,7 +100,7 @@ Name=Resistor
 Definition=Resistor
 Shape=Resistor
 Mask=6657
-Used=658
+Used=476
 memo=Resistor
 Label Offset=18,6,8,11
 PinCnt=2
@@ -112,7 +112,7 @@ Name=Inductor
 Definition=Inductor
 Shape=Inductor
 Mask=7681
-Used=382
+Used=223
 memo=Inductor
 Label Offset=18,9,11,12
 PinCnt=2
@@ -124,7 +124,7 @@ Name=BBY40
 Definition=Diode
 Shape=Varactor
 Mask=4480
-Used=264
+Used=114
 memo=Variable Capacitance Diode Ct3=29pF Vr=30V If=20mA
 Label Offset=19,15,16,14
 PinCnt=2
@@ -148,14 +148,14 @@ Name=Ground
 Definition=Ground
 Shape=Ground
 Mask=1793
-Used=730
+Used=555
 memo=Ground
 Label Offset=0,0,0,0
 PinCnt=1
 Pin="PinA",0,0,-3,-7
 
 [Circuit]
-Window Placement=2,3, -1,-1, -8,-31, 0,0,136,39
+Window Placement=2,3, -1,-1, -8,-31, 78,78,1997,630
 Default Object=Color=#FFFFFF,Width=3
 Default Object Font=Height=-34,FStyle=4,Color=#000000,Name=Ubuntu Mono
 Default Object Apply Border To Text=No
@@ -174,7 +174,7 @@ SpiceType=AMBIGUOUS
 Title_Block_Border=One
 Title_Block=True
 Show Nodes=False
-Show Voltages=True
+Show Voltages=False
 Show Current=False
 Show Power=False
 Show Condition=False
@@ -480,11 +480,11 @@ Pxs=1792,344,1800,344
 Pxs=1800,344,1800,392
 
 [Wire]
-Pxs=1800,344,1848,344
+Pxs=1800,344,1832,344
 
 [Comp]
 Name=Resistor
-Px=1896,344
+Px=1880,344
 Rot=2
 
 [Attr]
@@ -500,12 +500,6 @@ Style=8192
 [Attr]
 ON=0,0,PACKAGE
 V
-
-[Wire]
-Pxs=1888,344,1896,344
-
-[Wire]
-Pxs=1896,344,1904,344
 
 [Comp]
 Name=Inductor
@@ -752,16 +746,10 @@ Pxs=2776,344,2784,344
 Pxs=2784,344,2784,392
 
 [Wire]
-Pxs=2784,344,2848,344
-
-[Wire]
-Pxs=2848,344,2864,344
+Pxs=2784,344,2864,344
 
 [Wire]
 Pxs=2864,344,2864,384
-
-[Wire]
-Pxs=2864,344,2872,344
 
 [Comp]
 Name=Resistor
@@ -775,7 +763,7 @@ Style=8192
 
 [Attr]
 ON=8,25,RESISTANCE
-V=10Meg
+V={RLoadN10}
 Style=8192
 
 [Attr]
@@ -1054,11 +1042,6 @@ Rot=1
 [Comp]
 Name=Ground
 Px=1592,440
-Rot=1
-
-[Comp]
-Name=Ground
-Px=1800,440
 Rot=1
 
 [Comp]
@@ -1361,12 +1344,9 @@ Pxs=1792,576,1800,576
 [Wire]
 Pxs=1800,576,1800,624
 
-[Wire]
-Pxs=1800,576,1848,576
-
 [Comp]
 Name=Resistor
-Px=1896,576
+Px=1872,576
 Rot=2
 
 [Attr]
@@ -1382,12 +1362,6 @@ Style=8192
 [Attr]
 ON=0,0,PACKAGE
 V
-
-[Wire]
-Pxs=1888,576,1896,576
-
-[Wire]
-Pxs=1896,576,1904,576
 
 [Comp]
 Name=Inductor
@@ -1634,10 +1608,7 @@ Pxs=2776,576,2784,576
 Pxs=2784,576,2784,624
 
 [Wire]
-Pxs=2784,576,2832,576
-
-[Wire]
-Pxs=2832,576,2864,576
+Pxs=2784,576,2864,576
 
 [Wire]
 Pxs=2864,576,2864,616
@@ -2179,12 +2150,9 @@ Pxs=1792,800,1800,800
 [Wire]
 Pxs=1800,800,1800,848
 
-[Wire]
-Pxs=1800,800,1848,800
-
 [Comp]
 Name=Resistor
-Px=1896,800
+Px=1880,800
 Rot=2
 
 [Attr]
@@ -2200,12 +2168,6 @@ Style=8192
 [Attr]
 ON=0,0,PACKAGE
 V
-
-[Wire]
-Pxs=1888,800,1896,800
-
-[Wire]
-Pxs=1896,800,1904,800
 
 [Comp]
 Name=Inductor
@@ -2452,10 +2414,7 @@ Pxs=2776,800,2784,800
 Pxs=2784,800,2784,848
 
 [Wire]
-Pxs=2784,800,2848,800
-
-[Wire]
-Pxs=2848,800,2864,800
+Pxs=2784,800,2864,800
 
 [Wire]
 Pxs=2864,800,2864,840
@@ -2997,12 +2956,9 @@ Pxs=1792,1024,1800,1024
 [Wire]
 Pxs=1800,1024,1800,1072
 
-[Wire]
-Pxs=1800,1024,1848,1024
-
 [Comp]
 Name=Resistor
-Px=1896,1024
+Px=1880,1024
 Rot=2
 
 [Attr]
@@ -3018,12 +2974,6 @@ Style=8192
 [Attr]
 ON=0,0,PACKAGE
 V
-
-[Wire]
-Pxs=1888,1024,1896,1024
-
-[Wire]
-Pxs=1896,1024,1904,1024
 
 [Comp]
 Name=Inductor
@@ -3270,10 +3220,7 @@ Pxs=2776,1024,2784,1024
 Pxs=2784,1024,2784,1072
 
 [Wire]
-Pxs=2784,1024,2856,1024
-
-[Wire]
-Pxs=2856,1024,2864,1024
+Pxs=2784,1024,2864,1024
 
 [Wire]
 Pxs=2864,1024,2864,1064
@@ -3812,12 +3759,9 @@ Pxs=1792,1264,1800,1264
 [Wire]
 Pxs=1800,1264,1800,1312
 
-[Wire]
-Pxs=1800,1264,1848,1264
-
 [Comp]
 Name=Resistor
-Px=1896,1264
+Px=1880,1264
 Rot=2
 
 [Attr]
@@ -3833,12 +3777,6 @@ Style=8192
 [Attr]
 ON=0,0,PACKAGE
 V
-
-[Wire]
-Pxs=1888,1264,1896,1264
-
-[Wire]
-Pxs=1896,1264,1904,1264
 
 [Comp]
 Name=Inductor
@@ -4085,10 +4023,7 @@ Pxs=2776,1264,2784,1264
 Pxs=2784,1264,2784,1312
 
 [Wire]
-Pxs=2784,1264,2848,1264
-
-[Wire]
-Pxs=2848,1264,2864,1264
+Pxs=2784,1264,2864,1264
 
 [Wire]
 Pxs=2864,1264,2864,1304
@@ -4630,12 +4565,9 @@ Pxs=1792,1472,1800,1472
 [Wire]
 Pxs=1800,1472,1800,1520
 
-[Wire]
-Pxs=1800,1472,1848,1472
-
 [Comp]
 Name=Resistor
-Px=1896,1472
+Px=1872,1472
 Rot=2
 
 [Attr]
@@ -4651,12 +4583,6 @@ Style=8192
 [Attr]
 ON=0,0,PACKAGE
 V
-
-[Wire]
-Pxs=1888,1472,1896,1472
-
-[Wire]
-Pxs=1896,1472,1904,1472
 
 [Comp]
 Name=Inductor
@@ -4903,10 +4829,7 @@ Pxs=2776,1472,2784,1472
 Pxs=2784,1472,2784,1520
 
 [Wire]
-Pxs=2784,1472,2848,1472
-
-[Wire]
-Pxs=2848,1472,2864,1472
+Pxs=2784,1472,2864,1472
 
 [Wire]
 Pxs=2864,1472,2864,1512
@@ -5448,12 +5371,9 @@ Pxs=1792,1696,1800,1696
 [Wire]
 Pxs=1800,1696,1800,1744
 
-[Wire]
-Pxs=1800,1696,1848,1696
-
 [Comp]
 Name=Resistor
-Px=1896,1696
+Px=1880,1696
 Rot=2
 
 [Attr]
@@ -5469,12 +5389,6 @@ Style=8192
 [Attr]
 ON=0,0,PACKAGE
 V
-
-[Wire]
-Pxs=1888,1696,1896,1696
-
-[Wire]
-Pxs=1896,1696,1904,1696
 
 [Comp]
 Name=Inductor
@@ -5721,10 +5635,7 @@ Pxs=2776,1696,2784,1696
 Pxs=2784,1696,2784,1744
 
 [Wire]
-Pxs=2784,1696,2856,1696
-
-[Wire]
-Pxs=2856,1696,2864,1696
+Pxs=2784,1696,2864,1696
 
 [Wire]
 Pxs=2864,1696,2864,1736
@@ -6266,12 +6177,9 @@ Pxs=1792,1880,1800,1880
 [Wire]
 Pxs=1800,1880,1800,1928
 
-[Wire]
-Pxs=1800,1880,1848,1880
-
 [Comp]
 Name=Resistor
-Px=1896,1880
+Px=1880,1880
 Rot=2
 
 [Attr]
@@ -6287,12 +6195,6 @@ Style=8192
 [Attr]
 ON=0,0,PACKAGE
 V
-
-[Wire]
-Pxs=1888,1880,1896,1880
-
-[Wire]
-Pxs=1896,1880,1904,1880
 
 [Comp]
 Name=Inductor
@@ -6539,10 +6441,7 @@ Pxs=2776,1880,2784,1880
 Pxs=2784,1880,2784,1928
 
 [Wire]
-Pxs=2784,1880,2848,1880
-
-[Wire]
-Pxs=2848,1880,2864,1880
+Pxs=2784,1880,2864,1880
 
 [Wire]
 Pxs=2864,1880,2864,1920
@@ -7084,12 +6983,9 @@ Pxs=1792,2072,1800,2072
 [Wire]
 Pxs=1800,2072,1800,2120
 
-[Wire]
-Pxs=1800,2072,1848,2072
-
 [Comp]
 Name=Resistor
-Px=1896,2072
+Px=1880,2072
 Rot=2
 
 [Attr]
@@ -7105,12 +7001,6 @@ Style=8192
 [Attr]
 ON=0,0,PACKAGE
 V
-
-[Wire]
-Pxs=1888,2072,1896,2072
-
-[Wire]
-Pxs=1896,2072,1904,2072
 
 [Comp]
 Name=Inductor
@@ -7357,10 +7247,7 @@ Pxs=2776,2072,2784,2072
 Pxs=2784,2072,2784,2120
 
 [Wire]
-Pxs=2784,2072,2840,2072
-
-[Wire]
-Pxs=2840,2072,2864,2072
+Pxs=2784,2072,2864,2072
 
 [Wire]
 Pxs=2864,2072,2864,2112
@@ -7902,12 +7789,9 @@ Pxs=1792,2248,1800,2248
 [Wire]
 Pxs=1800,2248,1800,2296
 
-[Wire]
-Pxs=1800,2248,1848,2248
-
 [Comp]
 Name=Resistor
-Px=1896,2248
+Px=1888,2248
 Rot=2
 
 [Attr]
@@ -7923,12 +7807,6 @@ Style=8192
 [Attr]
 ON=0,0,PACKAGE
 V
-
-[Wire]
-Pxs=1888,2248,1896,2248
-
-[Wire]
-Pxs=1896,2248,1904,2248
 
 [Comp]
 Name=Inductor
@@ -8175,10 +8053,7 @@ Pxs=2776,2248,2784,2248
 Pxs=2784,2248,2784,2296
 
 [Wire]
-Pxs=2784,2248,2832,2248
-
-[Wire]
-Pxs=2832,2248,2864,2248
+Pxs=2784,2248,2864,2248
 
 [Wire]
 Pxs=2864,2248,2864,2288
@@ -8198,7 +8073,7 @@ Style=8192
 
 [Attr]
 ON=8,25,RESISTANCE
-V=50
+V={RLoadN100}
 Style=8192
 
 [Attr]
@@ -8450,9 +8325,112 @@ Name=Ground
 Px=2784,2344
 Rot=7
 
+[Wire]
+Pxs=1880,344,1904,344
+
+[Wire]
+Pxs=1800,2248,1840,2248
+
+[Wire]
+Pxs=1800,2072,1832,2072
+
+[Wire]
+Pxs=1800,576,1824,576
+
+[Wire]
+Pxs=1872,576,1904,576
+
+[Comp]
+Name=Ground
+Px=1800,440
+Rot=7
+
+[Wire]
+Pxs=1880,800,1904,800
+
+[Wire]
+Pxs=1800,800,1832,800
+
+[Wire]
+Pxs=1800,1024,1832,1024
+
+[Wire]
+Pxs=1880,1024,1904,1024
+
+[Wire]
+Pxs=1880,1264,1904,1264
+
+[Wire]
+Pxs=1800,1264,1832,1264
+
+[Wire]
+Pxs=1872,1472,1904,1472
+
+[Wire]
+Pxs=1800,1472,1824,1472
+
+[Wire]
+Pxs=1800,1696,1832,1696
+
+[Wire]
+Pxs=1880,1696,1904,1696
+
+[Wire]
+Pxs=1800,1880,1832,1880
+
+[Wire]
+Pxs=1880,1880,1904,1880
+
+[Wire]
+Pxs=1880,2072,1904,2072
+
+[Wire]
+Pxs=1888,2248,1904,2248
+
+[Wire]
+Pxs=2864,344,2880,344
+
+[Comp]
+Name=Resistor
+Px=832,576
+Rot=2
+
+[Attr]
+ON=-50,-20,PART
+V=R111
+Style=8192
+
+[Attr]
+ON=-51,-34,RESISTANCE
+V={Renable}
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=736,576,784,576
+
 [Grid Text]
-Text=".define Rparas 0"
-Px=3376,544
+Text=".define Renable 100G"
+Px=3368,592
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text=".define RLoadN10 50"
+Px=3368,568
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text=".define Rparas 0.122"
+Px=3368,544
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -8460,7 +8438,7 @@ CBorder=None
 
 [Grid Text]
 Text=".define L 56n"
-Px=3376,520
+Px=3368,520
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -8486,7 +8464,7 @@ CBorder=None
 
 [Grid Text]
 Text="N10"
-Px=2848,344
+Px=2880,344
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -8494,7 +8472,7 @@ CBorder=None
 
 [Grid Text]
 Text="N20"
-Px=2832,576
+Px=2872,576
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -8502,7 +8480,7 @@ CBorder=None
 
 [Grid Text]
 Text="N30"
-Px=2848,800
+Px=2872,800
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -8510,7 +8488,7 @@ CBorder=None
 
 [Grid Text]
 Text="N40"
-Px=2856,1024
+Px=2872,1024
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -8518,7 +8496,7 @@ CBorder=None
 
 [Grid Text]
 Text="N50"
-Px=2848,1264
+Px=2872,1264
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -8526,7 +8504,7 @@ CBorder=None
 
 [Grid Text]
 Text="N60"
-Px=2848,1472
+Px=2872,1472
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -8534,7 +8512,7 @@ CBorder=None
 
 [Grid Text]
 Text="N70"
-Px=2856,1696
+Px=2872,1696
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -8542,7 +8520,7 @@ CBorder=None
 
 [Grid Text]
 Text="N80"
-Px=2848,1880
+Px=2872,1880
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -8550,7 +8528,7 @@ CBorder=None
 
 [Grid Text]
 Text="N90"
-Px=2840,2072
+Px=2872,2072
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -8558,7 +8536,7 @@ CBorder=None
 
 [Grid Text]
 Text="N100"
-Px=2832,2248
+Px=2872,2248
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -8630,7 +8608,7 @@ CBorder=None
 
 [Grid Text]
 Text="N10"
-Px=832,576
+Px=736,576
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -8644,7 +8622,7 @@ CurrentSection 3=0
 Splitter.xs=0
 Splitter.ys=1558
 TextQuad=4099
-Scale=2.6666666666666665
+Scale=1.3333333333333333
 GridType=GraphPaper
 GridUser=10
 ShapeGroups="Main","Euro","Polarity","Main1","Main11","Electrolytic","GroundArrow","DeMorgan"
@@ -8831,13 +8809,13 @@ Enable=True
 Name=Main
 T.PrintPreview=Off,0,0,1,1
 PrinterScale=1
-SB 0=259,284
-Scale 0=2.6666666666666665
+SB 0=957,280
+Scale 0=1.3333333333333333
 Scale 1=1
 Scale 2=1
 SB 3=185,299
 Scale 3=0.66666666666666663
-Px=3395,535
+Px=2749,678
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
@@ -8901,7 +8879,6 @@ Type=Text
 Print=False
 Enable=True
 Name=Models
-SB 0=0,14
 Font=Height=-17,FStyle=0,Color=#000000,Name=Courier New
 Comment Color=#008000
 WinBackGround Color=#FFFFFF
@@ -9203,7 +9180,7 @@ Object=PTag
 Weight=3
 EndPoint=ArrowF
 CBorder=#FFFFFF
-Pos=548.6083098023397,1706.0367454068241,1811.2141992739007,2047.2440944881889
+Pos=550.45871559633031,1712.4735729386891,2076.7306088407004,2071.8816067653279
 Font=Height=-34,FStyle=4,Color=#000000,Name=Ubuntu Mono
 Format=3
 FormatY=3
@@ -9215,7 +9192,7 @@ Object=PTag
 Weight=3
 EndPoint=ArrowF
 CBorder=#FFFFFF
-Pos=548.6083098023397,1181.1023622047244,1762.807583703106,1522.3097112860892
+Pos=550.45871559633031,1183.9323467230445,2018.3486238532109,1543.3403805496828
 Font=Height=-34,FStyle=4,Color=#000000,Name=Ubuntu Mono
 Format=3
 FormatY=3
@@ -9227,7 +9204,7 @@ Object=PTag
 Weight=3
 EndPoint=ArrowF
 CBorder=#FFFFFF
-Pos=548.6083098023397,629.9212598425197,1520.7745058491328,971.12860892388449
+Pos=550.45871559633031,634.24947145877377,1726.4386989157631,993.6575052854123
 Font=Height=-34,FStyle=4,Color=#000000,Name=Ubuntu Mono
 Format=3
 FormatY=3
@@ -10094,7 +10071,7 @@ WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
 Select Box Color=#000080
-Title=RISETIME(V(N10)) vs 
+Title=RISETIME(V(N10)) vs D BBY40.RS
 AutoTitle=Yes
 ShowWin=True
 PrintPreview=Off,0,0,1,1
@@ -10247,7 +10224,7 @@ ALIGNBOTTOM=Yes
 [Performance WaveForm]
 ;Transient
 PMExpression=RISETIME(V(N10))
-XData=-1
+XData=1000
 VFmtX=3
 VFmtY=3
 ScaleFactorX="None"
@@ -10441,7 +10418,7 @@ ALIGNBOTTOM=Yes
 [Performance WaveForm]
 ;Transient
 PMExpression=Peak_Y(V(V1),1,V(N100))
-XData=1003
+XData=1000
 VFmtX=3
 VFmtY=3
 ScaleFactorX="None"
@@ -10477,7 +10454,7 @@ LinearY=True
 [Performance WaveForm]
 ;Transient
 PMExpression=RISETIME(V(N100))
-XData=1003
+XData=1000
 VFmtX=3
 VFmtY=3
 ScaleFactorX="None"
@@ -10681,6 +10658,7 @@ SFmtX=2
 SFmtY=2
 NOFmtX=3
 NOFmtY=3
+DPS=Open Bubbles
 CS=Normal
 Line Color=#FF0000
 Text Color=#FF0000
@@ -11138,12 +11116,10 @@ Analysis=Transient
 Index=1
 Simultaneous=Yes
 Method=List
-Parameter Type=Component
-Name=RTERM10
-Param=value
-From=50,10Meg
-To=20MEG
-Value=3MEG
+Parameter Type=Model
+Name=D BBY40
+Param=RS
+From=0,1m,2m
 
 [Stepping]
 Analysis=Transient
