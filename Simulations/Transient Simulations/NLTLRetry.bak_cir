@@ -7,8 +7,8 @@ Shape Version=11.00
 Screen=2560,1080
 MCAPVersion=12.2.0.3
 Key ID=Demo
-NLCnt=874
-TXCnt=23
+NLCnt=856
+TXCnt=25
 
 [shapedef]
 Name=Ground
@@ -100,7 +100,7 @@ Name=Resistor
 Definition=Resistor
 Shape=Resistor
 Mask=6657
-Used=658
+Used=476
 memo=Resistor
 Label Offset=18,6,8,11
 PinCnt=2
@@ -112,7 +112,7 @@ Name=Inductor
 Definition=Inductor
 Shape=Inductor
 Mask=7681
-Used=382
+Used=223
 memo=Inductor
 Label Offset=18,9,11,12
 PinCnt=2
@@ -124,7 +124,7 @@ Name=BBY40
 Definition=Diode
 Shape=Varactor
 Mask=4480
-Used=264
+Used=114
 memo=Variable Capacitance Diode Ct3=29pF Vr=30V If=20mA
 Label Offset=19,15,16,14
 PinCnt=2
@@ -148,14 +148,14 @@ Name=Ground
 Definition=Ground
 Shape=Ground
 Mask=1793
-Used=730
+Used=555
 memo=Ground
 Label Offset=0,0,0,0
 PinCnt=1
 Pin="PinA",0,0,-3,-7
 
 [Circuit]
-Window Placement=2,3, -1,-1, -8,-31, 0,0,136,39
+Window Placement=2,3, -1,-1, -8,-31, 78,78,1997,630
 Default Object=Color=#FFFFFF,Width=3
 Default Object Font=Height=-34,FStyle=4,Color=#000000,Name=Ubuntu Mono
 Default Object Apply Border To Text=No
@@ -167,14 +167,14 @@ PowerFormat=3
 PathDelayFormat=3
 WarningFormat=3
 GridTextFormulaFormat=3
-Window Placement in Transient Analysis=2,3, -1,-1, -8,-31, 1219,0,2438,590
+Window Placement in Transient Analysis=2,3, -1,-1, -8,-31, 208,208,2432,760
 Window Placement in Transient Probe=0,1, -1,-1, -8,-31, 1219,0,2438,792
 Window Placement in DC Analysis=2,3, -1,-1, -8,-31, 156,0,2312,594
 SpiceType=AMBIGUOUS
 Title_Block_Border=One
 Title_Block=True
 Show Nodes=False
-Show Voltages=True
+Show Voltages=False
 Show Current=False
 Show Power=False
 Show Condition=False
@@ -480,11 +480,11 @@ Pxs=1792,344,1800,344
 Pxs=1800,344,1800,392
 
 [Wire]
-Pxs=1800,344,1848,344
+Pxs=1800,344,1832,344
 
 [Comp]
 Name=Resistor
-Px=1896,344
+Px=1880,344
 Rot=2
 
 [Attr]
@@ -500,12 +500,6 @@ Style=8192
 [Attr]
 ON=0,0,PACKAGE
 V
-
-[Wire]
-Pxs=1888,344,1896,344
-
-[Wire]
-Pxs=1896,344,1904,344
 
 [Comp]
 Name=Inductor
@@ -752,16 +746,10 @@ Pxs=2776,344,2784,344
 Pxs=2784,344,2784,392
 
 [Wire]
-Pxs=2784,344,2848,344
-
-[Wire]
-Pxs=2848,344,2864,344
+Pxs=2784,344,2864,344
 
 [Wire]
 Pxs=2864,344,2864,384
-
-[Wire]
-Pxs=2864,344,2872,344
 
 [Comp]
 Name=Resistor
@@ -775,7 +763,7 @@ Style=8192
 
 [Attr]
 ON=8,25,RESISTANCE
-V=10Meg
+V={RLoadN10}
 Style=8192
 
 [Attr]
@@ -978,13 +966,13 @@ Px=696,464
 Rot=3
 
 [Attr]
-ON=-31,-27,PART
+ON=-31,-28,PART
 V=V1
 Style=8192
 
 [Attr]
 ON=-109,24,VALUE
-V=DC 400m AC 1 0 Pulse 0 5 200n 1u 0 10
+V=DC 400m AC 1 0 Pulse 0 1 0 10n 10n 500n 1u
 Style=8192
 
 [Attr]
@@ -1013,7 +1001,7 @@ Style=256
 
 [Attr]
 ON=0,0,Saved_Pulse
-V=DC 400m AC 1 0 Pulse 0 5 200n 1u 0 10
+V=DC 400m AC 1 0 Pulse 0 1 0 10n 10n 500n 1u
 Style=256
 
 [Attr]
@@ -1058,11 +1046,6 @@ Rot=1
 
 [Comp]
 Name=Ground
-Px=1800,440
-Rot=1
-
-[Comp]
-Name=Ground
 Px=1960,440
 Rot=1
 
@@ -1093,9 +1076,11 @@ Rot=1
 
 [Wire]
 Pxs=832,576,856,576
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=904,576
 Rot=2
 
@@ -1115,9 +1100,11 @@ V
 
 [Wire]
 Pxs=904,576,920,576
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=968,576
 Rot=6
 
@@ -1141,15 +1128,19 @@ V
 
 [Wire]
 Pxs=968,576,976,576
+Enable=FALSE
 
 [Wire]
 Pxs=976,576,976,624
+Enable=FALSE
 
 [Wire]
 Pxs=976,576,1032,576
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=1080,576
 Rot=2
 
@@ -1169,9 +1160,11 @@ V
 
 [Wire]
 Pxs=1080,576,1128,576
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=1176,576
 Rot=6
 
@@ -1195,15 +1188,19 @@ V
 
 [Wire]
 Pxs=1176,576,1184,576
+Enable=FALSE
 
 [Wire]
 Pxs=1184,576,1184,624
+Enable=FALSE
 
 [Wire]
 Pxs=1184,576,1208,576
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=1256,576
 Rot=2
 
@@ -1223,9 +1220,11 @@ V
 
 [Wire]
 Pxs=1256,576,1328,576
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=1376,576
 Rot=6
 
@@ -1249,15 +1248,19 @@ V
 
 [Wire]
 Pxs=1376,576,1384,576
+Enable=FALSE
 
 [Wire]
 Pxs=1384,576,1384,624
+Enable=FALSE
 
 [Wire]
 Pxs=1384,576,1440,576
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=1488,576
 Rot=2
 
@@ -1277,9 +1280,11 @@ V
 
 [Wire]
 Pxs=1488,576,1536,576
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=1584,576
 Rot=6
 
@@ -1303,15 +1308,19 @@ V
 
 [Wire]
 Pxs=1584,576,1592,576
+Enable=FALSE
 
 [Wire]
 Pxs=1592,576,1592,624
+Enable=FALSE
 
 [Wire]
 Pxs=1592,576,1648,576
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=1696,576
 Rot=2
 
@@ -1331,9 +1340,11 @@ V
 
 [Wire]
 Pxs=1696,576,1744,576
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=1792,576
 Rot=6
 
@@ -1357,16 +1368,16 @@ V
 
 [Wire]
 Pxs=1792,576,1800,576
+Enable=FALSE
 
 [Wire]
 Pxs=1800,576,1800,624
-
-[Wire]
-Pxs=1800,576,1848,576
+Enable=FALSE
 
 [Comp]
 Name=Resistor
-Px=1896,576
+Enable=FALSE
+Px=1872,576
 Rot=2
 
 [Attr]
@@ -1383,14 +1394,9 @@ Style=8192
 ON=0,0,PACKAGE
 V
 
-[Wire]
-Pxs=1888,576,1896,576
-
-[Wire]
-Pxs=1896,576,1904,576
-
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=1952,576
 Rot=6
 
@@ -1414,15 +1420,19 @@ V
 
 [Wire]
 Pxs=1952,576,1960,576
+Enable=FALSE
 
 [Wire]
 Pxs=1960,576,1960,624
+Enable=FALSE
 
 [Wire]
 Pxs=1960,576,2016,576
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=2064,576
 Rot=2
 
@@ -1442,9 +1452,11 @@ V
 
 [Wire]
 Pxs=2064,576,2112,576
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=2160,576
 Rot=6
 
@@ -1468,15 +1480,19 @@ V
 
 [Wire]
 Pxs=2160,576,2168,576
+Enable=FALSE
 
 [Wire]
 Pxs=2168,576,2168,624
+Enable=FALSE
 
 [Wire]
 Pxs=2168,576,2192,576
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=2240,576
 Rot=2
 
@@ -1496,9 +1512,11 @@ V
 
 [Wire]
 Pxs=2240,576,2272,576
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=2320,576
 Rot=6
 
@@ -1522,15 +1540,19 @@ V
 
 [Wire]
 Pxs=2320,576,2352,576
+Enable=FALSE
 
 [Wire]
 Pxs=2352,576,2352,624
+Enable=FALSE
 
 [Wire]
 Pxs=2352,576,2424,576
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=2472,576
 Rot=2
 
@@ -1550,9 +1572,11 @@ V
 
 [Wire]
 Pxs=2472,576,2520,576
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=2568,576
 Rot=6
 
@@ -1576,15 +1600,19 @@ V
 
 [Wire]
 Pxs=2568,576,2576,576
+Enable=FALSE
 
 [Wire]
 Pxs=2576,576,2576,624
+Enable=FALSE
 
 [Wire]
 Pxs=2576,576,2632,576
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=2632,576
 
 [Attr]
@@ -1603,9 +1631,11 @@ V
 
 [Wire]
 Pxs=2680,576,2728,576
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=2776,576
 Rot=6
 
@@ -1629,24 +1659,27 @@ V
 
 [Wire]
 Pxs=2776,576,2784,576
+Enable=FALSE
 
 [Wire]
 Pxs=2784,576,2784,624
+Enable=FALSE
 
 [Wire]
-Pxs=2784,576,2832,576
-
-[Wire]
-Pxs=2832,576,2864,576
+Pxs=2784,576,2864,576
+Enable=FALSE
 
 [Wire]
 Pxs=2864,576,2864,616
+Enable=FALSE
 
 [Wire]
 Pxs=2864,576,2872,576
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=2864,616
 Rot=1
 
@@ -1666,6 +1699,7 @@ V
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=976,624
 Rot=1
 
@@ -1685,6 +1719,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=1184,624
 Rot=1
 
@@ -1704,6 +1739,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=1384,624
 Rot=1
 
@@ -1723,6 +1759,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=1592,624
 Rot=1
 
@@ -1742,6 +1779,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=1800,624
 Rot=1
 
@@ -1761,6 +1799,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=1960,624
 Rot=1
 
@@ -1780,6 +1819,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=2168,624
 Rot=1
 
@@ -1799,6 +1839,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=2352,624
 Rot=1
 
@@ -1818,6 +1859,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=2576,624
 Rot=1
 
@@ -1837,6 +1879,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=2784,624
 Rot=1
 
@@ -1856,64 +1899,77 @@ V=SOT-23
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=2864,664
 Rot=7
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=976,672
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=1184,672
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=1384,672
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=1592,672
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=1800,672
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=1960,672
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=2168,672
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=2352,672
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=2576,672
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=2784,672
 Rot=1
 
 [Wire]
 Pxs=832,800,856,800
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=904,800
 Rot=2
 
@@ -1933,9 +1989,11 @@ V
 
 [Wire]
 Pxs=904,800,920,800
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=968,800
 Rot=6
 
@@ -1959,15 +2017,19 @@ V
 
 [Wire]
 Pxs=968,800,976,800
+Enable=FALSE
 
 [Wire]
 Pxs=976,800,976,848
+Enable=FALSE
 
 [Wire]
 Pxs=976,800,1032,800
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=1080,800
 Rot=2
 
@@ -1987,9 +2049,11 @@ V
 
 [Wire]
 Pxs=1080,800,1128,800
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=1176,800
 Rot=6
 
@@ -2013,15 +2077,19 @@ V
 
 [Wire]
 Pxs=1176,800,1184,800
+Enable=FALSE
 
 [Wire]
 Pxs=1184,800,1184,848
+Enable=FALSE
 
 [Wire]
 Pxs=1184,800,1208,800
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=1256,800
 Rot=2
 
@@ -2041,9 +2109,11 @@ V
 
 [Wire]
 Pxs=1256,800,1328,800
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=1376,800
 Rot=6
 
@@ -2067,15 +2137,19 @@ V
 
 [Wire]
 Pxs=1376,800,1384,800
+Enable=FALSE
 
 [Wire]
 Pxs=1384,800,1384,848
+Enable=FALSE
 
 [Wire]
 Pxs=1384,800,1440,800
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=1488,800
 Rot=2
 
@@ -2095,9 +2169,11 @@ V
 
 [Wire]
 Pxs=1488,800,1536,800
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=1584,800
 Rot=6
 
@@ -2121,15 +2197,19 @@ V
 
 [Wire]
 Pxs=1584,800,1592,800
+Enable=FALSE
 
 [Wire]
 Pxs=1592,800,1592,848
+Enable=FALSE
 
 [Wire]
 Pxs=1592,800,1648,800
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=1696,800
 Rot=2
 
@@ -2149,9 +2229,11 @@ V
 
 [Wire]
 Pxs=1696,800,1744,800
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=1792,800
 Rot=6
 
@@ -2175,16 +2257,16 @@ V
 
 [Wire]
 Pxs=1792,800,1800,800
+Enable=FALSE
 
 [Wire]
 Pxs=1800,800,1800,848
-
-[Wire]
-Pxs=1800,800,1848,800
+Enable=FALSE
 
 [Comp]
 Name=Resistor
-Px=1896,800
+Enable=FALSE
+Px=1880,800
 Rot=2
 
 [Attr]
@@ -2201,14 +2283,9 @@ Style=8192
 ON=0,0,PACKAGE
 V
 
-[Wire]
-Pxs=1888,800,1896,800
-
-[Wire]
-Pxs=1896,800,1904,800
-
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=1952,800
 Rot=6
 
@@ -2232,15 +2309,19 @@ V
 
 [Wire]
 Pxs=1952,800,1960,800
+Enable=FALSE
 
 [Wire]
 Pxs=1960,800,1960,848
+Enable=FALSE
 
 [Wire]
 Pxs=1960,800,2016,800
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=2064,800
 Rot=2
 
@@ -2260,9 +2341,11 @@ V
 
 [Wire]
 Pxs=2064,800,2112,800
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=2160,800
 Rot=6
 
@@ -2286,15 +2369,19 @@ V
 
 [Wire]
 Pxs=2160,800,2168,800
+Enable=FALSE
 
 [Wire]
 Pxs=2168,800,2168,848
+Enable=FALSE
 
 [Wire]
 Pxs=2168,800,2192,800
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=2240,800
 Rot=2
 
@@ -2314,9 +2401,11 @@ V
 
 [Wire]
 Pxs=2240,800,2272,800
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=2320,800
 Rot=6
 
@@ -2340,15 +2429,19 @@ V
 
 [Wire]
 Pxs=2320,800,2352,800
+Enable=FALSE
 
 [Wire]
 Pxs=2352,800,2352,848
+Enable=FALSE
 
 [Wire]
 Pxs=2352,800,2424,800
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=2472,800
 Rot=2
 
@@ -2368,9 +2461,11 @@ V
 
 [Wire]
 Pxs=2472,800,2520,800
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=2568,800
 Rot=6
 
@@ -2394,15 +2489,19 @@ V
 
 [Wire]
 Pxs=2568,800,2576,800
+Enable=FALSE
 
 [Wire]
 Pxs=2576,800,2576,848
+Enable=FALSE
 
 [Wire]
 Pxs=2576,800,2632,800
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=2632,800
 
 [Attr]
@@ -2421,9 +2520,11 @@ V
 
 [Wire]
 Pxs=2680,800,2728,800
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=2776,800
 Rot=6
 
@@ -2447,24 +2548,27 @@ V
 
 [Wire]
 Pxs=2776,800,2784,800
+Enable=FALSE
 
 [Wire]
 Pxs=2784,800,2784,848
+Enable=FALSE
 
 [Wire]
-Pxs=2784,800,2848,800
-
-[Wire]
-Pxs=2848,800,2864,800
+Pxs=2784,800,2864,800
+Enable=FALSE
 
 [Wire]
 Pxs=2864,800,2864,840
+Enable=FALSE
 
 [Wire]
 Pxs=2864,800,2872,800
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=2864,840
 Rot=1
 
@@ -2484,6 +2588,7 @@ V
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=976,848
 Rot=1
 
@@ -2503,6 +2608,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=1184,848
 Rot=1
 
@@ -2522,6 +2628,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=1384,848
 Rot=1
 
@@ -2541,6 +2648,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=1592,848
 Rot=1
 
@@ -2560,6 +2668,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=1800,848
 Rot=1
 
@@ -2579,6 +2688,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=1960,848
 Rot=1
 
@@ -2598,6 +2708,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=2168,848
 Rot=1
 
@@ -2617,6 +2728,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=2352,848
 Rot=1
 
@@ -2636,6 +2748,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=2576,848
 Rot=1
 
@@ -2655,6 +2768,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=2784,848
 Rot=1
 
@@ -2674,64 +2788,77 @@ V=SOT-23
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=2864,888
 Rot=7
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=976,896
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=1184,896
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=1384,896
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=1592,896
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=1800,896
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=1960,896
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=2168,896
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=2352,896
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=2576,896
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=2784,896
 Rot=1
 
 [Wire]
 Pxs=832,1024,856,1024
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=904,1024
 Rot=2
 
@@ -2751,9 +2878,11 @@ V
 
 [Wire]
 Pxs=904,1024,920,1024
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=968,1024
 Rot=6
 
@@ -2777,15 +2906,19 @@ V
 
 [Wire]
 Pxs=968,1024,976,1024
+Enable=FALSE
 
 [Wire]
 Pxs=976,1024,976,1072
+Enable=FALSE
 
 [Wire]
 Pxs=976,1024,1032,1024
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=1080,1024
 Rot=2
 
@@ -2805,9 +2938,11 @@ V
 
 [Wire]
 Pxs=1080,1024,1128,1024
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=1176,1024
 Rot=6
 
@@ -2831,15 +2966,19 @@ V
 
 [Wire]
 Pxs=1176,1024,1184,1024
+Enable=FALSE
 
 [Wire]
 Pxs=1184,1024,1184,1072
+Enable=FALSE
 
 [Wire]
 Pxs=1184,1024,1208,1024
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=1256,1024
 Rot=2
 
@@ -2859,9 +2998,11 @@ V
 
 [Wire]
 Pxs=1256,1024,1328,1024
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=1376,1024
 Rot=6
 
@@ -2885,15 +3026,19 @@ V
 
 [Wire]
 Pxs=1376,1024,1384,1024
+Enable=FALSE
 
 [Wire]
 Pxs=1384,1024,1384,1072
+Enable=FALSE
 
 [Wire]
 Pxs=1384,1024,1440,1024
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=1488,1024
 Rot=2
 
@@ -2913,9 +3058,11 @@ V
 
 [Wire]
 Pxs=1488,1024,1536,1024
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=1584,1024
 Rot=6
 
@@ -2939,15 +3086,19 @@ V
 
 [Wire]
 Pxs=1584,1024,1592,1024
+Enable=FALSE
 
 [Wire]
 Pxs=1592,1024,1592,1072
+Enable=FALSE
 
 [Wire]
 Pxs=1592,1024,1648,1024
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=1696,1024
 Rot=2
 
@@ -2967,9 +3118,11 @@ V
 
 [Wire]
 Pxs=1696,1024,1744,1024
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=1792,1024
 Rot=6
 
@@ -2993,16 +3146,16 @@ V
 
 [Wire]
 Pxs=1792,1024,1800,1024
+Enable=FALSE
 
 [Wire]
 Pxs=1800,1024,1800,1072
-
-[Wire]
-Pxs=1800,1024,1848,1024
+Enable=FALSE
 
 [Comp]
 Name=Resistor
-Px=1896,1024
+Enable=FALSE
+Px=1880,1024
 Rot=2
 
 [Attr]
@@ -3019,14 +3172,9 @@ Style=8192
 ON=0,0,PACKAGE
 V
 
-[Wire]
-Pxs=1888,1024,1896,1024
-
-[Wire]
-Pxs=1896,1024,1904,1024
-
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=1952,1024
 Rot=6
 
@@ -3050,15 +3198,19 @@ V
 
 [Wire]
 Pxs=1952,1024,1960,1024
+Enable=FALSE
 
 [Wire]
 Pxs=1960,1024,1960,1072
+Enable=FALSE
 
 [Wire]
 Pxs=1960,1024,2016,1024
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=2064,1024
 Rot=2
 
@@ -3078,9 +3230,11 @@ V
 
 [Wire]
 Pxs=2064,1024,2112,1024
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=2160,1024
 Rot=6
 
@@ -3104,15 +3258,19 @@ V
 
 [Wire]
 Pxs=2160,1024,2168,1024
+Enable=FALSE
 
 [Wire]
 Pxs=2168,1024,2168,1072
+Enable=FALSE
 
 [Wire]
 Pxs=2168,1024,2192,1024
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=2240,1024
 Rot=2
 
@@ -3132,9 +3290,11 @@ V
 
 [Wire]
 Pxs=2240,1024,2272,1024
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=2320,1024
 Rot=6
 
@@ -3158,15 +3318,19 @@ V
 
 [Wire]
 Pxs=2320,1024,2352,1024
+Enable=FALSE
 
 [Wire]
 Pxs=2352,1024,2352,1072
+Enable=FALSE
 
 [Wire]
 Pxs=2352,1024,2424,1024
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=2472,1024
 Rot=2
 
@@ -3186,9 +3350,11 @@ V
 
 [Wire]
 Pxs=2472,1024,2520,1024
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=2568,1024
 Rot=6
 
@@ -3212,15 +3378,19 @@ V
 
 [Wire]
 Pxs=2568,1024,2576,1024
+Enable=FALSE
 
 [Wire]
 Pxs=2576,1024,2576,1072
+Enable=FALSE
 
 [Wire]
 Pxs=2576,1024,2632,1024
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=2632,1024
 
 [Attr]
@@ -3239,9 +3409,11 @@ V
 
 [Wire]
 Pxs=2680,1024,2728,1024
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=2776,1024
 Rot=6
 
@@ -3265,24 +3437,27 @@ V
 
 [Wire]
 Pxs=2776,1024,2784,1024
+Enable=FALSE
 
 [Wire]
 Pxs=2784,1024,2784,1072
+Enable=FALSE
 
 [Wire]
-Pxs=2784,1024,2856,1024
-
-[Wire]
-Pxs=2856,1024,2864,1024
+Pxs=2784,1024,2864,1024
+Enable=FALSE
 
 [Wire]
 Pxs=2864,1024,2864,1064
+Enable=FALSE
 
 [Wire]
 Pxs=2864,1024,2872,1024
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=2864,1064
 Rot=1
 
@@ -3302,6 +3477,7 @@ V
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=976,1072
 Rot=1
 
@@ -3321,6 +3497,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=1184,1072
 Rot=1
 
@@ -3340,6 +3517,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=1384,1072
 Rot=1
 
@@ -3359,6 +3537,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=1592,1072
 Rot=1
 
@@ -3378,6 +3557,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=1800,1072
 Rot=1
 
@@ -3397,6 +3577,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=1960,1072
 Rot=1
 
@@ -3416,6 +3597,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=2168,1072
 Rot=1
 
@@ -3435,6 +3617,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=2352,1072
 Rot=1
 
@@ -3454,6 +3637,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=2576,1072
 Rot=1
 
@@ -3473,6 +3657,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=2784,1072
 Rot=1
 
@@ -3492,64 +3677,77 @@ V=SOT-23
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=2864,1112
 Rot=7
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=976,1120
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=1184,1120
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=1384,1120
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=1592,1120
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=1800,1120
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=1960,1120
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=2168,1120
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=2352,1120
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=2576,1120
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=2784,1120
 Rot=1
 
 [Wire]
 Pxs=848,1264,872,1264
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=920,1264
 Rot=2
 
@@ -3569,6 +3767,7 @@ V
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=968,1264
 Rot=6
 
@@ -3592,15 +3791,19 @@ V
 
 [Wire]
 Pxs=968,1264,976,1264
+Enable=FALSE
 
 [Wire]
 Pxs=976,1264,976,1312
+Enable=FALSE
 
 [Wire]
 Pxs=976,1264,1032,1264
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=1080,1264
 Rot=2
 
@@ -3620,9 +3823,11 @@ V
 
 [Wire]
 Pxs=1080,1264,1128,1264
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=1176,1264
 Rot=6
 
@@ -3646,15 +3851,19 @@ V
 
 [Wire]
 Pxs=1176,1264,1184,1264
+Enable=FALSE
 
 [Wire]
 Pxs=1184,1264,1184,1312
+Enable=FALSE
 
 [Wire]
 Pxs=1184,1264,1208,1264
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=1256,1264
 Rot=2
 
@@ -3674,9 +3883,11 @@ V
 
 [Wire]
 Pxs=1256,1264,1328,1264
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=1376,1264
 Rot=6
 
@@ -3700,15 +3911,19 @@ V
 
 [Wire]
 Pxs=1376,1264,1384,1264
+Enable=FALSE
 
 [Wire]
 Pxs=1384,1264,1384,1312
+Enable=FALSE
 
 [Wire]
 Pxs=1384,1264,1440,1264
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=1488,1264
 Rot=2
 
@@ -3728,9 +3943,11 @@ V
 
 [Wire]
 Pxs=1488,1264,1536,1264
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=1584,1264
 Rot=6
 
@@ -3754,15 +3971,19 @@ V
 
 [Wire]
 Pxs=1584,1264,1592,1264
+Enable=FALSE
 
 [Wire]
 Pxs=1592,1264,1592,1312
+Enable=FALSE
 
 [Wire]
 Pxs=1592,1264,1648,1264
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=1696,1264
 Rot=2
 
@@ -3782,9 +4003,11 @@ V
 
 [Wire]
 Pxs=1696,1264,1744,1264
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=1792,1264
 Rot=6
 
@@ -3808,16 +4031,16 @@ V
 
 [Wire]
 Pxs=1792,1264,1800,1264
+Enable=FALSE
 
 [Wire]
 Pxs=1800,1264,1800,1312
-
-[Wire]
-Pxs=1800,1264,1848,1264
+Enable=FALSE
 
 [Comp]
 Name=Resistor
-Px=1896,1264
+Enable=FALSE
+Px=1880,1264
 Rot=2
 
 [Attr]
@@ -3834,14 +4057,9 @@ Style=8192
 ON=0,0,PACKAGE
 V
 
-[Wire]
-Pxs=1888,1264,1896,1264
-
-[Wire]
-Pxs=1896,1264,1904,1264
-
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=1952,1264
 Rot=6
 
@@ -3865,15 +4083,19 @@ V
 
 [Wire]
 Pxs=1952,1264,1960,1264
+Enable=FALSE
 
 [Wire]
 Pxs=1960,1264,1960,1312
+Enable=FALSE
 
 [Wire]
 Pxs=1960,1264,2016,1264
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=2064,1264
 Rot=2
 
@@ -3893,9 +4115,11 @@ V
 
 [Wire]
 Pxs=2064,1264,2112,1264
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=2160,1264
 Rot=6
 
@@ -3919,15 +4143,19 @@ V
 
 [Wire]
 Pxs=2160,1264,2168,1264
+Enable=FALSE
 
 [Wire]
 Pxs=2168,1264,2168,1312
+Enable=FALSE
 
 [Wire]
 Pxs=2168,1264,2192,1264
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=2240,1264
 Rot=2
 
@@ -3947,9 +4175,11 @@ V
 
 [Wire]
 Pxs=2240,1264,2272,1264
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=2320,1264
 Rot=6
 
@@ -3973,15 +4203,19 @@ V
 
 [Wire]
 Pxs=2320,1264,2352,1264
+Enable=FALSE
 
 [Wire]
 Pxs=2352,1264,2352,1312
+Enable=FALSE
 
 [Wire]
 Pxs=2352,1264,2424,1264
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=2472,1264
 Rot=2
 
@@ -4001,9 +4235,11 @@ V
 
 [Wire]
 Pxs=2472,1264,2520,1264
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=2568,1264
 Rot=6
 
@@ -4027,15 +4263,19 @@ V
 
 [Wire]
 Pxs=2568,1264,2576,1264
+Enable=FALSE
 
 [Wire]
 Pxs=2576,1264,2576,1312
+Enable=FALSE
 
 [Wire]
 Pxs=2576,1264,2632,1264
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=2632,1264
 
 [Attr]
@@ -4054,9 +4294,11 @@ V
 
 [Wire]
 Pxs=2680,1264,2728,1264
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=2776,1264
 Rot=6
 
@@ -4080,24 +4322,27 @@ V
 
 [Wire]
 Pxs=2776,1264,2784,1264
+Enable=FALSE
 
 [Wire]
 Pxs=2784,1264,2784,1312
+Enable=FALSE
 
 [Wire]
-Pxs=2784,1264,2848,1264
-
-[Wire]
-Pxs=2848,1264,2864,1264
+Pxs=2784,1264,2864,1264
+Enable=FALSE
 
 [Wire]
 Pxs=2864,1264,2864,1304
+Enable=FALSE
 
 [Wire]
 Pxs=2864,1264,2872,1264
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=2864,1304
 Rot=1
 
@@ -4117,6 +4362,7 @@ V
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=976,1312
 Rot=1
 
@@ -4136,6 +4382,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=1184,1312
 Rot=1
 
@@ -4155,6 +4402,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=1384,1312
 Rot=1
 
@@ -4174,6 +4422,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=1592,1312
 Rot=1
 
@@ -4193,6 +4442,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=1800,1312
 Rot=1
 
@@ -4212,6 +4462,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=1960,1312
 Rot=1
 
@@ -4231,6 +4482,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=2168,1312
 Rot=1
 
@@ -4250,6 +4502,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=2352,1312
 Rot=1
 
@@ -4269,6 +4522,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=2576,1312
 Rot=1
 
@@ -4288,6 +4542,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=2784,1312
 Rot=1
 
@@ -4307,64 +4562,77 @@ V=SOT-23
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=2864,1352
 Rot=7
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=976,1360
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=1184,1360
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=1384,1360
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=1592,1360
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=1800,1360
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=1960,1360
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=2168,1360
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=2352,1360
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=2576,1360
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=2784,1360
 Rot=1
 
 [Wire]
 Pxs=832,1472,856,1472
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=904,1472
 Rot=2
 
@@ -4384,9 +4652,11 @@ V
 
 [Wire]
 Pxs=904,1472,920,1472
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=968,1472
 Rot=6
 
@@ -4410,15 +4680,19 @@ V
 
 [Wire]
 Pxs=968,1472,976,1472
+Enable=FALSE
 
 [Wire]
 Pxs=976,1472,976,1520
+Enable=FALSE
 
 [Wire]
 Pxs=976,1472,1032,1472
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=1080,1472
 Rot=2
 
@@ -4438,9 +4712,11 @@ V
 
 [Wire]
 Pxs=1080,1472,1128,1472
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=1176,1472
 Rot=6
 
@@ -4464,15 +4740,19 @@ V
 
 [Wire]
 Pxs=1176,1472,1184,1472
+Enable=FALSE
 
 [Wire]
 Pxs=1184,1472,1184,1520
+Enable=FALSE
 
 [Wire]
 Pxs=1184,1472,1208,1472
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=1256,1472
 Rot=2
 
@@ -4492,9 +4772,11 @@ V
 
 [Wire]
 Pxs=1256,1472,1328,1472
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=1376,1472
 Rot=6
 
@@ -4518,15 +4800,19 @@ V
 
 [Wire]
 Pxs=1376,1472,1384,1472
+Enable=FALSE
 
 [Wire]
 Pxs=1384,1472,1384,1520
+Enable=FALSE
 
 [Wire]
 Pxs=1384,1472,1440,1472
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=1488,1472
 Rot=2
 
@@ -4546,9 +4832,11 @@ V
 
 [Wire]
 Pxs=1488,1472,1536,1472
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=1584,1472
 Rot=6
 
@@ -4572,15 +4860,19 @@ V
 
 [Wire]
 Pxs=1584,1472,1592,1472
+Enable=FALSE
 
 [Wire]
 Pxs=1592,1472,1592,1520
+Enable=FALSE
 
 [Wire]
 Pxs=1592,1472,1648,1472
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=1696,1472
 Rot=2
 
@@ -4600,9 +4892,11 @@ V
 
 [Wire]
 Pxs=1696,1472,1744,1472
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=1792,1472
 Rot=6
 
@@ -4626,16 +4920,16 @@ V
 
 [Wire]
 Pxs=1792,1472,1800,1472
+Enable=FALSE
 
 [Wire]
 Pxs=1800,1472,1800,1520
-
-[Wire]
-Pxs=1800,1472,1848,1472
+Enable=FALSE
 
 [Comp]
 Name=Resistor
-Px=1896,1472
+Enable=FALSE
+Px=1872,1472
 Rot=2
 
 [Attr]
@@ -4652,14 +4946,9 @@ Style=8192
 ON=0,0,PACKAGE
 V
 
-[Wire]
-Pxs=1888,1472,1896,1472
-
-[Wire]
-Pxs=1896,1472,1904,1472
-
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=1952,1472
 Rot=6
 
@@ -4683,15 +4972,19 @@ V
 
 [Wire]
 Pxs=1952,1472,1960,1472
+Enable=FALSE
 
 [Wire]
 Pxs=1960,1472,1960,1520
+Enable=FALSE
 
 [Wire]
 Pxs=1960,1472,2016,1472
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=2064,1472
 Rot=2
 
@@ -4711,9 +5004,11 @@ V
 
 [Wire]
 Pxs=2064,1472,2112,1472
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=2160,1472
 Rot=6
 
@@ -4737,15 +5032,19 @@ V
 
 [Wire]
 Pxs=2160,1472,2168,1472
+Enable=FALSE
 
 [Wire]
 Pxs=2168,1472,2168,1520
+Enable=FALSE
 
 [Wire]
 Pxs=2168,1472,2192,1472
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=2240,1472
 Rot=2
 
@@ -4765,9 +5064,11 @@ V
 
 [Wire]
 Pxs=2240,1472,2272,1472
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=2320,1472
 Rot=6
 
@@ -4791,15 +5092,19 @@ V
 
 [Wire]
 Pxs=2320,1472,2352,1472
+Enable=FALSE
 
 [Wire]
 Pxs=2352,1472,2352,1520
+Enable=FALSE
 
 [Wire]
 Pxs=2352,1472,2424,1472
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=2472,1472
 Rot=2
 
@@ -4819,9 +5124,11 @@ V
 
 [Wire]
 Pxs=2472,1472,2520,1472
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=2568,1472
 Rot=6
 
@@ -4845,15 +5152,19 @@ V
 
 [Wire]
 Pxs=2568,1472,2576,1472
+Enable=FALSE
 
 [Wire]
 Pxs=2576,1472,2576,1520
+Enable=FALSE
 
 [Wire]
 Pxs=2576,1472,2632,1472
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=2632,1472
 
 [Attr]
@@ -4872,9 +5183,11 @@ V
 
 [Wire]
 Pxs=2680,1472,2728,1472
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=2776,1472
 Rot=6
 
@@ -4898,24 +5211,27 @@ V
 
 [Wire]
 Pxs=2776,1472,2784,1472
+Enable=FALSE
 
 [Wire]
 Pxs=2784,1472,2784,1520
+Enable=FALSE
 
 [Wire]
-Pxs=2784,1472,2848,1472
-
-[Wire]
-Pxs=2848,1472,2864,1472
+Pxs=2784,1472,2864,1472
+Enable=FALSE
 
 [Wire]
 Pxs=2864,1472,2864,1512
+Enable=FALSE
 
 [Wire]
 Pxs=2864,1472,2872,1472
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=2864,1512
 Rot=1
 
@@ -4935,6 +5251,7 @@ V
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=976,1520
 Rot=1
 
@@ -4954,6 +5271,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=1184,1520
 Rot=1
 
@@ -4973,6 +5291,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=1384,1520
 Rot=1
 
@@ -4992,6 +5311,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=1592,1520
 Rot=1
 
@@ -5011,6 +5331,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=1800,1520
 Rot=1
 
@@ -5030,6 +5351,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=1960,1520
 Rot=1
 
@@ -5049,6 +5371,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=2168,1520
 Rot=1
 
@@ -5068,6 +5391,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=2352,1520
 Rot=1
 
@@ -5087,6 +5411,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=2576,1520
 Rot=1
 
@@ -5106,6 +5431,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=2784,1520
 Rot=1
 
@@ -5125,64 +5451,77 @@ V=SOT-23
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=2864,1560
 Rot=7
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=976,1568
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=1184,1568
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=1384,1568
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=1592,1568
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=1800,1568
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=1960,1568
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=2168,1568
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=2352,1568
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=2576,1568
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=2784,1568
 Rot=1
 
 [Wire]
 Pxs=832,1696,856,1696
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=904,1696
 Rot=2
 
@@ -5202,9 +5541,11 @@ V
 
 [Wire]
 Pxs=904,1696,920,1696
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=968,1696
 Rot=6
 
@@ -5228,15 +5569,19 @@ V
 
 [Wire]
 Pxs=968,1696,976,1696
+Enable=FALSE
 
 [Wire]
 Pxs=976,1696,976,1744
+Enable=FALSE
 
 [Wire]
 Pxs=976,1696,1032,1696
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=1080,1696
 Rot=2
 
@@ -5256,9 +5601,11 @@ V
 
 [Wire]
 Pxs=1080,1696,1128,1696
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=1176,1696
 Rot=6
 
@@ -5282,15 +5629,19 @@ V
 
 [Wire]
 Pxs=1176,1696,1184,1696
+Enable=FALSE
 
 [Wire]
 Pxs=1184,1696,1184,1744
+Enable=FALSE
 
 [Wire]
 Pxs=1184,1696,1208,1696
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=1256,1696
 Rot=2
 
@@ -5310,9 +5661,11 @@ V
 
 [Wire]
 Pxs=1256,1696,1328,1696
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=1376,1696
 Rot=6
 
@@ -5336,15 +5689,19 @@ V
 
 [Wire]
 Pxs=1376,1696,1384,1696
+Enable=FALSE
 
 [Wire]
 Pxs=1384,1696,1384,1744
+Enable=FALSE
 
 [Wire]
 Pxs=1384,1696,1440,1696
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=1488,1696
 Rot=2
 
@@ -5364,9 +5721,11 @@ V
 
 [Wire]
 Pxs=1488,1696,1536,1696
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=1584,1696
 Rot=6
 
@@ -5390,15 +5749,19 @@ V
 
 [Wire]
 Pxs=1584,1696,1592,1696
+Enable=FALSE
 
 [Wire]
 Pxs=1592,1696,1592,1744
+Enable=FALSE
 
 [Wire]
 Pxs=1592,1696,1648,1696
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=1696,1696
 Rot=2
 
@@ -5418,9 +5781,11 @@ V
 
 [Wire]
 Pxs=1696,1696,1744,1696
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=1792,1696
 Rot=6
 
@@ -5444,16 +5809,16 @@ V
 
 [Wire]
 Pxs=1792,1696,1800,1696
+Enable=FALSE
 
 [Wire]
 Pxs=1800,1696,1800,1744
-
-[Wire]
-Pxs=1800,1696,1848,1696
+Enable=FALSE
 
 [Comp]
 Name=Resistor
-Px=1896,1696
+Enable=FALSE
+Px=1880,1696
 Rot=2
 
 [Attr]
@@ -5470,14 +5835,9 @@ Style=8192
 ON=0,0,PACKAGE
 V
 
-[Wire]
-Pxs=1888,1696,1896,1696
-
-[Wire]
-Pxs=1896,1696,1904,1696
-
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=1952,1696
 Rot=6
 
@@ -5501,15 +5861,19 @@ V
 
 [Wire]
 Pxs=1952,1696,1960,1696
+Enable=FALSE
 
 [Wire]
 Pxs=1960,1696,1960,1744
+Enable=FALSE
 
 [Wire]
 Pxs=1960,1696,2016,1696
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=2064,1696
 Rot=2
 
@@ -5529,9 +5893,11 @@ V
 
 [Wire]
 Pxs=2064,1696,2112,1696
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=2160,1696
 Rot=6
 
@@ -5555,15 +5921,19 @@ V
 
 [Wire]
 Pxs=2160,1696,2168,1696
+Enable=FALSE
 
 [Wire]
 Pxs=2168,1696,2168,1744
+Enable=FALSE
 
 [Wire]
 Pxs=2168,1696,2192,1696
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=2240,1696
 Rot=2
 
@@ -5583,9 +5953,11 @@ V
 
 [Wire]
 Pxs=2240,1696,2272,1696
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=2320,1696
 Rot=6
 
@@ -5609,15 +5981,19 @@ V
 
 [Wire]
 Pxs=2320,1696,2352,1696
+Enable=FALSE
 
 [Wire]
 Pxs=2352,1696,2352,1744
+Enable=FALSE
 
 [Wire]
 Pxs=2352,1696,2424,1696
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=2472,1696
 Rot=2
 
@@ -5637,9 +6013,11 @@ V
 
 [Wire]
 Pxs=2472,1696,2520,1696
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=2568,1696
 Rot=6
 
@@ -5663,15 +6041,19 @@ V
 
 [Wire]
 Pxs=2568,1696,2576,1696
+Enable=FALSE
 
 [Wire]
 Pxs=2576,1696,2576,1744
+Enable=FALSE
 
 [Wire]
 Pxs=2576,1696,2632,1696
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=2632,1696
 
 [Attr]
@@ -5690,9 +6072,11 @@ V
 
 [Wire]
 Pxs=2680,1696,2728,1696
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=2776,1696
 Rot=6
 
@@ -5716,24 +6100,27 @@ V
 
 [Wire]
 Pxs=2776,1696,2784,1696
+Enable=FALSE
 
 [Wire]
 Pxs=2784,1696,2784,1744
+Enable=FALSE
 
 [Wire]
-Pxs=2784,1696,2856,1696
-
-[Wire]
-Pxs=2856,1696,2864,1696
+Pxs=2784,1696,2864,1696
+Enable=FALSE
 
 [Wire]
 Pxs=2864,1696,2864,1736
+Enable=FALSE
 
 [Wire]
 Pxs=2864,1696,2872,1696
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=2864,1736
 Rot=1
 
@@ -5753,6 +6140,7 @@ V
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=976,1744
 Rot=1
 
@@ -5772,6 +6160,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=1184,1744
 Rot=1
 
@@ -5791,6 +6180,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=1384,1744
 Rot=1
 
@@ -5810,6 +6200,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=1592,1744
 Rot=1
 
@@ -5829,6 +6220,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=1800,1744
 Rot=1
 
@@ -5848,6 +6240,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=1960,1744
 Rot=1
 
@@ -5867,6 +6260,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=2168,1744
 Rot=1
 
@@ -5886,6 +6280,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=2352,1744
 Rot=1
 
@@ -5905,6 +6300,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=2576,1744
 Rot=1
 
@@ -5924,6 +6320,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=2784,1744
 Rot=1
 
@@ -5943,64 +6340,77 @@ V=SOT-23
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=2864,1784
 Rot=7
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=976,1792
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=1184,1792
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=1384,1792
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=1592,1792
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=1800,1792
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=1960,1792
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=2168,1792
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=2352,1792
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=2576,1792
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=2784,1792
 Rot=1
 
 [Wire]
 Pxs=832,1880,856,1880
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=904,1880
 Rot=2
 
@@ -6020,9 +6430,11 @@ V
 
 [Wire]
 Pxs=904,1880,920,1880
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=968,1880
 Rot=6
 
@@ -6046,15 +6458,19 @@ V
 
 [Wire]
 Pxs=968,1880,976,1880
+Enable=FALSE
 
 [Wire]
 Pxs=976,1880,976,1928
+Enable=FALSE
 
 [Wire]
 Pxs=976,1880,1032,1880
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=1080,1880
 Rot=2
 
@@ -6074,9 +6490,11 @@ V
 
 [Wire]
 Pxs=1080,1880,1128,1880
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=1176,1880
 Rot=6
 
@@ -6100,15 +6518,19 @@ V
 
 [Wire]
 Pxs=1176,1880,1184,1880
+Enable=FALSE
 
 [Wire]
 Pxs=1184,1880,1184,1928
+Enable=FALSE
 
 [Wire]
 Pxs=1184,1880,1208,1880
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=1256,1880
 Rot=2
 
@@ -6128,9 +6550,11 @@ V
 
 [Wire]
 Pxs=1256,1880,1328,1880
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=1376,1880
 Rot=6
 
@@ -6154,15 +6578,19 @@ V
 
 [Wire]
 Pxs=1376,1880,1384,1880
+Enable=FALSE
 
 [Wire]
 Pxs=1384,1880,1384,1928
+Enable=FALSE
 
 [Wire]
 Pxs=1384,1880,1440,1880
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=1488,1880
 Rot=2
 
@@ -6182,9 +6610,11 @@ V
 
 [Wire]
 Pxs=1488,1880,1536,1880
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=1584,1880
 Rot=6
 
@@ -6208,15 +6638,19 @@ V
 
 [Wire]
 Pxs=1584,1880,1592,1880
+Enable=FALSE
 
 [Wire]
 Pxs=1592,1880,1592,1928
+Enable=FALSE
 
 [Wire]
 Pxs=1592,1880,1648,1880
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=1696,1880
 Rot=2
 
@@ -6236,9 +6670,11 @@ V
 
 [Wire]
 Pxs=1696,1880,1744,1880
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=1792,1880
 Rot=6
 
@@ -6262,16 +6698,16 @@ V
 
 [Wire]
 Pxs=1792,1880,1800,1880
+Enable=FALSE
 
 [Wire]
 Pxs=1800,1880,1800,1928
-
-[Wire]
-Pxs=1800,1880,1848,1880
+Enable=FALSE
 
 [Comp]
 Name=Resistor
-Px=1896,1880
+Enable=FALSE
+Px=1880,1880
 Rot=2
 
 [Attr]
@@ -6288,14 +6724,9 @@ Style=8192
 ON=0,0,PACKAGE
 V
 
-[Wire]
-Pxs=1888,1880,1896,1880
-
-[Wire]
-Pxs=1896,1880,1904,1880
-
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=1952,1880
 Rot=6
 
@@ -6319,15 +6750,19 @@ V
 
 [Wire]
 Pxs=1952,1880,1960,1880
+Enable=FALSE
 
 [Wire]
 Pxs=1960,1880,1960,1928
+Enable=FALSE
 
 [Wire]
 Pxs=1960,1880,2016,1880
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=2064,1880
 Rot=2
 
@@ -6347,9 +6782,11 @@ V
 
 [Wire]
 Pxs=2064,1880,2112,1880
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=2160,1880
 Rot=6
 
@@ -6373,15 +6810,19 @@ V
 
 [Wire]
 Pxs=2160,1880,2168,1880
+Enable=FALSE
 
 [Wire]
 Pxs=2168,1880,2168,1928
+Enable=FALSE
 
 [Wire]
 Pxs=2168,1880,2192,1880
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=2240,1880
 Rot=2
 
@@ -6401,9 +6842,11 @@ V
 
 [Wire]
 Pxs=2240,1880,2272,1880
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=2320,1880
 Rot=6
 
@@ -6427,15 +6870,19 @@ V
 
 [Wire]
 Pxs=2320,1880,2352,1880
+Enable=FALSE
 
 [Wire]
 Pxs=2352,1880,2352,1928
+Enable=FALSE
 
 [Wire]
 Pxs=2352,1880,2424,1880
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=2472,1880
 Rot=2
 
@@ -6455,9 +6902,11 @@ V
 
 [Wire]
 Pxs=2472,1880,2520,1880
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=2568,1880
 Rot=6
 
@@ -6481,15 +6930,19 @@ V
 
 [Wire]
 Pxs=2568,1880,2576,1880
+Enable=FALSE
 
 [Wire]
 Pxs=2576,1880,2576,1928
+Enable=FALSE
 
 [Wire]
 Pxs=2576,1880,2632,1880
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=2632,1880
 
 [Attr]
@@ -6508,9 +6961,11 @@ V
 
 [Wire]
 Pxs=2680,1880,2728,1880
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=2776,1880
 Rot=6
 
@@ -6534,24 +6989,27 @@ V
 
 [Wire]
 Pxs=2776,1880,2784,1880
+Enable=FALSE
 
 [Wire]
 Pxs=2784,1880,2784,1928
+Enable=FALSE
 
 [Wire]
-Pxs=2784,1880,2848,1880
-
-[Wire]
-Pxs=2848,1880,2864,1880
+Pxs=2784,1880,2864,1880
+Enable=FALSE
 
 [Wire]
 Pxs=2864,1880,2864,1920
+Enable=FALSE
 
 [Wire]
 Pxs=2864,1880,2872,1880
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=2864,1920
 Rot=1
 
@@ -6571,6 +7029,7 @@ V
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=976,1928
 Rot=1
 
@@ -6590,6 +7049,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=1184,1928
 Rot=1
 
@@ -6609,6 +7069,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=1384,1928
 Rot=1
 
@@ -6628,6 +7089,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=1592,1928
 Rot=1
 
@@ -6647,6 +7109,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=1800,1928
 Rot=1
 
@@ -6666,6 +7129,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=1960,1928
 Rot=1
 
@@ -6685,6 +7149,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=2168,1928
 Rot=1
 
@@ -6704,6 +7169,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=2352,1928
 Rot=1
 
@@ -6723,6 +7189,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=2576,1928
 Rot=1
 
@@ -6742,6 +7209,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=2784,1928
 Rot=1
 
@@ -6761,64 +7229,77 @@ V=SOT-23
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=2864,1968
 Rot=7
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=976,1976
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=1184,1976
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=1384,1976
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=1592,1976
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=1800,1976
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=1960,1976
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=2168,1976
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=2352,1976
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=2576,1976
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=2784,1976
 Rot=1
 
 [Wire]
 Pxs=832,2072,856,2072
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=904,2072
 Rot=2
 
@@ -6838,9 +7319,11 @@ V
 
 [Wire]
 Pxs=904,2072,920,2072
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=968,2072
 Rot=6
 
@@ -6864,15 +7347,19 @@ V
 
 [Wire]
 Pxs=968,2072,976,2072
+Enable=FALSE
 
 [Wire]
 Pxs=976,2072,976,2120
+Enable=FALSE
 
 [Wire]
 Pxs=976,2072,1032,2072
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=1080,2072
 Rot=2
 
@@ -6892,9 +7379,11 @@ V
 
 [Wire]
 Pxs=1080,2072,1128,2072
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=1176,2072
 Rot=6
 
@@ -6918,15 +7407,19 @@ V
 
 [Wire]
 Pxs=1176,2072,1184,2072
+Enable=FALSE
 
 [Wire]
 Pxs=1184,2072,1184,2120
+Enable=FALSE
 
 [Wire]
 Pxs=1184,2072,1208,2072
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=1256,2072
 Rot=2
 
@@ -6946,9 +7439,11 @@ V
 
 [Wire]
 Pxs=1256,2072,1328,2072
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=1376,2072
 Rot=6
 
@@ -6972,15 +7467,19 @@ V
 
 [Wire]
 Pxs=1376,2072,1384,2072
+Enable=FALSE
 
 [Wire]
 Pxs=1384,2072,1384,2120
+Enable=FALSE
 
 [Wire]
 Pxs=1384,2072,1440,2072
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=1488,2072
 Rot=2
 
@@ -7000,9 +7499,11 @@ V
 
 [Wire]
 Pxs=1488,2072,1536,2072
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=1584,2072
 Rot=6
 
@@ -7026,15 +7527,19 @@ V
 
 [Wire]
 Pxs=1584,2072,1592,2072
+Enable=FALSE
 
 [Wire]
 Pxs=1592,2072,1592,2120
+Enable=FALSE
 
 [Wire]
 Pxs=1592,2072,1648,2072
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=1696,2072
 Rot=2
 
@@ -7054,9 +7559,11 @@ V
 
 [Wire]
 Pxs=1696,2072,1744,2072
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=1792,2072
 Rot=6
 
@@ -7080,16 +7587,16 @@ V
 
 [Wire]
 Pxs=1792,2072,1800,2072
+Enable=FALSE
 
 [Wire]
 Pxs=1800,2072,1800,2120
-
-[Wire]
-Pxs=1800,2072,1848,2072
+Enable=FALSE
 
 [Comp]
 Name=Resistor
-Px=1896,2072
+Enable=FALSE
+Px=1880,2072
 Rot=2
 
 [Attr]
@@ -7106,14 +7613,9 @@ Style=8192
 ON=0,0,PACKAGE
 V
 
-[Wire]
-Pxs=1888,2072,1896,2072
-
-[Wire]
-Pxs=1896,2072,1904,2072
-
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=1952,2072
 Rot=6
 
@@ -7137,15 +7639,19 @@ V
 
 [Wire]
 Pxs=1952,2072,1960,2072
+Enable=FALSE
 
 [Wire]
 Pxs=1960,2072,1960,2120
+Enable=FALSE
 
 [Wire]
 Pxs=1960,2072,2016,2072
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=2064,2072
 Rot=2
 
@@ -7165,9 +7671,11 @@ V
 
 [Wire]
 Pxs=2064,2072,2112,2072
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=2160,2072
 Rot=6
 
@@ -7191,15 +7699,19 @@ V
 
 [Wire]
 Pxs=2160,2072,2168,2072
+Enable=FALSE
 
 [Wire]
 Pxs=2168,2072,2168,2120
+Enable=FALSE
 
 [Wire]
 Pxs=2168,2072,2192,2072
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=2240,2072
 Rot=2
 
@@ -7219,9 +7731,11 @@ V
 
 [Wire]
 Pxs=2240,2072,2272,2072
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=2320,2072
 Rot=6
 
@@ -7245,15 +7759,19 @@ V
 
 [Wire]
 Pxs=2320,2072,2352,2072
+Enable=FALSE
 
 [Wire]
 Pxs=2352,2072,2352,2120
+Enable=FALSE
 
 [Wire]
 Pxs=2352,2072,2424,2072
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=2472,2072
 Rot=2
 
@@ -7273,9 +7791,11 @@ V
 
 [Wire]
 Pxs=2472,2072,2520,2072
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=2568,2072
 Rot=6
 
@@ -7299,15 +7819,19 @@ V
 
 [Wire]
 Pxs=2568,2072,2576,2072
+Enable=FALSE
 
 [Wire]
 Pxs=2576,2072,2576,2120
+Enable=FALSE
 
 [Wire]
 Pxs=2576,2072,2632,2072
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=2632,2072
 
 [Attr]
@@ -7326,9 +7850,11 @@ V
 
 [Wire]
 Pxs=2680,2072,2728,2072
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=2776,2072
 Rot=6
 
@@ -7352,24 +7878,27 @@ V
 
 [Wire]
 Pxs=2776,2072,2784,2072
+Enable=FALSE
 
 [Wire]
 Pxs=2784,2072,2784,2120
+Enable=FALSE
 
 [Wire]
-Pxs=2784,2072,2840,2072
-
-[Wire]
-Pxs=2840,2072,2864,2072
+Pxs=2784,2072,2864,2072
+Enable=FALSE
 
 [Wire]
 Pxs=2864,2072,2864,2112
+Enable=FALSE
 
 [Wire]
 Pxs=2864,2072,2872,2072
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=2864,2112
 Rot=1
 
@@ -7389,6 +7918,7 @@ V
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=976,2120
 Rot=1
 
@@ -7408,6 +7938,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=1184,2120
 Rot=1
 
@@ -7427,6 +7958,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=1384,2120
 Rot=1
 
@@ -7446,6 +7978,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=1592,2120
 Rot=1
 
@@ -7465,6 +7998,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=1800,2120
 Rot=1
 
@@ -7484,6 +8018,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=1960,2120
 Rot=1
 
@@ -7503,6 +8038,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=2168,2120
 Rot=1
 
@@ -7522,6 +8058,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=2352,2120
 Rot=1
 
@@ -7541,6 +8078,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=2576,2120
 Rot=1
 
@@ -7560,6 +8098,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=2784,2120
 Rot=1
 
@@ -7579,64 +8118,77 @@ V=SOT-23
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=2864,2160
 Rot=7
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=976,2168
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=1184,2168
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=1384,2168
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=1592,2168
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=1800,2168
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=1960,2168
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=2168,2168
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=2352,2168
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=2576,2168
 Rot=1
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=2784,2168
 Rot=1
 
 [Wire]
 Pxs=832,2248,856,2248
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=904,2248
 Rot=2
 
@@ -7656,9 +8208,11 @@ V
 
 [Wire]
 Pxs=904,2248,920,2248
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=968,2248
 Rot=6
 
@@ -7682,15 +8236,19 @@ V
 
 [Wire]
 Pxs=968,2248,976,2248
+Enable=FALSE
 
 [Wire]
 Pxs=976,2248,976,2296
+Enable=FALSE
 
 [Wire]
 Pxs=976,2248,1032,2248
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=1080,2248
 Rot=2
 
@@ -7710,9 +8268,11 @@ V
 
 [Wire]
 Pxs=1080,2248,1128,2248
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=1176,2248
 Rot=6
 
@@ -7736,15 +8296,19 @@ V
 
 [Wire]
 Pxs=1176,2248,1184,2248
+Enable=FALSE
 
 [Wire]
 Pxs=1184,2248,1184,2296
+Enable=FALSE
 
 [Wire]
 Pxs=1184,2248,1208,2248
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=1256,2248
 Rot=2
 
@@ -7764,9 +8328,11 @@ V
 
 [Wire]
 Pxs=1256,2248,1328,2248
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=1376,2248
 Rot=6
 
@@ -7790,15 +8356,19 @@ V
 
 [Wire]
 Pxs=1376,2248,1384,2248
+Enable=FALSE
 
 [Wire]
 Pxs=1384,2248,1384,2296
+Enable=FALSE
 
 [Wire]
 Pxs=1384,2248,1440,2248
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=1488,2248
 Rot=2
 
@@ -7818,9 +8388,11 @@ V
 
 [Wire]
 Pxs=1488,2248,1536,2248
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=1584,2248
 Rot=6
 
@@ -7844,15 +8416,19 @@ V
 
 [Wire]
 Pxs=1584,2248,1592,2248
+Enable=FALSE
 
 [Wire]
 Pxs=1592,2248,1592,2296
+Enable=FALSE
 
 [Wire]
 Pxs=1592,2248,1648,2248
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=1696,2248
 Rot=2
 
@@ -7872,9 +8448,11 @@ V
 
 [Wire]
 Pxs=1696,2248,1744,2248
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=1792,2248
 Rot=6
 
@@ -7898,16 +8476,16 @@ V
 
 [Wire]
 Pxs=1792,2248,1800,2248
+Enable=FALSE
 
 [Wire]
 Pxs=1800,2248,1800,2296
-
-[Wire]
-Pxs=1800,2248,1848,2248
+Enable=FALSE
 
 [Comp]
 Name=Resistor
-Px=1896,2248
+Enable=FALSE
+Px=1888,2248
 Rot=2
 
 [Attr]
@@ -7924,14 +8502,9 @@ Style=8192
 ON=0,0,PACKAGE
 V
 
-[Wire]
-Pxs=1888,2248,1896,2248
-
-[Wire]
-Pxs=1896,2248,1904,2248
-
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=1952,2248
 Rot=6
 
@@ -7955,15 +8528,19 @@ V
 
 [Wire]
 Pxs=1952,2248,1960,2248
+Enable=FALSE
 
 [Wire]
 Pxs=1960,2248,1960,2296
+Enable=FALSE
 
 [Wire]
 Pxs=1960,2248,2016,2248
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=2064,2248
 Rot=2
 
@@ -7983,9 +8560,11 @@ V
 
 [Wire]
 Pxs=2064,2248,2112,2248
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=2160,2248
 Rot=6
 
@@ -8009,15 +8588,19 @@ V
 
 [Wire]
 Pxs=2160,2248,2168,2248
+Enable=FALSE
 
 [Wire]
 Pxs=2168,2248,2168,2296
+Enable=FALSE
 
 [Wire]
 Pxs=2168,2248,2192,2248
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=2240,2248
 Rot=2
 
@@ -8037,9 +8620,11 @@ V
 
 [Wire]
 Pxs=2240,2248,2272,2248
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=2320,2248
 Rot=6
 
@@ -8063,15 +8648,19 @@ V
 
 [Wire]
 Pxs=2320,2248,2352,2248
+Enable=FALSE
 
 [Wire]
 Pxs=2352,2248,2352,2296
+Enable=FALSE
 
 [Wire]
 Pxs=2352,2248,2424,2248
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=2472,2248
 Rot=2
 
@@ -8091,9 +8680,11 @@ V
 
 [Wire]
 Pxs=2472,2248,2520,2248
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=2568,2248
 Rot=6
 
@@ -8117,15 +8708,19 @@ V
 
 [Wire]
 Pxs=2568,2248,2576,2248
+Enable=FALSE
 
 [Wire]
 Pxs=2576,2248,2576,2296
+Enable=FALSE
 
 [Wire]
 Pxs=2576,2248,2632,2248
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=2632,2248
 
 [Attr]
@@ -8144,9 +8739,11 @@ V
 
 [Wire]
 Pxs=2680,2248,2728,2248
+Enable=FALSE
 
 [Comp]
 Name=Inductor
+Enable=FALSE
 Px=2776,2248
 Rot=6
 
@@ -8170,24 +8767,27 @@ V
 
 [Wire]
 Pxs=2776,2248,2784,2248
+Enable=FALSE
 
 [Wire]
 Pxs=2784,2248,2784,2296
+Enable=FALSE
 
 [Wire]
-Pxs=2784,2248,2832,2248
-
-[Wire]
-Pxs=2832,2248,2864,2248
+Pxs=2784,2248,2864,2248
+Enable=FALSE
 
 [Wire]
 Pxs=2864,2248,2864,2288
+Enable=FALSE
 
 [Wire]
 Pxs=2864,2248,2872,2248
+Enable=FALSE
 
 [Comp]
 Name=Resistor
+Enable=FALSE
 Px=2864,2288
 Rot=1
 
@@ -8198,7 +8798,7 @@ Style=8192
 
 [Attr]
 ON=8,25,RESISTANCE
-V=50
+V={RLoadN100}
 Style=8192
 
 [Attr]
@@ -8207,6 +8807,7 @@ V
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=976,2296
 Rot=1
 
@@ -8226,6 +8827,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=1184,2296
 Rot=1
 
@@ -8245,6 +8847,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=1384,2296
 Rot=1
 
@@ -8264,6 +8867,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=1592,2296
 Rot=1
 
@@ -8283,6 +8887,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=1800,2296
 Rot=1
 
@@ -8302,6 +8907,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=1960,2296
 Rot=1
 
@@ -8321,6 +8927,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=2168,2296
 Rot=1
 
@@ -8340,6 +8947,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=2352,2296
 Rot=1
 
@@ -8359,6 +8967,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=2576,2296
 Rot=1
 
@@ -8378,6 +8987,7 @@ V=SOT-23
 
 [Comp]
 Name=BBY40
+Enable=FALSE
 Px=2784,2296
 Rot=1
 
@@ -8397,62 +9007,196 @@ V=SOT-23
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=2864,2336
 Rot=7
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=976,2344
 Rot=7
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=1184,2344
 Rot=7
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=1384,2344
 Rot=7
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=1592,2344
 Rot=7
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=1800,2344
 Rot=7
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=1960,2344
 Rot=7
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=2168,2344
 Rot=7
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=2352,2344
 Rot=7
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=2576,2344
 Rot=7
 
 [Comp]
 Name=Ground
+Enable=FALSE
 Px=2784,2344
 Rot=7
 
+[Wire]
+Pxs=1880,344,1904,344
+
+[Wire]
+Pxs=1800,2248,1840,2248
+Enable=FALSE
+
+[Wire]
+Pxs=1800,2072,1832,2072
+Enable=FALSE
+
+[Wire]
+Pxs=1800,576,1824,576
+Enable=FALSE
+
+[Wire]
+Pxs=1872,576,1904,576
+Enable=FALSE
+
+[Comp]
+Name=Ground
+Px=1800,440
+Rot=7
+
+[Wire]
+Pxs=1880,800,1904,800
+Enable=FALSE
+
+[Wire]
+Pxs=1800,800,1832,800
+Enable=FALSE
+
+[Wire]
+Pxs=1800,1024,1832,1024
+Enable=FALSE
+
+[Wire]
+Pxs=1880,1024,1904,1024
+Enable=FALSE
+
+[Wire]
+Pxs=1880,1264,1904,1264
+Enable=FALSE
+
+[Wire]
+Pxs=1800,1264,1832,1264
+Enable=FALSE
+
+[Wire]
+Pxs=1872,1472,1904,1472
+Enable=FALSE
+
+[Wire]
+Pxs=1800,1472,1824,1472
+Enable=FALSE
+
+[Wire]
+Pxs=1800,1696,1832,1696
+Enable=FALSE
+
+[Wire]
+Pxs=1880,1696,1904,1696
+Enable=FALSE
+
+[Wire]
+Pxs=1800,1880,1832,1880
+Enable=FALSE
+
+[Wire]
+Pxs=1880,1880,1904,1880
+Enable=FALSE
+
+[Wire]
+Pxs=1880,2072,1904,2072
+Enable=FALSE
+
+[Wire]
+Pxs=1888,2248,1904,2248
+Enable=FALSE
+
+[Wire]
+Pxs=2864,344,2880,344
+
+[Comp]
+Name=Resistor
+Enable=FALSE
+Px=832,576
+Rot=2
+
+[Attr]
+ON=-50,-20,PART
+V=R111
+Style=8192
+
+[Attr]
+ON=-51,-34,RESISTANCE
+V={Renable}
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=736,576,784,576
+Enable=FALSE
+
 [Grid Text]
-Text=".define Rparas 0"
-Px=3376,544
+Text=".define Renable 100G"
+Px=3368,592
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text=".define RLoadN10 50"
+Px=3368,568
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text=".define Rparas 0.122"
+Px=3368,544
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -8460,7 +9204,7 @@ CBorder=None
 
 [Grid Text]
 Text=".define L 56n"
-Px=3376,520
+Px=3368,520
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -8486,7 +9230,7 @@ CBorder=None
 
 [Grid Text]
 Text="N10"
-Px=2848,344
+Px=2880,344
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -8494,74 +9238,83 @@ CBorder=None
 
 [Grid Text]
 Text="N20"
-Px=2832,576
+Px=2872,576
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
+Enable=FALSE
 CBorder=None
 
 [Grid Text]
 Text="N30"
-Px=2848,800
+Px=2872,800
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
+Enable=FALSE
 CBorder=None
 
 [Grid Text]
 Text="N40"
-Px=2856,1024
+Px=2872,1024
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
+Enable=FALSE
 CBorder=None
 
 [Grid Text]
 Text="N50"
-Px=2848,1264
+Px=2872,1264
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
+Enable=FALSE
 CBorder=None
 
 [Grid Text]
 Text="N60"
-Px=2848,1472
+Px=2872,1472
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
+Enable=FALSE
 CBorder=None
 
 [Grid Text]
 Text="N70"
-Px=2856,1696
+Px=2872,1696
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
+Enable=FALSE
 CBorder=None
 
 [Grid Text]
 Text="N80"
-Px=2848,1880
+Px=2872,1880
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
+Enable=FALSE
 CBorder=None
 
 [Grid Text]
 Text="N90"
-Px=2840,2072
+Px=2872,2072
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
+Enable=FALSE
 CBorder=None
 
 [Grid Text]
 Text="N100"
-Px=2832,2248
+Px=2872,2248
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
+Enable=FALSE
 CBorder=None
 
 [Grid Text]
@@ -8570,6 +9323,7 @@ Px=832,2248
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
+Enable=FALSE
 CBorder=None
 
 [Grid Text]
@@ -8578,6 +9332,7 @@ Px=832,2072
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
+Enable=FALSE
 CBorder=None
 
 [Grid Text]
@@ -8586,6 +9341,7 @@ Px=832,1880
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
+Enable=FALSE
 CBorder=None
 
 [Grid Text]
@@ -8594,6 +9350,7 @@ Px=832,1696
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
+Enable=FALSE
 CBorder=None
 
 [Grid Text]
@@ -8602,6 +9359,7 @@ Px=832,1472
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
+Enable=FALSE
 CBorder=None
 
 [Grid Text]
@@ -8610,6 +9368,7 @@ Px=848,1264
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
+Enable=FALSE
 CBorder=None
 
 [Grid Text]
@@ -8618,6 +9377,7 @@ Px=832,1024
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
+Enable=FALSE
 CBorder=None
 
 [Grid Text]
@@ -8626,14 +9386,16 @@ Px=832,800
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
+Enable=FALSE
 CBorder=None
 
 [Grid Text]
 Text="N10"
-Px=832,576
+Px=736,576
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
+Enable=FALSE
 CBorder=None
 
 [Schematic]
@@ -8642,9 +9404,9 @@ CurrentSection 1=0
 CurrentSection 2=0
 CurrentSection 3=0
 Splitter.xs=0
-Splitter.ys=623
+Splitter.ys=1558
 TextQuad=4099
-Scale=0.25
+Scale=0.66666666666666663
 GridType=GraphPaper
 GridUser=10
 ShapeGroups="Main","Euro","Polarity","Main1","Main11","Electrolytic","GroundArrow","DeMorgan"
@@ -8829,15 +9591,15 @@ Section=0
 Print=True
 Enable=True
 Name=Main
-T.PrintPreview=On,0,0,1,1
+T.PrintPreview=Off,0,0,1,1
 PrinterScale=1
-SB 0=2675,357
-Scale 0=0.25
+SB 0=549,0
+Scale 0=1
 Scale 1=1
 Scale 2=1
 SB 3=185,299
 Scale 3=0.66666666666666663
-Px=2850,465
+Px=1832,192
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
@@ -8901,7 +9663,6 @@ Type=Text
 Print=False
 Enable=True
 Name=Models
-SB 0=0,14
 Font=Height=-17,FStyle=0,Color=#000000,Name=Courier New
 Comment Color=#008000
 WinBackGround Color=#FFFFFF
@@ -8970,7 +9731,7 @@ SimulationLog=True
 
 [Transient]
 WinID=1
-Window Placement=2,3, -1,-1, -8,-31, 1219,0,2438,590
+Window Placement=2,3, -1,-1, -8,-31, 208,208,2432,760
 Font=Height=-19,FStyle=0,Color=#0000FF,Name=Arial
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
@@ -9036,7 +9797,7 @@ FFT_IncludeDCHarmonic=False
 FFT_AutoScale_Harmonics="10"
 PrinterAutoTile=Yes
 PrinterBlackBorder=Yes
-MonMaxShow=11
+MonMaxShow=12
 MonPageWidth=66
 MonPlotWidth=21
 MonExprXWidth=142
@@ -9203,7 +9964,7 @@ Object=PTag
 Weight=3
 EndPoint=ArrowF
 CBorder=#FFFFFF
-Pos=1009.1743119266055,3890.0634249471459,2477.0642201834862,4249.4714587737844
+Pos=552.41935483870964,1181.1023622047244,1717.741935483871,1522.3097112860892
 Font=Height=-34,FStyle=4,Color=#000000,Name=Ubuntu Mono
 Format=3
 FormatY=3
@@ -9215,7 +9976,7 @@ Object=PTag
 Weight=3
 EndPoint=ArrowF
 CBorder=#FFFFFF
-Pos=892.41034195162638,3234.6723044397463,2068.3903252710593,3594.0803382663848
+Pos=552.41935483870964,629.9212598425197,1475.8064516129032,971.12860892388449
 Font=Height=-34,FStyle=4,Color=#000000,Name=Ubuntu Mono
 Format=3
 FormatY=3
@@ -9566,7 +10327,7 @@ ALIGNBOTTOM=Yes
 [Performance]
 Analysis=Transient
 WinID=8
-Window Placement=2,3, -1,-1, -8,-31, 1219,0,2438,590
+Window Placement=0,1, -1,-1, -8,-31, 1219,0,2438,590
 Font=Height=-32,FStyle=0,Color=#000000,Name=Ubuntu Mono
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
@@ -10073,17 +10834,17 @@ Range Bold Y=0
 LinearX=True
 LinearY=True
 
-[Performance]
+[FFT]
 Analysis=Transient
 WinID=9
-Window Placement=2,3, -1,-1, -8,-31, 1219,0,2438,590
-Font=Height=-32,FStyle=0,Color=#000000,Name=Ubuntu Mono
+Window Placement=2,3, -1,-1, -8,-31, 208,208,2432,760
+Font=Height=-19,FStyle=0,Color=#0000FF,Name=Arial
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
 Select Box Color=#000080
-Title=RISETIME(V(N10)) vs RPARAS
-AutoTitle=Yes
+Title=dB(Harm(V(V1))) : V1.pulse.v2=5...10
+AutoTitle=No
 ShowWin=True
 Grid Color=#808080
 Grid Weight=1
@@ -10116,6 +10877,7 @@ Graph Background=#FFFFFF
 Tracker Intercept=False
 Tracker Mouse=True
 Tracker Cursor=True
+Tracker Cursor BranchInfo=False
 Horizontal Cursor=False
 Same Y Scales=Yes
 Enable X Scaling=True
@@ -10123,7 +10885,13 @@ Enable Y Scaling=True
 Keep X Scales The Same=True
 Number of Grids X=5
 Number of Grids Y=5
-UpdateDuringRun=True
+FFT_NPts="1048576"
+FFT_IncludeDCHarmonic=True
+FFT_AutoScale_Harmonics="20"
+FFT_Base_Line="-240"
+FFT_Phase_Limit="-240"
+FFT_PlotNegativeFrequencies=False
+Fourier_Method=Fourier
 Num Out Write Main Header=True
 Num Out Write Limits=True
 Num Out Write Branch Header=True
@@ -10231,10 +10999,11 @@ ALIGNBOTTOM=Yes
 
 [APage]
 
-[Performance WaveForm]
-;Transient
-PMExpression=RISETIME(V(N10))
-XData=1003
+[FFT WaveForm]
+Expression=V(V1)
+What=dB
+RefFreq
+Window
 VFmtX=3
 VFmtY=3
 ScaleFactorX="None"
@@ -10245,31 +11014,29 @@ SFmtX=2
 SFmtY=2
 NOFmtX=3
 NOFmtY=3
-DPS=Open Bubbles
 CS=Normal
 Line Color=#0000FF
 Text Color=#0000FF
-Rainbow=True
-LWdth=3
+Rainbow=False
 PlotNum=1
 AliasID=1
 Enable=0
 Auto Scale X=Yes
 Auto Scale Y=Yes
-Range Min X=0
-Range Min Y=7.6000000000000035e-007
-Range Max X=12.5
-Range Max Y=9.6000000000000055e-007
-Range Grid X=2.5
-Range Grid Y=4.0000000000000021e-008
-Range Bold X=0.14999999999999999
-Range Bold Y=1.2e-010
+Range Min X=-8357.7099874634296
+Range Min Y=-60.107758620689651
+Range Max X=19991642.290012538
+Range Max Y=14.892241379310345
+Range Grid X=2000000
+Range Grid Y=15
+Range Bold X=0
+Range Bold Y=0
 LinearX=True
 LinearY=True
 
 [Limits]
 Analysis=Transient
-TMax=3u
+TMax=1u
 TStart=0
 TStep=0
 NPts=10001
@@ -10279,7 +11046,7 @@ StateVar=Zero
 RunOption=Normal
 Temperature Type=Linear
 Accumulate Plots=False
-IgnoreExprErrors=False
+IgnoreExprErrors=True
 
 [WaveForm]
 Analysis=Transient
@@ -10287,11 +11054,11 @@ Plt=1
 AliasID=2
 XExp=T
 YExp=V(V1)
-XRng=3e-6
-YRng=8,-2
+XRng=1e-6
+YRng=1.6,-0.4
 Options=LINEARX,LINEARY
-Range Grid X=6e-7
-Range Grid Y=2
+Range Grid X=2e-7
+Range Grid Y=0.4
 Enable=Enable
 CS=Normal
 Line Color=#FF0000
@@ -10315,11 +11082,11 @@ Plt=1
 AliasID=11
 XExp=T
 YExp=V(N10)
-XRng=3e-6
-YRng=8,-2
+XRng=1e-6
+YRng=1.6,-0.4
 Options=LINEARX,LINEARY
-Range Grid X=6e-7
-Range Grid Y=2
+Range Grid X=2e-7
+Range Grid Y=0.4
 Enable=Enable
 CS=Normal
 Line Color=#009F00
@@ -10348,12 +11115,39 @@ YRng=5
 Options=LINEARX,LINEARY
 Range Grid X=6.4e-7
 Range Grid Y=1
-Enable=Hide
+Enable=DontRun
 CS=Normal
 Line Color=#008000
 Text Color=#008000
 Rainbow=True
 LWdth=3
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=2
+SFmtY=2
+NOFmtX=3E
+NOFmtY=3E
+
+[WaveForm]
+Analysis=Transient
+Plt=1
+AliasID=12
+XExp=T
+YExp=V(N20)
+XRng=3e-6
+YRng=5
+Options=LINEARX,LINEARY
+Range Grid X=6.4e-7
+Range Grid Y=1
+Enable=DontRun
+Line Color=#FF00FF
+Text Color=#FF00FF
+Rainbow=True
+LWdth=2
 VFmtX=3
 VFmtY=3
 ScaleFactorX="None"
@@ -10376,7 +11170,7 @@ YRng=5
 Options=LINEARX,LINEARY
 Range Grid X=6.4e-7
 Range Grid Y=1
-Enable=Hide
+Enable=DontRun
 CS=Normal
 Line Color=#FF00FF
 Text Color=#FF00FF
@@ -10404,7 +11198,7 @@ YRng=5
 Options=LINEARX,LINEARY
 Range Grid X=6.4e-7
 Range Grid Y=1
-Enable=Hide
+Enable=DontRun
 CS=Normal
 Line Color=#000000
 Text Color=#000000
@@ -10432,7 +11226,7 @@ YRng=16,-4
 Options=LINEARX,LINEARY
 Range Grid X=6e-7
 Range Grid Y=4
-Enable=Hide
+Enable=DontRun
 CS=Normal
 Line Color=#0000FF
 Text Color=#0000FF
@@ -10460,7 +11254,7 @@ YRng=5
 Options=LINEARX,LINEARY
 Range Grid X=6.4e-7
 Range Grid Y=1
-Enable=Hide
+Enable=DontRun
 CS=Normal
 Line Color=#0000FF
 Text Color=#0000FF
@@ -10488,7 +11282,7 @@ YRng=5
 Options=LINEARX,LINEARY
 Range Grid X=6.4e-7
 Range Grid Y=1
-Enable=Hide
+Enable=DontRun
 CS=Normal
 Line Color=#FF0000
 Text Color=#FF0000
@@ -10516,7 +11310,7 @@ YRng=5
 Options=LINEARX,LINEARY
 Range Grid X=6.4e-7
 Range Grid Y=1
-Enable=Hide
+Enable=DontRun
 CS=Normal
 Line Color=#008000
 Text Color=#008000
@@ -10543,7 +11337,7 @@ YRng=5
 Options=LINEARX,LINEARY
 Range Grid X=6.4e-7
 Range Grid Y=1
-Enable=Hide
+Enable=DontRun
 CS=Normal
 Line Color=#FF00FF
 Text Color=#FF00FF
@@ -10570,7 +11364,7 @@ YRng=8,-2
 Options=LINEARX,LINEARY
 Range Grid X=6e-7
 Range Grid Y=2
-Enable=Enable
+Enable=DontRun
 CS=Normal
 Line Color=#000000
 Text Color=#000000
@@ -10703,12 +11497,10 @@ Analysis=Transient
 Index=1
 Simultaneous=Yes
 Method=List
-Parameter Type=Component
-Name=RTERM10
-Param=value
-From=50,10Meg
-To=20MEG
-Value=3MEG
+Parameter Type=Model
+Name=D BBY40
+Param=RS
+From=0,1m,2m
 
 [Stepping]
 Analysis=Transient
@@ -10734,7 +11526,6 @@ Value=15
 [Stepping]
 Analysis=Transient
 Index=4
-Status=On
 Parameter Type=Symbolic
 Name=RPARAS
 From=0
