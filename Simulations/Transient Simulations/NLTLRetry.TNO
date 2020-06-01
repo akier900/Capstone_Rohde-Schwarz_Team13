@@ -3,14 +3,14 @@
 ***                                                                          ***
 ***                                                                          ***
 ***                     Transient Analysis of NLTLRetry                      ***
-***                           5/27/2020 1:37:00 PM                           ***
+***                           5/28/2020 1:48:38 PM                           ***
 ********************************************************************************
 Limits
 ======
-Maximum Run Time           20u
-Output Start Time (tstart) 0
+Maximum Run Time           110u
+Output Start Time (tstart) 10u
 Maximum Time Step          1n
-Number of Points           1001
+Number of Points           101
 Temperature                Linear 27
 Retrace Runs               1
 Run Options                Normal
@@ -20,8 +20,8 @@ Operating Point Only       Off
 Auto Scale Ranges          Off
 Accumulate Plots           Off
 Fixed Time Step            On
-Periodic Steady State      On
-Ignore Expression Errors   On
+Periodic Steady State      Off
+Ignore Expression Errors   Off
 
 
 *****************************************************
@@ -33,7 +33,7 @@ Temperature=27
 DC Operating Point Voltages
 ===========================
 Node         Voltage  Node         Voltage  Node         Voltage 
-1        -4.107E-032  2             0.000   3        -4.117E-032 
+1             0.000   2        -4.107E-032  3        -4.117E-032 
 4        -4.117E-032  5        -4.125E-032  6        -4.125E-032 
 7        -4.131E-032  8        -4.131E-032  9        -4.135E-032 
 10       -4.135E-032  11       -4.137E-032  12       -4.137E-032 
@@ -420,58 +420,58 @@ ic                                0.000                      0.000
 
 Operating Point for Devices of Type SPICE Source
 ================================================
-Instance:                         L1.V1                      L2.V1
+Instance:                            V1                      L1.V1
 V                                0.000                      0.000 
 Power DC Terms:
 PG                               0.000                      0.000 
 
 DC Pin Currents:
-ISource                      8.214E-034                 6.574E-034
+ISource                     -8.214E-034                 8.214E-034
 
 
-Instance:                         L3.V1                      L4.V1
+Instance:                         L2.V1                      L3.V1
 V                                0.000                      0.000 
 Power DC Terms:
 PG                               0.000                      0.000 
 
 DC Pin Currents:
-ISource                      4.931E-034                 3.285E-034
+ISource                      6.574E-034                 4.931E-034
 
 
-Instance:                         L5.V1                      L6.V1
+Instance:                         L4.V1                      L5.V1
 V                                0.000                      0.000 
 Power DC Terms:
 PG                               0.000                      0.000 
 
 DC Pin Currents:
-ISource                      1.638E-034                -9.973E-037
+ISource                      3.285E-034                 1.638E-034
 
 
-Instance:                         L7.V1                      L8.V1
+Instance:                         L6.V1                      L7.V1
 V                                0.000                      0.000 
 Power DC Terms:
 PG                               0.000                      0.000 
 
 DC Pin Currents:
-ISource                     -1.658E-034                -3.305E-034
+ISource                     -9.973E-037                -1.658E-034
 
 
-Instance:                         L9.V1                     L10.V1
-V                                0.000                  1.095E-047
+Instance:                         L8.V1                      L9.V1
+V                                0.000                      0.000 
 Power DC Terms:
-PG                               0.000                  7.219E-081
+PG                               0.000                      0.000 
 
 DC Pin Currents:
-ISource                     -4.951E-034                -6.594E-034
+ISource                     -3.305E-034                -4.951E-034
 
 
-Instance:                            V1
-V                                0.000 
+Instance:                        L10.V1
+V                            1.095E-047
 Power DC Terms:
-PG                               0.000 
+PG                           7.219E-081
 
 DC Pin Currents:
-ISource                     -8.214E-034
+ISource                     -6.594E-034
 
 
 Function Values
