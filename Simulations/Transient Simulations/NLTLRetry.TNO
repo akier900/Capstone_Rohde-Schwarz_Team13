@@ -3,21 +3,21 @@
 ***                                                                          ***
 ***                                                                          ***
 ***                     Transient Analysis of NLTLRetry                      ***
-***                           5/27/2020 1:37:00 PM                           ***
+***                           5/27/2020 2:15:33 PM                           ***
 ********************************************************************************
 Limits
 ======
-Maximum Run Time           20u
+Maximum Run Time           5u
 Output Start Time (tstart) 0
 Maximum Time Step          1n
-Number of Points           1001
+Number of Points           4096
 Temperature                Linear 27
 Retrace Runs               1
 Run Options                Normal
 State Variables            Zero
 Operating Point            On
 Operating Point Only       Off
-Auto Scale Ranges          Off
+Auto Scale Ranges          On
 Accumulate Plots           Off
 Fixed Time Step            On
 Periodic Steady State      On
