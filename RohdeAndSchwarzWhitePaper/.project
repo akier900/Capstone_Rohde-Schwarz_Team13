@@ -101,11 +101,6 @@
 			<locationURI>PARENT-1-PROJECT_LOC/Simulations/Transient%20Simulations/Probed_Input_N10_N240.pdf</locationURI>
 		</link>
 		<link>
-			<name>images/Probed_Input_N10_N240_NoSeriesResistance.pdf</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Simulations/Transient%20Simulations/Probed_Input_N10_N240_NoSeriesResistance.pdf</locationURI>
-		</link>
-		<link>
 			<name>images/Probed_Input_N10_N240_With_SeriesResistance.pdf</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/Simulations/Transient%20Simulations/Probed_Input_N10_N240_With_SeriesResistance.pdf</locationURI>
@@ -114,6 +109,11 @@
 			<name>images/TestSetup.pdf</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/Measurements/RohdeAndSchwarzMeasurements/5_19_2020/TestSetup.pdf</locationURI>
+		</link>
+		<link>
+			<name>images/probed_noSeriesResistance.pdf</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Simulations/Transient%20Simulations/Probed_Input_N10_N240_NoSeriesResistance.pdf</locationURI>
 		</link>
 		<link>
 			<name>images/Board1/B1.pdf</name>
