@@ -691,6 +691,15 @@ In figure \ref{fig:riseWithLoss}, we add the series DC resistance of the inducto
 \caption{\ Rise time at source, node 10 and node 100 simulated with resistive loss of $0.122\Omega$ per ladder section 
 }\label{fig:riseWithLoss}
 \end{figure}
+
+Figure \ref{fig:ACResp56nh} shows the simulated AC response of our 10 ladder long circuit.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.45\textwidth,page = 1]{ACResponseB1.png}
+\caption{\ AC Response of Board 1 (L = 56nH) 
+}\label{fig:ACResp56nh}
+\end{figure}
  
  Figure \ref{fig:RiseVsLineVsBias} explores the effect of different biasing on our line as well as how long a line we can practically use for sharpening purposes. As our DC resistance grows with our line length, we expect our amplitude to keep dropping. As the amplitude of the traveling wave is reduced, we effectively trace out less of our varactor CV curves. Due to this, the CV relationship will begin to look more and more linear as we add ladder sections to our design. We have used a parametric plot to show the limits of this pulse sharpening as we increase  the line length and plotted rise-time vs. DC bias for each $10^{th}$ node of the ladder. The input pulse used in this case was $400ns$. 
 
@@ -700,6 +709,25 @@ In figure \ref{fig:riseWithLoss}, we add the series DC resistance of the inducto
 \caption{\ Risetime Vs. Line Length vs. DC Bias Voltage 
 }\label{fig:RiseVsLineVsBias}
 \end{figure}
+
+
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.4\textwidth,page = {1}]{Probed_Input_N10_N240_NoSeriesResistance.pdf}
+\caption{\ Risetime Vs. Line Length vs. DC Bias Voltage 
+}\label{fig:ProbedNoSeriesR}
+\end{figure}
+
+
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.4\textwidth,page = {1}]{Probed_Input_N10_N240_With_SeriesResistance.pdf}
+\caption{\ Risetime Vs. Line Length vs. DC Bias Voltage 
+}\label{fig:ProbedSeriesR}
+\end{figure}
+
 
 
 \section{Board Design} 
