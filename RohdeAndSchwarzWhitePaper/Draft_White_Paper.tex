@@ -784,20 +784,59 @@ Through use of this fixture, we were able to generate the curves shown in figure
 \end{figure}
 
 
+\subsection{AC Response}\label{ACMeasResults}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.45\textwidth]{Board1/MeasuredACResponseB1.BMP}
+\caption{}
+\label{}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.45\textwidth]{}
+\caption{}
+\label{}
+\end{figure}
 
 
-\subsection{Rise Time}
+
+
+
+\subsection{Rise Time}\label{RiseTimeMeasResults}
 
 We had great difficulty in measuring rise time of our circuit and the main problems we faced were not understanding the theory well enough have do proper testing. While our components were chosen on the basis of working at 144Mhz, we failed to see that driving our circuit below this bandwidth and performing similar simulations may be adequate to prove rise time performance increase. Another complication was keeping in mind the biasing conditions of the varactors. We did not design for a port in which to introduce a dc bias to our circuit and relied on equipment being able to accomplish this. Care must be taken when using analog generators to supply the DC bias to the circuit. Our particular model begins sweeping with a negative bias before reaching a positive one. This effectively puts the varactors into forward bias and allows them to hold a charge. 
 
-Before grappling with these issues, we were able to measure this pulse sharpening effect using a higher bandwidth oscilloscope as shown in figure \ref{fig:RandSScope}. 
+Before grappling with these issues, we were able to measure this pulse sharpening effect using a higher bandwidth oscilloscope as shown in figure \ref{fig:FirstRandS}. 
 
 
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.45\textwidth]{Risetime_RandS}
 \caption{Risetime can be seen to be reduced by our transmission line}
-\label{fig:RandSScope}
+\label{fig:FirstRandS}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.45\textwidth]{}
+\caption{}
+\label{}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.45\textwidth]{}
+\caption{}
+\label{}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.45\textwidth]{}
+\caption{}
+\label{}
 \end{figure}
 
 \subsection{S-parameters}
@@ -832,6 +871,9 @@ To produce figure \ref{fig:S11_S21}, we parameterized the values of our parasiti
 \end{figure}
 
 In figure \ref{fig:VSWRandReturnLoss}, we see that our measured and simulated are almost identical except for a sharp rise in VSWR near the resonant frequency of our LC network (144Mhz). After this point, we expect our VSWR to start rising dramatically. What we see is a much more subtle increase from about 1.5 to 5. Still a much larger ratio than was present within our operating bandwidth, but certainly not the expected value of $\approx 100$.
+
+
+\
 
 
 
