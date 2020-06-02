@@ -1,0 +1,14 @@
+#TeXlipse project settings
+#Tue May 26 19:43:07 PDT 2020
+outputDir=
+markDer=true
+mainTexFile=Draft_White_Paper.tex
+bibrefDir=
+builderNum=2
+outputFile=Draft_White_Paper.pdf
+makeIndSty=
+srcDir=
+markTmpDer=true
+tempDir=tmp
+outputFormat=pdf
+langSpell=en
