@@ -91,19 +91,9 @@
 			<locationURI>PARENT-1-PROJECT_LOC/Simulations/Transient%20Simulations/Probed_Input_N10_N240_With_SeriesResistance.pdf</locationURI>
 		</link>
 		<link>
-			<name>images/SecondTestWaveform.JPG</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Measurements/RohdeAndSchwarzMeasurements/5_19_2020/IMG_0140.JPG</locationURI>
-		</link>
-		<link>
 			<name>images/SetupWithBiasing.JPG</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/Measurements/RohdeAndSchwarzMeasurements/5_19_2020/IMG_0132.JPG</locationURI>
-		</link>
-		<link>
-			<name>images/SquareInputTestSetup.JPG</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Measurements/RohdeAndSchwarzMeasurements/5_19_2020/IMG_0130.JPG</locationURI>
 		</link>
 		<link>
 			<name>images/TestSetup.pdf</name>
@@ -121,7 +111,7 @@
 			<locationURI>PARENT-1-PROJECT_LOC/Measurements/RohdeAndSchwarzMeasurements/5_19_2020/Board1/B1.pdf</locationURI>
 		</link>
 		<link>
-			<name>images/Board1/MeasuredACResponseB1.BMP</name>
+			<name>images/Board1/MeasuredACResponseB1.bmp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/Measurements/RohdeAndSchwarzMeasurements/5_19_2020/Board1/FSW_ScreenShot_2020-05-09_19-01-46.BMP</locationURI>
 		</link>

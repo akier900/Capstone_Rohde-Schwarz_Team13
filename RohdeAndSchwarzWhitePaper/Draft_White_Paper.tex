@@ -112,7 +112,7 @@
 %\ifCLASSINFOpdf
   \usepackage{graphicx}
   % declare the path(s) where your graphic files are
-\graphicspath{{./images/}}
+\graphicspath{{./images/}{./images/Board1/}{./images/Board2/}}
   % and their extensions so you won't have to specify these with
   % every instance of \includegraphics
   % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
@@ -121,7 +121,7 @@
   % declare the path(s) where your graphic files are
   % and their extensions so you won't have to specify these with
   % every instance of \includegraphics
-  % \DeclareGraphicsExtensions{.eps}
+%  \DeclareGraphicsExtensions{.bmp}
 % graphicx was written by David Carlisle and Sebastian Rahtz. It is
 % required if you want graphics, photos, etc. graphicx.sty is already
 % installed on most LaTeX systems. The latest version and documentation
@@ -788,9 +788,9 @@ Through use of this fixture, we were able to generate the curves shown in figure
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.45\textwidth]{Board1/MeasuredACResponseB1.BMP}
-\caption{}
-\label{}
+\includegraphics[width=0.45\textwidth]{MeasuredACResponseB1.bmp}
+\caption{Measured Frequency Response for Board 1 (L= 56nH)}
+\label{fig:MeasACBoard1}
 \end{figure}
 
 \begin{figure}[htb]
