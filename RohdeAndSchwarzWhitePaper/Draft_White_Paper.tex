@@ -939,13 +939,22 @@ to curves found on datasheets for the BBY40 and SMV1249 respectively.
 
 \subsection{AC Response}\label{ACMeasResults}
 
+The frequency response of our circuit effectively tells us the operating
+bandwidth of our ciruit. With a 10 ladder long circuit, our cuttoff can be
+calculated to be around 103Mhz. We also notice that as we near the corner, the
+nonlinearities present in the circuit cause increased amounts of resonance as
+expected. The thing to notice is the presence of multiple oscillations of
+increasing frequency. These are frequencies we may want to consider when
+measuring circuit quality factor, Q.
+
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.35\textwidth,angle = -90]{ACResponseB1}
+\includegraphics[width=0.35\textwidth,angle = -90]{ACResponseB1.png}
 \caption{Simulated AC Response for Board 1}
 \label{fig:simACBoard1}
 \end{figure}
+ 
 
 \begin{figure}[htb]
 \centering
@@ -954,8 +963,10 @@ to curves found on datasheets for the BBY40 and SMV1249 respectively.
 \label{fig:MeasACBoard1}
 \end{figure}
 
-
-
+Comparing figures \ref{fig:simACBoard1} and \ref{fig:MeasACBoard1}, we see a
+similar pattern however with an additional -10dBm loss at DC and less pronounced
+resonant frequencies. The additional loss could be due to the cables or due to
+improper modeling of our series resistance in the line. 
 
 
 \subsection{Rise Time}\label{RiseTimeMeasResults}
@@ -975,8 +986,14 @@ hold a charge.
 
 
 
+Figure \ref{fig:SetupWBiasing} shows the lab setup used to take the time-domain
+measurements. A bias-Tee is used to provide a DC bias to our NLTL and is
+adjusted by a bench power supply. A picosend pulse generator is used to send
+in a well-behaved high speed signal into the DUT.
 
-
+The input wave is a 1Mhz 1Vpp Square wave with 10nS rise and fall times and the
+bias is adjusted from 0 to 3V to further investigate its effect on the
+capacitance of the varactor.
 
 \begin{figure}[htb]
 \centering
@@ -989,10 +1006,16 @@ hold a charge.
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.45\textwidth]{Probed_Input_N10_N240_NoSeriesResistance}
-\caption{Simulated Risetimes for Input pulse, $10^{th}$ node, and the $240^{th}$ node}
+\caption{Simulated Risetimes for Input pulse, and the $240^{th}$ node}
 \label{fig:probedNoResistance}
 \end{figure}
 
+Figure \ref{fig:probedNoResistance} shows the expected rise time improvement for
+a circuit like ours with 240 ladders sections in an ideal environment. Once we
+account for the series resistance, $Rser = -0.7\Omega$ for the purposes of
+figure \ref{fig:probedWithResistance}. We see in this case the loss is great
+enough to overcome the linearity of the line and we see a rise time increase
+instead. 
 
 \begin{figure}[htb]
 \centering
@@ -1001,13 +1024,11 @@ hold a charge.
 \label{fig:probedWithResistance}
 \end{figure}
 
+Figures \ref{fig:MeasuredSquare1VBiasB1} and \ref{fig:MeasSquare2VBiasB1} show
+the measured response to a square wave with $V_{dc} = 1V$ and $V_{dc} = 2V$,
+respectively. While we seem some pulse sharpening in both cases, we don't see
+the increase shown in figure \ref{fig:RiseVsLineVsBias}.
 
-\begin{figure}[htb]
-\centering
-\includegraphics[width=0.45\textwidth]{MeasuredSquareResponseB1.png}
-\caption{Risetime Measurement from Board 1 (L=56nH)}
-\label{fig:MeasuredSquareGeneric}
-\end{figure}
 
 \begin{figure}[htb]
 \centering
@@ -1015,6 +1036,9 @@ hold a charge.
 \caption{Measured Risetime with 1V DC Bias}
 \label{fig:MeasuredSquare1VBiasB1}
 \end{figure}
+
+
+
 
 \begin{figure}[htb]
 \centering
@@ -1026,17 +1050,36 @@ hold a charge.
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.45\textwidth]{MeasuredSpectrum.png}
-\caption{}
-\label{fig:MeasSpec}
-\end{figure}
-
-\begin{figure}[htb]
-\centering
 \includegraphics[width=0.38\textwidth,angle=-90]{SimulatedSpectrum.png}
 \caption{Expected Power Spectrum when DUT fed with 1Mhz 1Vpp Sine Wave}
 \label{fig:SimSpec}
 \end{figure}
+
+We now change the stimulus to a 1Vpp Sine wave at 1Mhz, and find the power
+spectrum the NLTL output. In figure \ref{fig:SimSpec}, it is shows that as a non-linear
+circuit there is a great deal of harmonic content generated due to
+non-linearity.We expect to see odd and even harmonics throughout the entire
+sweep. 
+
+Figure \ref{fig:MeasSpec} shows that in the lab, we don't see this same
+behavior. This is puzzling and implies that either linear parasitic capacitance
+is the dominant factor as a result of either the connectors, board material or
+inductor contstruction, or there is enough loss in the line to linearize the
+structure or both. 
+
+To further test this assumption, we can adjust the inductor model or include the
+other classic parasitic components of a transmission line as shown and discussed
+in \cite{nikoo2018theory}.
+
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.45\textwidth]{MeasuredSpectrum.png}
+\caption{Meaured Power Spectrum of Board 1. We see a lack of the harmonics we
+expected from simulation}
+\label{fig:MeasSpec}
+\end{figure}
+
 
 
 
@@ -1098,11 +1141,11 @@ certainly not the expected value of $\approx 100$.
 
 
 
-\section{ Model Accuracy/ Predictions }
-Under Construction: Using this section for generating bibliography for the the
-time being. We will work on predictions and further flesh things out during the
-next revision.
-\cite{ould2011circuit} \cite{distributedAnalogPhase},\cite{ellinger2003varactor},\cite{lee2012nonlinear},\cite{UltraCompact},\cite{EffVaractorCharac},\cite{FastHighVoltageNLTL}, \cite{nikoo2018theory}, \cite{TwoLine},\cite{ComputerExpNLTL}
+% \section{ Model Accuracy/ Predictions }
+% Under Construction: Using this section for generating bibliography for the the
+% time being. We will work on predictions and further flesh things out during the
+% next revision.
+% \cite{ould2011circuit} \cite{distributedAnalogPhase},\cite{ellinger2003varactor},\cite{lee2012nonlinear},\cite{UltraCompact},\cite{EffVaractorCharac},\cite{FastHighVoltageNLTL}, \cite{nikoo2018theory}, \cite{TwoLine},\cite{ComputerExpNLTL}
 
 
 
@@ -1112,15 +1155,15 @@ next revision.
 \centering
 \includegraphics[width=0.45\textwidth]{EstimatingQ.png}
 \caption{Transient Waveform for Estimating Q
-}\label{fig:EstimatingQ}
+}\label{fig:EstimQ}
 \end{figure}
 
 
 To estimate our circuit Q, we employ a technique called ring-down method
 \cite{giangrandi}. Driving the circuit with a square wave much slower than the
 expected resonance frequency of the LC network, we simply count the amount of
-cycles it takes for the signal envelope to decay to rougly 50\% of the maximum
-amplitude. Observing figure /ref{fig:EstimatingQ}, we see that the ringing dies
+cycles it takes for the signal envelope to decay to rougly $50\%$ of the maximum
+amplitude. Observing figure \ref{fig:EstimQ}, we see that the ringing dies
 down in about 1 cycle. To get our Q estimate, we simply multiply this value by
 approximate 4.53. This yields an approximate Q of 4.53 for our transmission
 line. This seems a little lower than expected however, we can see that the
@@ -1132,26 +1175,22 @@ content.
 By feeding in a 1Vpp Sine wave and measuring the frequency response of our
 circuit, we see that many harmonics should be present in our line. Since we are
 using this simulation to stand in place of a physical measurement, this
-interferenece makes sense.
+interference makes sense.
 
 To repeat this process for our physical circuit is a good next step to confirm
 the observed value of $Q \approx 5$.
 
 \section{Next Steps}\label{sec:NextSteps}
 
-
-
 \subsection{Verilog-A Module}
 
 While we were able to draft a preliminary Verilog-A module for this project,
 we were unable to fully debug, implement, or optimize this code.
 Introductory literature exists explaining how these models are constructed
-and used \cite{VerilogAFun}. There also exists literature specifically gear
+and used \cite{VerilogAFun}. There also exists literature specifically geared
 toward creating RF models using Verilog-A\cite{VerilogARF}.
     
     
-
-
 
 
 \subsection{Using varying physical circuit geometry}
@@ -1181,6 +1220,18 @@ designs\cite{NonUniformBandpass}.
 
 
 \section{ Conclusion} 
+
+In this paper, we have summarized the work we have done in understanding the use
+of NLTL's and nonlinear waves in general and attempted to reproduce these
+results using simulation and measurement. While it was a good first attempt,
+there are many areas to explore further such as the simulation, building and
+measurement of a model dealing with higher bandwidths (0-6GHz), Non-uniform
+geometry, simultaneous edge sharpening, and writing a more accurate Verilog-A
+module. For much higher frequencies,the design may need to be constructing using
+ADS and momentum as this neccesitates much smaller components and boards. 
+
+
+
 
 
 
