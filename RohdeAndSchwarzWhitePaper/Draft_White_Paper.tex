@@ -559,7 +559,7 @@ handheld LCR meter.
 
 
 \section{ Theory }
-\subsection{Why use Nonlinear Devices?}
+\subsection{Why use Nonlinear Devices?}\label{sub:WhyNonLin}
 
 Non-linear devices in transmission lines have been widely used for pulse
 sharpening in particular. Similar sharpening can be observed by use of
@@ -582,10 +582,59 @@ the group velocity is what we care about.
 
 
 
-\subsection{Types of NLTL waves}
-Solitons and Shockwaves.
+\subsection{Types of NLTL waves}\label{sub:NLTLTypes}
+While treating the physics of non-linear waves is beyond the scope of this
+paper, the use of NLTL's in transmission lines is founded upon the existence of
+waves that do not behave like the pure sine waves we usually consider in
+electronics. These both types of waves can be present and used in techonology to
+lessen the time it takes for an input waveform to reach its final value as well
+as lessen the time to return to its ``off'' voltage state. In other words, these
+can be used to sharpen both rising and falling edges of a square
+wave input\cite{afshari2005nonlinear}.
 
-\subsection{Varactors vs. Nonlinear Capacitors}
+Informally, \emph{Solitons} are much like the type of wave we see
+travelling in the open ocean without breaking and are characterized by their
+ability to interact with other waves without losing energy. This means that
+after passing another wave it largely maintains its shape and is only shifted in
+phase (experiences time delay).
+
+
+\emph{Shockwaves} are more easily visualized by a wave approaching the shore and
+breaking. This is the type of wave we utilize when considering non-uniform
+NLTL's. As the wave moves closer to the beach and the shoreline rises
+dramatically, the wave can no longer move in the same way due to the shore
+interrupting the circulating water and the momentum carried by it. With this
+sudden discharge of energy, we see the wave ``break'' and momentarily create a
+large vertical column of water. 
+
+
+\subsection{Non-linearity vs Wave Dispersion}\label{NonlinearVsDispersion}
+
+Another main concept of operation of these types of circuits, is the need for
+non-linearity to outweigh possible wave dispersion. Dispersion is a concept
+commonly discussed relative to optical fiber cable as a limiting factor of
+transmission speed. The idea is that travelling through any medium will cause a
+small amount of pulse spreading. This means that, if dispersion is strong
+enough, the pulse can spread or even break apart into several smaller pulses. To
+overcome this, we need enough nonlinearity in the line primarily in terms of
+voltage/amplitude dependence such that the wave remains narrow. 
+
+
+Figure \ref{fig:shockline}\cite{shocklineNLTL}, shows how construction of NLTL's
+follows catch up theory and how pulse sharpening is achieved by these types of
+circuits. 
+
+
+
+ \begin{figure}[htb]
+\centering
+\includegraphics[width=0.45\textwidth]{shockline_nltl_fig2.jpg}
+\caption{\ This graphic taken from an ANRITSU application note shows the basic
+principle of catch-up theory.
+and how it can be used to sharpen input pulses}\label{fig:shockline}
+\end{figure}
+
+\subsection{Varactors vs. Nonlinear Capacitors}\label{sub:varacVSnonlincap}
 
 While nonlinear capacitors have been used in many studies
 \cite{FastHighVoltageNLTL} when implementing this design in high power systems,
@@ -606,24 +655,26 @@ C(v) = \frac{C_{o}}{\sqrt{1+v/V_{o}}}
 where $C_{o}$ and $V_{o}$ are zero bias capacitance and reference voltage,
 respectively.
 
+Equation (\ref{eq:LargeSignalDiodeCap}) becomes useful as we start looking at
+larger pulses with large amplitude and should allow for scaling of our design.
 \begin{equation}\label{eq:LargeSignalDiodeCap}
 C_{ls}(V_{l},V_{n}) = \frac{1}{V_{n}-V_{l}}\int_{V_{l}}^{V_{n}}C(v)\, dv
 \end{equation}
 
+This leads to an important constraint when designing passive NLTL's made up of
+series low-pass LC circuits. The fastest wave we can propagate down the NLTL can
+be approximately found by using equation (\ref{eq:bragg}) to find the cutoff
+frequency of the network as a function of the voltage across the varactors. 
+
 \begin{equation}\label{eq:bragg}
-	f_{bragg} \approx \frac{1}{2\pi{}\sqrt{LC(v_{max})}}	
+	f_{bragg} \approx \frac{1}{2\pi{}\sqrt{LC(v)}}	
 \end{equation}
 
+This equation is used in section \ref{sub:simsRise} indirectly to estimate the
+amount of pulse sharpening we can expect for a given step inputl
 
-\begin{equation}\label{eq:ShockwaveSections}
-	n \approx \frac{T_{f,in}}{\Delta{}T}
-\end{equation}
 
-Where $T_{f,in}$ is the fall time of the step input. 
- 
-%\subsection{Choosing a Varactor Diode}
-
-\subsection{Methods of Modeling Varactors}
+\subsection{Methods of Modeling Varactors}\label{sub:VaracModeling}
 
 In order to properly simulate and predict data using these simulations, we
 need first to determine how to model the non-ideal parasitics of the line
@@ -644,7 +695,7 @@ such as ADS.
     
    
 
-\subsection{Modeling Board Characteristics}
+\subsection{Modeling Board Characteristics}\label{sub:BoardModeling}
 
 When constructing a test fixture for measurements of NLTL's of higher frequency,
 we must also take into account the properties of the board we are working with.
@@ -681,7 +732,7 @@ VNA\cite{SimpleRelative}.
 
 
     
-\subsubsection{SPICE Models}
+\subsubsection{SPICE Models}\label{subsub:SPICE}
 
 SPICE models are typically easier to find and use in most circuit simulation
 software and what we used for our low frequency prototype as it seemed to be
@@ -699,7 +750,7 @@ application notes from their manufacturer, SKYWORKS Inc.
 
 
 
-\subsubsection{Verilog-A Modules}
+\subsubsection{Verilog-A Modules}\label{subsub:VerilogAMS}
 
 We were unable to utilize this modeling method. In section \ref{sec:NextSteps}, 
 we go over some potentially useful references to help you create models for
@@ -713,7 +764,7 @@ varactors.
 
 
 
-\section{ Simulations }
+\section{ Simulations }\label{sec:sims}
 
 In this section we will discuss the basics behind catch-up
 theory\cite{wilson1991pulse} and how we confirmed this with simulation.
@@ -724,10 +775,10 @@ step input maximum. This result is multiplied for every ladder section the pulse
 passes. Catch-up theory suggests that this delay is accounted for the variation
 in phase velocity as the rising pulse effects the varactor capacitance.
 
-\subsection{Simulating Rise Time}
+\subsection{Simulating Rise Time}\label{sub:simsRise}
 
 In our simulations we use an input step of 5 volts which takes $1\mu s$ to reach
-it's final value. Using equation \ref{DelayApproxCalc}, we calculate a pulse
+it's final value. Using equation (\ref{DelayApproxCalc}), we calculate a pulse
 sharpening of $8.44ns$ at our $10^{th}$ node and $84.37ns$ at our $100^{th}$
 node. To make these calculations, we used the CV plots obtained by measuring the
 BBY40 with the test fixture discussed in section \ref{subsec:CVCurves}.
@@ -738,16 +789,24 @@ BBY40 with the test fixture discussed in section \ref{subsec:CVCurves}.
 \end{equation}
 
 For a lossless line, the sharpest pulse we can achieve can be estimated by first
-using equation \ref{NLTLCutoff} taken from \cite{wilson1991pulse}. This gives us
-the ideal cutoff frequency of the line which in Hz is about $f_c \approx
-290Mhz$. The period of a wave moving at this rate is $T \approx 3.4ns$. While we
-have not been able to achieve a rise time of this magnitude, we need to remind
-ourselves of the inherent parasitics we are dealing with. Using a basic model
+using equation \ref{NLTLCutoff}\cite{wilson1991pulse}.
+We notice that this utilizes the equation of our estimated bragg frequency as
+seen in (\ref{eq:bragg}) and describes the differenece in cutoff
+frequencies at maximim and minimum bias voltage multiplied by the number of
+sections, N. 
+
+ This gives us the ideal cutoff frequency of the line which in Hz is about $f_c
+ \approx 290Mhz$. The period of a wave moving at this rate is $T \approx 3.4ns$.
+ While we have not been able to achieve a rise time of this magnitude, we need
+ to remind ourselves of the inherent parasitics we are dealing with. Using a
+ basic model
 with values from our inductor and varactor diode datasheet. We have a per
 section series resistance of roughly $R_s = 122m\Omega$ at DC, and a parallel
 resistance given by the resistance inherent in the varactor packaging as well as
 of the trace itself. This value was taken from the SPICE model used and was
 $R_{p} = 1m\Omega$
+
+
 
 \begin{equation} \label{NLTLCutoff}
     \omega_{c} = \frac{2}{\sqrt{ LC_{s} } }
