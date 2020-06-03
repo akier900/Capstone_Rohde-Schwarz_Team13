@@ -423,8 +423,8 @@ have constructed a varactor loaded transmission line and attempted to observe
 and replicate the pulse sharpening effect shown in the literature.
 
 First, we discuss the necessity of non-linear components in such a Nonlinear
-Transmission line or NLTL for short. We then discuss ways in which the devices
-we use in simulation are modeled and the obstacles we faced in constructing
+Transmission line or \emph{NLTL} for short. We then discuss ways in which the
+devices we use in simulation are modeled and the obstacles we faced in constructing
 these models. We simulate these nonlinear lines using MICROCAP and discuss
 possible reasons for the discrepancies we have seen between research and
 simulations.
@@ -592,7 +592,8 @@ capacitance\cite{nikoo2018theory}.
 C(v) = \frac{C_{o}}{\sqrt{1+v/V_{o}}}
 \end{equation}
 
-where $C_{o}$ and $V_{o}$ are zero bias capacitance and reference voltage, respectively. 
+where $C_{o}$ and $V_{o}$ are zero bias capacitance and reference voltage,
+respectively.
 
 
 %\subsection{Choosing a Varactor Diode}
@@ -612,6 +613,47 @@ where $C_{o}$ and $V_{o}$ are zero bias capacitance and reference voltage, respe
     the non-idealities in capacitors and varactors. This is a useful tool to
     explore as it can be integrated with many commercial simulation programs
     such as ADS.
+    
+    
+    
+   
+
+\subsection{Modeling Board Characteristics}
+
+When constructing a test fixture for measurements of NLTL's of higher frequency,
+we must also take into account the properties of the board we are working with.
+For our low frequency model and with limited access to robust VNA's this
+procedure was not neccessary but we recommend using the two-line pencil
+method to approximate the board permittivity and loss tangent as utilized to do
+the same for flex PCB's due to it's simplicity and limited need for
+equipment\cite{TwoLine}.
+
+For our board, we used a simpler method which may prove useful as a quick and
+dirty alternative to the one descbribed above. To find the permitivittivy of the
+board we used a simple LCR Meter (DE-5000) and the following formula of a
+parallel plate capacitor as shown in equation \ref{eq:epsAOverD}.
+
+
+
+\begin{equation}\label{eq:epsAOverD}
+	C =\frac{ \epsilon{}A }{d}
+\end{equation}
+
+Where we treat the width of the dielectric as plate spacing d, the board area
+as area, A, and measured capacitance as C. Solving for Permittivity
+$\epsilon$, we found a relative permittivity of $\epsilon_{r}\approx 3.54$.
+For this measurement a figure normally given for FR4 is roughly 4.0 to 4.4. A
+few possible things could cause this error. 
+
+The device used to measure the FR4 board generates a test frequency of 100kHz at
+maximum. Relative permittivity is usually given for FR4 at a much higher
+frequency in the Mhz range. Another is the precision achievable when measuring
+the dielectric thickness. A caliper would be much better suited for this task.
+Alternative methods do exist and are quite simple but do necessitate access to a
+VNA\cite{SimpleRelative}.
+
+
+
     
 \subsubsection{SPICE Models}
 
@@ -638,8 +680,6 @@ we go over some potentially useful references to help you create models for
 higher frequency/bandwidth designs. Most verilog modules we have come across
 utilize equation \ref{eq:nonlincap} in order to model non-linear capacitors and
 varactors.
-
-%\subsection{Modeling Board Characteristics}
 
 
 
