@@ -692,14 +692,6 @@ In figure \ref{fig:riseWithLoss}, we add the series DC resistance of the inducto
 }\label{fig:riseWithLoss}
 \end{figure}
 
-Figure \ref{fig:ACResp56nh} shows the simulated AC response of our 10 ladder long circuit.
-
-\begin{figure}[htb]
-\centering
-\includegraphics[width=0.45\textwidth,page = 1]{ACResponseB1.png}
-\caption{\ AC Response of Board 1 (L = 56nH) 
-}\label{fig:ACResp56nh}
-\end{figure}
  
  Figure \ref{fig:RiseVsLineVsBias} explores the effect of different biasing on our line as well as how long a line we can practically use for sharpening purposes. As our DC resistance grows with our line length, we expect our amplitude to keep dropping. As the amplitude of the traveling wave is reduced, we effectively trace out less of our varactor CV curves. Due to this, the CV relationship will begin to look more and more linear as we add ladder sections to our design. We have used a parametric plot to show the limits of this pulse sharpening as we increase  the line length and plotted rise-time vs. DC bias for each $10^{th}$ node of the ladder. The input pulse used in this case was $400ns$. 
 
@@ -714,7 +706,7 @@ Figure \ref{fig:ACResp56nh} shows the simulated AC response of our 10 ladder lon
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.4\textwidth,page={1}]{Probed_Input_N10_N240_NoSeriesResistance.pdf}
-\caption{\
+\caption{\ Comparing Risetime in Simulations at Input node Node 10 and Node 240
 }\label{fig:ProbedTransientNoSer}
 \end{figure}
 
@@ -788,7 +780,7 @@ Through use of this fixture, we were able to generate the curves shown in figure
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.45\textwidth]{MeasuredACResponseB1.bmp}
+\includegraphics[width=0.45\textwidth]{MeasuredACResponseB1.png}
 \caption{Measured Frequency Response for Board 1 (L= 56nH)}
 \label{fig:MeasACBoard1}
 \end{figure}
@@ -802,44 +794,80 @@ Through use of this fixture, we were able to generate the curves shown in figure
 
 
 
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.45\textwidth]{MeasuredACResponseB2.png}
+\caption{Measured Frequency Response for Board 2 (L= 560nH)}
+\label{fig:MeasACBoard2}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.45\textwidth]{ACResponseB1}
+\caption{Simulated AC Response for Board L=560nH}
+\label{fig:simACBoard2}
+\end{figure}
 
 
 \subsection{Rise Time}\label{RiseTimeMeasResults}
 
 We had great difficulty in measuring rise time of our circuit and the main problems we faced were not understanding the theory well enough have do proper testing. While our components were chosen on the basis of working at 144Mhz, we failed to see that driving our circuit below this bandwidth and performing similar simulations may be adequate to prove rise time performance increase. Another complication was keeping in mind the biasing conditions of the varactors. We did not design for a port in which to introduce a dc bias to our circuit and relied on equipment being able to accomplish this. Care must be taken when using analog generators to supply the DC bias to the circuit. Our particular model begins sweeping with a negative bias before reaching a positive one. This effectively puts the varactors into forward bias and allows them to hold a charge. 
 
-Before grappling with these issues, we were able to measure this pulse sharpening effect using a higher bandwidth oscilloscope as shown in figure \ref{fig:FirstRandS}. 
+
+
+
 
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.45\textwidth]{Risetime_RandS}
-\caption{Risetime can be seen to be reduced by our transmission line}
-\label{fig:FirstRandS}
+\includegraphics[width=0.45\textwidth,angle = -90]{SetupWithBiasing.JPG}
+\caption{Test Setup for Measuring Risetime With Bias}
+\label{fig:SetupWBiasing}
+\end{figure}
+
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.45\textwidth]{Probed_Input_N10_N240_NoSeriesResistance}
+\caption{Simulated Risetimes for Input pulse, $10^{th}$ node, and the $240^{th}$ node}
+\label{fig:probedNoResistance}
+\end{figure}
+
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.45\textwidth]{Probed_Input_N10_N240_NoSeriesResistance}
+\caption{Accounting for Series Resistance shows that there is a certain point where no more sharpening takes place}
+\label{fig:probedWithResistance}
+\end{figure}
+
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.45\textwidth]{MeasuredSquareResponseB1.png}
+\caption{Risetime Measurement from Board 1 (L=56nH)}
+\label{fig:MeasuredSquareGeneric}
 \end{figure}
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.45\textwidth]{}
+\includegraphics[width=0.45\textwidth]{MeasuredSquare1VBiasB1.png}
 \caption{}
-\label{}
+\label{fig:MeasuredSquare1VBiasB1}
 \end{figure}
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.45\textwidth]{}
+\includegraphics[width=0.45\textwidth]{MeasuredSquare2VBiasB1.png}
 \caption{}
-\label{}
+\label{fig:Measured Risetime with 2V DC Bias}
 \end{figure}
 
-\begin{figure}[htb]
-\centering
-\includegraphics[width=0.45\textwidth]{}
-\caption{}
-\label{}
-\end{figure}
+
+
 
 \subsection{S-parameters}
+
 
 In figure \ref{fig:sparamSchem} shows the schematic used to measure and compare our measured s-parameters taken through a NanoVNA to our simulated circuit with parasitics included. The NanoVNA data is imported through use of the n-port components and define statements are utilized to calculate other parameters such as generated power in dbm, VSWR, etc...
 
@@ -847,7 +875,7 @@ In figure \ref{fig:sparamSchem} shows the schematic used to measure and compare 
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.45\textwidth,page = 1]{images/MostRecentSparamMeasSchem.pdf}
-\caption{\ Schematic used to generate S-parameter plots  
+\caption{Schematic used to generate S-parameter plots. The top line measures S11 and S12, and bottom line measures S21 and S22. 
 }\label{fig:sparamSchem}
 \end{figure}
 
@@ -873,7 +901,7 @@ To produce figure \ref{fig:S11_S21}, we parameterized the values of our parasiti
 In figure \ref{fig:VSWRandReturnLoss}, we see that our measured and simulated are almost identical except for a sharp rise in VSWR near the resonant frequency of our LC network (144Mhz). After this point, we expect our VSWR to start rising dramatically. What we see is a much more subtle increase from about 1.5 to 5. Still a much larger ratio than was present within our operating bandwidth, but certainly not the expected value of $\approx 100$.
 
 
-\
+
 
 
 

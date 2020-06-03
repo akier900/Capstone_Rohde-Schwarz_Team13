@@ -106,14 +106,9 @@
 			<locationURI>PARENT-1-PROJECT_LOC/Measurements/RohdeAndSchwarzMeasurements/5_19_2020/Board1/Screenshot_2020-05-17_38_062755.png</locationURI>
 		</link>
 		<link>
-			<name>images/MeasuredSquareResonse.png</name>
+			<name>images/MeasuredSquareResonseB1.png</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/Measurements/RohdeAndSchwarzMeasurements/5_19_2020/Board2/Screenshot_2020-05-17_32_054504.png</locationURI>
-		</link>
-		<link>
-			<name>images/MeasuredSquareResponseB1.png</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Measurements/RohdeAndSchwarzMeasurements/5_19_2020/Board1/Screenshot_2020-05-17_28_062455.png</locationURI>
 		</link>
 		<link>
 			<name>images/Probed_Input_N10_N120.pdf</name>
