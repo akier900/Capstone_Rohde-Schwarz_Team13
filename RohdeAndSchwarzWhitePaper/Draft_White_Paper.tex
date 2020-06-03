@@ -557,9 +557,6 @@ handheld LCR meter.
 %
 
 
-% Everywhere I put \blindtext should be where you type in the contents. Dont worry about formatting for now.
-% Let me know if you think an image would work in a certain place and Ill add it
-% Use comments like this or say something in the attached chat or slack if theres anything you think I should know
 
 \section{ Theory }
 \subsection{Why use Nonlinear Devices?}
@@ -571,20 +568,33 @@ material in the line\cite{wilson1991pulse}. The non-linearity helps us because
 it allows for voltage dependence impedance on the line. When an input pulse is
 sent through such a line, the voltage dependence causes a change in line
 impedance and a change in the behavior of the lumped element stubs which are
-also essentially low pass filters.
+also essentially low pass filters. 
 
+Much like a wave travelling in the ocean towards the shore, certain sections of
+the wave travel at different speeds despite the travel of the wave as a whole.
+This can be seen first hand by a surfer utilizing their position on the wave to
+have the right speed and stability. 
+
+In electronics this same concept is present in optical fibers or waveguides. As
+we reflect a signal beam into a guide, the phase velocity can actually exceed
+the speed of light, however the speed of the the information characterized by
+the group velocity is what we care about. 
+
+
+
+\subsection{Types of NLTL waves}
+Solitons and Shockwaves.
 
 \subsection{Varactors vs. Nonlinear Capacitors}
 
 While nonlinear capacitors have been used in many studies
-
 \cite{FastHighVoltageNLTL} when implementing this design in high power systems,
 varactor diodes have the advantage of a larger capacitance range, and allow us
 to perform measurements using lower voltages. In addition, the overall design is
 simplified with the use of Varactors because only one bias is needed.
 
 In any case, non linear capacitors are often modeled using equation
-\ref{eq:nonlincap} to describe the voltage dependence of the
+(\ref{eq:nonlincap}) to describe the voltage dependence of the
 capacitance\cite{nikoo2018theory}.
 
 
@@ -592,27 +602,43 @@ capacitance\cite{nikoo2018theory}.
 C(v) = \frac{C_{o}}{\sqrt{1+v/V_{o}}}
 \end{equation}
 
+
 where $C_{o}$ and $V_{o}$ are zero bias capacitance and reference voltage,
 respectively.
 
+\begin{equation}\label{eq:LargeSignalDiodeCap}
+C_{ls}(V_{l},V_{n}) = \frac{1}{V_{n}-V_{l}}\int_{V_{l}}^{V_{n}}C(v)\, dv
+\end{equation}
 
+\begin{equation}\label{eq:bragg}
+	f_{bragg} \approx \frac{1}{2\pi{}\sqrt{LC(v_{max})}}	
+\end{equation}
+
+
+\begin{equation}\label{eq:ShockwaveSections}
+	n \approx \frac{T_{f,in}}{\Delta{}T}
+\end{equation}
+
+Where $T_{f,in}$ is the fall time of the step input. 
+ 
 %\subsection{Choosing a Varactor Diode}
 
 \subsection{Methods of Modeling Varactors}
-    In order to properly simulate and predict data using these simulations, we
-    need first to determine how to model the non-ideal parasitics of the line
-    and particularly the behavior of the chosen varactor diode loading the NLTL.
-    There are several ways to accomplish this. The most standard and the method
-    chosen by our group is SPICE modeling. The disadvantage of this route is
-    that nonlinear behavior can be particularly hard to model with SPICE alone
-    at higher frequencies and voltage levels (find source for this, think it's
-    in SKYWORKS application note).
-    
-    Another industry standard used to do this is by modeling via Verilog code.
-    Specifically, Verilog-AMS or Verilog-A modules can more accurately capture
-    the non-idealities in capacitors and varactors. This is a useful tool to
-    explore as it can be integrated with many commercial simulation programs
-    such as ADS.
+
+In order to properly simulate and predict data using these simulations, we
+need first to determine how to model the non-ideal parasitics of the line
+and particularly the behavior of the chosen varactor diode loading the NLTL.
+There are several ways to accomplish this. The most standard and the method
+chosen by our group is SPICE modeling. The disadvantage of this route is
+that nonlinear behavior can be particularly hard to model with SPICE alone
+at higher frequencies and voltage levels (find source for this, think it's
+in SKYWORKS application note).
+
+Another industry standard used to do this is by modeling via Verilog code.
+Specifically, Verilog-AMS or Verilog-A modules can more accurately capture
+the non-idealities in capacitors and varactors. This is a useful tool to
+explore as it can be integrated with many commercial simulation programs
+such as ADS.
     
     
     
@@ -631,7 +657,7 @@ equipment\cite{TwoLine}.
 For our board, we used a simpler method which may prove useful as a quick and
 dirty alternative to the one descbribed above. To find the permitivittivy of the
 board we used a simple LCR Meter (DE-5000) and the following formula of a
-parallel plate capacitor as shown in equation \ref{eq:epsAOverD}.
+parallel plate capacitor as shown in equation (\ref{eq:epsAOverD}).
 
 
 
@@ -640,14 +666,14 @@ parallel plate capacitor as shown in equation \ref{eq:epsAOverD}.
 \end{equation}
 
 Where we treat the width of the dielectric as plate spacing d, the board area
-as area, A, and measured capacitance as C. Solving for Permittivity
+as area, A, and measured capacitance as C. Solving for permittivity
 $\epsilon$, we found a relative permittivity of $\epsilon_{r}\approx 3.54$.
 For this measurement a figure normally given for FR4 is roughly 4.0 to 4.4. A
 few possible things could cause this error. 
 
 The device used to measure the FR4 board generates a test frequency of 100kHz at
 maximum. Relative permittivity is usually given for FR4 at a much higher
-frequency in the Mhz range. Another is the precision achievable when measuring
+frequencies in the Mhz range. Another is the precision achievable when measuring
 the dielectric thickness. A caliper would be much better suited for this task.
 Alternative methods do exist and are quite simple but do necessitate access to a
 VNA\cite{SimpleRelative}.
@@ -911,7 +937,7 @@ hold a charge.
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.45\textwidth]{Probed_Input_N10_N240_NoSeriesResistance}
+\includegraphics[width=0.45\textwidth]{Probed_Input_N10_N240_With_SeriesResistance}
 \caption{Accounting for Series Resistance shows that there is a certain point where no more sharpening takes place}
 \label{fig:probedWithResistance}
 \end{figure}
@@ -927,15 +953,15 @@ hold a charge.
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.45\textwidth]{MeasuredSquare1VBiasB1.png}
-\caption{}
+\caption{Measured Risetime with 1V DC Bias}
 \label{fig:MeasuredSquare1VBiasB1}
 \end{figure}
 
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.45\textwidth]{MeasuredSquare2VBiasB1.png}
-\caption{}
-\label{fig:Measured Risetime with 2V DC Bias}
+\caption{Measured Risetime with 2V DC Bias}
+\label{fig:MeasSquare2VBiasB1}
 \end{figure}
 
 
