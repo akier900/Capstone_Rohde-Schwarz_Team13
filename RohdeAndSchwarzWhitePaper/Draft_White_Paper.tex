@@ -424,7 +424,7 @@ and replicate the pulse sharpening effect shown in the literature.
 
 First, we discuss the necessity of non-linear components in such a Nonlinear
 Transmission line or \emph{NLTL} for short. We then discuss ways in which the
-devices we use in simulation are modeled and the obstacles we faced in
+devices we use in our simulations are modeled, and the obstacles we faced in
 constructing these models. We simulate these nonlinear lines using MICROCAP and
 discuss possible reasons for the discrepancies we have seen between research and
 simulations.
@@ -570,14 +570,14 @@ sent through such a line, the voltage dependence causes a change in line
 impedance and a change in the behavior of the lumped element stubs which are
 also essentially low pass filters. 
 
-Much like a wave travelling in the ocean towards the shore, certain sections of
+Much like a wave traveling in the ocean towards the shore, certain sections of
 the wave travel at different speeds despite the travel of the wave as a whole.
 This can be seen first hand by a surfer utilizing their position on the wave to
 have the right speed and stability. 
 
-In electronics this same concept is present in optical fibers or waveguides. As
+In electronics, this same concept is present in optical fibers or waveguides. As
 we reflect a signal beam into a guide, the phase velocity can actually exceed
-the speed of light, however the speed of the the information characterized by
+the speed of light, however the speed of the information characterized by
 the group velocity is what we care about. 
 
 
@@ -586,14 +586,14 @@ the group velocity is what we care about.
 While treating the physics of non-linear waves is beyond the scope of this
 paper, the use of NLTL's in transmission lines is founded upon the existence of
 waves that do not behave like the pure sine waves we usually consider in
-electronics. These both types of waves can be present and used in techonology to
+electronics. Both types of waves can be present and used in technology to
 lessen the time it takes for an input waveform to reach its final value as well
 as lessen the time to return to its ``off'' voltage state. In other words, these
 can be used to sharpen both rising and falling edges of a square
 wave input\cite{afshari2005nonlinear}.
 
 Informally, \emph{Solitons} are much like the type of wave we see
-travelling in the open ocean without breaking and are characterized by their
+traveling in the open ocean without breaking and are characterized by their
 ability to interact with other waves without losing energy. This means that
 after passing another wave it largely maintains its shape and is only shifted in
 phase (experiences time delay).
@@ -610,10 +610,10 @@ large vertical column of water.
 
 \subsection{Non-linearity vs Wave Dispersion}\label{NonlinearVsDispersion}
 
-Another main concept of operation of these types of circuits, is the need for
+Another main concept of operation of these types of circuits is the need for
 non-linearity to outweigh possible wave dispersion. Dispersion is a concept
 commonly discussed relative to optical fiber cable as a limiting factor of
-transmission speed. The idea is that travelling through any medium will cause a
+transmission speed. The idea is that traveling through any medium will cause a
 small amount of pulse spreading. This means that, if dispersion is strong
 enough, the pulse can spread or even break apart into several smaller pulses. To
 overcome this, we need enough nonlinearity in the line primarily in terms of
@@ -638,11 +638,11 @@ and how it can be used to sharpen input pulses}\label{fig:shockline}
 
 While nonlinear capacitors have been used in many studies
 \cite{FastHighVoltageNLTL} when implementing this design in high power systems,
-varactor diodes have the advantage of a larger capacitance range, and allow us
+varactor diodes have the advantage of a larger capacitance range and allow us
 to perform measurements using lower voltages. In addition, the overall design is
 simplified with the use of Varactors because only one bias is needed.
 
-In any case, non linear capacitors are often modeled using equation
+In any case, nonlinear capacitors are often modeled using equation
 (\ref{eq:nonlincap}) to describe the voltage dependence of the
 capacitance\cite{nikoo2018theory}.
 
@@ -652,7 +652,7 @@ C(v) = \frac{C_{o}}{\sqrt{1+v/V_{o}}}
 \end{equation}
 
 
-where $C_{o}$ and $V_{o}$ are zero bias capacitance and reference voltage,
+where $C_{o}$ and $V_{o}$ are zero bias capacitance and the reference voltage,
 respectively.
 
 Equation (\ref{eq:LargeSignalDiodeCap}) becomes useful as we start looking at
@@ -671,7 +671,7 @@ frequency of the network as a function of the voltage across the varactors.
 \end{equation}
 
 This equation is used in section \ref{sub:simsRise} indirectly to estimate the
-amount of pulse sharpening we can expect for a given step inputl
+amount of pulse sharpening we can expect for a given step input
 
 
 \subsection{Methods of Modeling Varactors}\label{sub:VaracModeling}
@@ -682,7 +682,7 @@ and particularly the behavior of the chosen varactor diode loading the NLTL.
 There are several ways to accomplish this. The most standard and the method
 chosen by our group is SPICE modeling. The disadvantage of this route is
 that nonlinear behavior can be particularly hard to model with SPICE alone
-at higher frequencies and voltage levels (find source for this, think it's
+at higher frequencies and voltage levels (find a source for this, think it's
 in SKYWORKS application note).
 
 Another industry standard used to do this is by modeling via Verilog code.
@@ -699,14 +699,14 @@ such as ADS.
 
 When constructing a test fixture for measurements of NLTL's of higher frequency,
 we must also take into account the properties of the board we are working with.
-For our low frequency model and with limited access to robust VNA's this
-procedure was not neccessary but we recommend using the two-line pencil
+For our low-frequency model and with limited access to robust VNA's, the
+the procedure was not necessary but we recommend using the two-line pencil
 method to approximate the board permittivity and loss tangent as utilized to do
-the same for flex PCB's due to it's simplicity and limited need for
+the same for flex PCB's due to its simplicity and limited need for
 equipment\cite{TwoLine}.
 
 For our board, we used a simpler method which may prove useful as a quick and
-dirty alternative to the one descbribed above. To find the permitivittivy of the
+dirty alternative to the one described above. To find the permittivity of the
 board we used a simple LCR Meter (DE-5000) and the following formula of a
 parallel plate capacitor as shown in equation (\ref{eq:epsAOverD}).
 
@@ -719,11 +719,11 @@ parallel plate capacitor as shown in equation (\ref{eq:epsAOverD}).
 Where we treat the width of the dielectric as plate spacing d, the board area
 as area, A, and measured capacitance as C. Solving for permittivity
 $\epsilon$, we found a relative permittivity of $\epsilon_{r}\approx 3.54$.
-For this measurement a figure normally given for FR4 is roughly 4.0 to 4.4. A
+For this measurement, a figure normally given for FR4 is roughly 4.0 to 4.4. A
 few possible things could cause this error. 
 
 The device used to measure the FR4 board generates a test frequency of 100kHz at
-maximum. Relative permittivity is usually given for FR4 at a much higher
+maximum. Relative permittivity is usually given for FR4 at much higher
 frequencies in the Mhz range. Another is the precision achievable when measuring
 the dielectric thickness. A caliper would be much better suited for this task.
 Alternative methods do exist and are quite simple but do necessitate access to a
@@ -735,11 +735,11 @@ VNA\cite{SimpleRelative}.
 \subsubsection{SPICE Models}\label{subsub:SPICE}
 
 SPICE models are typically easier to find and use in most circuit simulation
-software and what we used for our low frequency prototype as it seemed to be
+software and what we used for our low-frequency prototype as it seemed to be
 sufficient for our purposes. We chose to use software from the company
-SpectrumSoft. We chose this tool due to it's vast array of built-in SPICE models
+SpectrumSoft. We chose this tool due to its vast array of built-in SPICE models
 and capabilities. For example, it ships with SPICE models for the BBY40 and
-SMV1249 varactor diodes. Previously a software found in industry for a high
+SMV1249 varactor diodes. Previously a software found in the industry for a high
 price, SpectrumSoft is now no longer in business and has released this program
 free. It can be downloaded from SpectrumSoft's home page.
 
@@ -754,7 +754,7 @@ application notes from their manufacturer, SKYWORKS Inc.
 
 We were unable to utilize this modeling method. In section \ref{sec:NextSteps}, 
 we go over some potentially useful references to help you create models for
-higher frequency/bandwidth designs. Most verilog modules we have come across
+higher frequency/bandwidth designs. Most Verilog modules we have come across
 utilize equation \ref{eq:nonlincap} in order to model non-linear capacitors and
 varactors.
 
@@ -766,19 +766,19 @@ varactors.
 
 \section{ Simulations }\label{sec:sims}
 
-In this section we will discuss the basics behind catch-up
+In this section, we will discuss the basics behind catch-up
 theory\cite{wilson1991pulse} and how we confirmed this with simulation.
 $\Delta$T represents the time delay at the $N^{th}$ node and is found by the
 difference period the line cutoff frequency at zero-bias varactor capacitance
-and the period of the line cutoff where varactor capacitance if defined by the
+and the period of the line cutoff where varactor capacitance is defined by the
 step input maximum. This result is multiplied for every ladder section the pulse
 passes. Catch-up theory suggests that this delay is accounted for the variation
 in phase velocity as the rising pulse effects the varactor capacitance.
 
 \subsection{Simulating Rise Time}\label{sub:simsRise}
 
-In our simulations we use an input step of 5 volts which takes $1\mu s$ to reach
-it's final value. Using equation (\ref{DelayApproxCalc}), we calculate a pulse
+In our simulations, we use an input step of 5 volts which takes $1\mu s$ to reach
+its final value. Using equation (\ref{DelayApproxCalc}), we calculate a pulse
 sharpening of $8.44ns$ at our $10^{th}$ node and $84.37ns$ at our $100^{th}$
 node. To make these calculations, we used the CV plots obtained by measuring the
 BBY40 with the test fixture discussed in section \ref{subsec:CVCurves}.
@@ -790,15 +790,14 @@ BBY40 with the test fixture discussed in section \ref{subsec:CVCurves}.
 
 For a lossless line, the sharpest pulse we can achieve can be estimated by first
 using equation \ref{NLTLCutoff}\cite{wilson1991pulse}.
-We notice that this utilizes the equation of our estimated bragg frequency as
-seen in (\ref{eq:bragg}) and describes the differenece in cutoff
-frequencies at maximim and minimum bias voltage multiplied by the number of
+We notice that this utilizes the equation of our estimated Bragg frequency as
+seen in (\ref{eq:bragg}) and describes the difference in cutoff
+frequencies at maximum and minimum bias voltage multiplied by the number of
 sections, N. 
 
  This gives us the ideal cutoff frequency of the line which in Hz is about $f_c
  \approx 290Mhz$. The period of a wave moving at this rate is $T \approx 3.4ns$.
- While we have not been able to achieve a rise time of this magnitude, we need
- to remind ourselves of the inherent parasitics we are dealing with. Using a
+ While we have not been able to achieve a rise time of this magnitude, we need to remind ourselves of the inherent parasitics we are dealing with. Using a
  basic model
 with values from our inductor and varactor diode datasheet. We have a per
 section series resistance of roughly $R_s = 122m\Omega$ at DC, and a parallel
@@ -832,8 +831,8 @@ to properly model the nonlinear nature of the varactor diodes.
 
 In figure \ref{fig:riseWithLoss}, we add the series DC resistance of the
 inductor $(R_s \approx 122m\Omega)$ and the $1m\Omega$ resistance of the BBY40. 
-From this, we see that not much has changed in this model and in fact we see an
-increased sharpening effect if anything. We do notice however, that the
+From this, we see that not much has changed in this model and in fact, we see an
+increased sharpening effect if anything. We do notice, however, that the
 amplitude of the wave is much more attenuated at our $100^{th}$ node. This would
 lead us to expect a decrease in the pulse sharpening in the circuit instead of a
 relatively constant value due to the lessened effect on varactor capacitance as
@@ -847,15 +846,9 @@ the pulse climbs.
 \end{figure}
 
  
- Figure \ref{fig:RiseVsLineVsBias} explores the effect of different biasing on
- our line as well as how long a line we can practically use for sharpening
- purposes. As our DC resistance grows with our line length, we expect our
- amplitude to keep dropping. As the amplitude of the traveling wave is reduced,
+ Figure \ref{fig:RiseVsLineVsBias} explores the effect of different biasing on our line as well as how long a line we can practically use for sharpening purposes. As our DC resistance grows with our line length, we expect our amplitude to keep dropping. As the amplitude of the traveling wave is reduced,
  we effectively trace out less of our varactor CV curves. Due to this, the CV
- relationship will begin to look more and more linear as we add ladder sections
- to our design. We have used a parametric plot to show the limits of this pulse
- sharpening as we increase  the line length and plotted rise-time vs. DC bias
- for each $10^{th}$ node of the ladder. The input pulse used in this case was
+ relationship will begin to look more and more linear as we add ladder sections to our design. We have used a parametric plot to show the limits of this pulse sharpening as we increase the line length and plotted rise-time vs. DC bias for each $10^{th}$ node of the ladder. The input pulse used in this case was
  $400ns$.
 
 \begin{figure}[htb]
@@ -873,7 +866,7 @@ the pulse climbs.
 \section{Board Design} 
 
 
-In order to test all these simulated values we designed a discrete version of
+In order to test all these simulated values, we designed a discrete version of
 our transmission line using Altium Designer. We emphasized traces being as short
 as possible and used Altium's built-in impedance profile tool to match our path
 between each pair of SMA connectors to $50\Omega$. The circuit we constructed is
@@ -902,9 +895,9 @@ shown assembled in figure \ref{fig:assembled}.
 
 To measure and find the capacitance vs Voltage of our chosen varactors we
 created a small ugly style circuit based on a design by W2AEW. Two 100k
-resistors are added to limit current flowing to the power supply. A ceramic
+resistors are added to limit the current flowing to the power supply. A ceramic
 capacitor of value much greater than our varactor is placed to protect the meter
-from excessive voltage. Since this larger capacitance is in effectively in
+from excessive voltage. Since this larger capacitance effectively in
 parallel with our varactor, our meter measurement is approximately only the
 capacitance of the varactor diode itself.
 
@@ -917,7 +910,7 @@ capacitance of the varactor diode itself.
 
 
 
-Through use of this fixture, we were able to generate the curves shown in
+Through the use of this fixture, we were able to generate the curves shown in
 figures \ref{fig:BBY40CV} and \ref{fig:SMV1249CV}. These were in close agreement
 to curves found on datasheets for the BBY40 and SMV1249 respectively.
  
@@ -940,7 +933,7 @@ to curves found on datasheets for the BBY40 and SMV1249 respectively.
 \subsection{AC Response}\label{ACMeasResults}
 
 The frequency response of our circuit effectively tells us the operating
-bandwidth of our ciruit. With a 10 ladder long circuit, our cuttoff can be
+bandwidth of our circuit. With a 10 ladder long circuit, our cutoff can be
 calculated to be around 103Mhz. We also notice that as we near the corner, the
 nonlinearities present in the circuit cause increased amounts of resonance as
 expected. The thing to notice is the presence of multiple oscillations of
@@ -971,8 +964,8 @@ improper modeling of our series resistance in the line.
 
 \subsection{Rise Time}\label{RiseTimeMeasResults}
 
-We had great difficulty in measuring rise time of our circuit and the main
-problems we faced were not understanding the theory well enough have do proper
+We had great difficulty in measuring the rise time of our circuit and the main
+problems we faced were not understanding the theory well enough have done proper
 testing. While our components were chosen on the basis of working at 144Mhz, we
 failed to see that driving our circuit below this bandwidth and performing
 similar simulations may be adequate to prove rise time performance increase.
@@ -988,12 +981,12 @@ hold a charge.
 
 Figure \ref{fig:SetupWBiasing} shows the lab setup used to take the time-domain
 measurements. A bias-Tee is used to provide a DC bias to our NLTL and is
-adjusted by a bench power supply. A picosend pulse generator is used to send
-in a well-behaved high speed signal into the DUT.
+adjusted by a bench power supply. A picosecond pulse generator is used to send
+in a well-behaved high-speed signal into the DUT.
 
 The input wave is a 1Mhz 1Vpp Square wave with 10nS rise and fall times and the
 bias is adjusted from 0 to 3V to further investigate its effect on the
-capacitance of the varactor.
+the capacitance of the varactor.
 
 \begin{figure}[htb]
 \centering
@@ -1055,16 +1048,16 @@ the increase shown in figure \ref{fig:RiseVsLineVsBias}.
 \label{fig:SimSpec}
 \end{figure}
 
-We now change the stimulus to a 1Vpp Sine wave at 1Mhz, and find the power
-spectrum the NLTL output. In figure \ref{fig:SimSpec}, it is shows that as a non-linear
+We now change the stimulus to a 1Vpp Sine wave at 1Mhz and find the power
+spectrum of the NLTL output. In figure \ref{fig:SimSpec}, it is shows that as a non-linear
 circuit there is a great deal of harmonic content generated due to
-non-linearity.We expect to see odd and even harmonics throughout the entire
+non-linearity. We expect to see odd and even harmonics throughout the entire
 sweep. 
 
 Figure \ref{fig:MeasSpec} shows that in the lab, we don't see this same
 behavior. This is puzzling and implies that either linear parasitic capacitance
 is the dominant factor as a result of either the connectors, board material or
-inductor contstruction, or there is enough loss in the line to linearize the
+inductor construction or there is enough loss in the line to linearize the
 structure or both. 
 
 To further test this assumption, we can adjust the inductor model or include the
@@ -1088,10 +1081,9 @@ expected from simulation}
 
 
 In figure \ref{fig:sparamSchem} shows the schematic used to measure and compare
-our measured s-parameters taken through a NanoVNA to our simulated circuit with
-parasitics included. The NanoVNA data is imported through use of the n-port
+our measured s-parameters. These were measured with a NanoVNA. The circuit simulates included parasitics. The NanoVNA data is imported through the use of n-port
 components and define statements are utilized to calculate other parameters such
-as generated power in dbm, VSWR, etc...
+as generated power in dBm, VSWR, etc...
 
 
 \begin{figure}[htb]
@@ -1103,10 +1095,10 @@ as generated power in dbm, VSWR, etc...
 
 
 To produce figure \ref{fig:S11_S21}, we parameterized the values of our
-parasitic elements in circuit and within the BBY40 model itself. We changed
+parasitic elements in the circuit and within the BBY40 model itself. We changed
 these values to match our measured data more closely to see the accuracy of our
 model. While we were able to achieve relatively agreeing data we still see a
-large discrepancy in our S11 data. At 10MHz, we see a our measured data is
+large discrepancy in our S11 data. At 10MHz, we see our measured data is
 roughly $-10dbm$ lower than our expected simulation. This could be due to
 incorrect modeling of our load impedances and requires further study. Some have
 mentioned that when using NLTL's, there is bound to always be some impedance
@@ -1134,7 +1126,7 @@ In figure \ref{fig:VSWRandReturnLoss}, we see that our measured and simulated
 are almost identical except for a sharp rise in VSWR near the resonant frequency
 of our LC network (144Mhz). After this point, we expect our VSWR to start rising
 dramatically. What we see is a much more subtle increase from about 1.5 to 5.
-Still a much larger ratio than was present within our operating bandwidth, but
+Still, a much larger ratio than was present within our operating bandwidth, but
 certainly not the expected value of $\approx 100$.
 
 
@@ -1161,11 +1153,10 @@ certainly not the expected value of $\approx 100$.
 
 To estimate our circuit Q, we employ a technique called ring-down method
 \cite{giangrandi}. Driving the circuit with a square wave much slower than the
-expected resonance frequency of the LC network, we simply count the amount of
-cycles it takes for the signal envelope to decay to rougly $50\%$ of the maximum
+expected resonance frequency of the LC network, we simply count the number of
+cycles it takes for the signal envelope to decay to roughly $50\%$ of the maximum
 amplitude. Observing figure \ref{fig:EstimQ}, we see that the ringing dies
-down in about 1 cycle. To get our Q estimate, we simply multiply this value by
-approximate 4.53. This yields an approximate Q of 4.53 for our transmission
+down in about 1 cycle. To get our Q estimate, we simply multiply this value by 4.53. This yields an approximate Q of 4.53 for our transmission
 line. This seems a little lower than expected however, we can see that the
 ringing is not as clean as we expected.
 It is unsurprising that our non-linear circuit results in a fluctuating
@@ -1174,7 +1165,7 @@ content.
 
 By feeding in a 1Vpp Sine wave and measuring the frequency response of our
 circuit, we see that many harmonics should be present in our line. Since we are
-using this simulation to stand in place of a physical measurement, this
+using this simulation to stand in place of physical measurement, this
 interference makes sense.
 
 To repeat this process for our physical circuit is a good next step to confirm
@@ -1199,8 +1190,7 @@ figure \ref{fig:WeirdGeo} shows a possible implementation of pulse sharpening by
 taking advantage of the circuit's physical geometry to produce further
 non-linearities and mismatches in the circuit. This type of geometry should be
 used with much higher frequencies than the designs we created for this report as
-it relies on the the lines themselves to act as inductive components. This 
-exploration may have several advantages including easier reproduction and less
+it relies on the lines themselves to act as inductive components. This exploration may have several advantages including easier reproduction and less
 resistive losses on the line due to lack of discrete inductors.
 
 As an intermediate step, it may be beneficial to conduct further simulation with
@@ -1227,8 +1217,8 @@ results using simulation and measurement. While it was a good first attempt,
 there are many areas to explore further such as the simulation, building and
 measurement of a model dealing with higher bandwidths (0-6GHz), Non-uniform
 geometry, simultaneous edge sharpening, and writing a more accurate Verilog-A
-module. For much higher frequencies,the design may need to be constructing using
-ADS and momentum as this neccesitates much smaller components and boards. 
+module. For much higher frequencies, the design may need to be constructing using
+ADS and momentum as this necessitates much smaller components and boards. 
 
 
 
