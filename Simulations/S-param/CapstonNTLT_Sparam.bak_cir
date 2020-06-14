@@ -110,8 +110,8 @@ Current=32,16,16,16
 Name=Resistor
 Definition=Resistor
 Shape=Resistor
-Mask=6401
-Used=475
+Mask=6913
+Used=481
 memo=Resistor
 Label Offset=18,6,8,11
 PinCnt=2
@@ -135,7 +135,7 @@ Name=Voltage Source
 Definition=VSpice
 Shape=SPICE_V
 Mask=4865
-Used=88
+Used=94
 memo=Voltage Source
 Label Offset=19,13,15,13
 PinCnt=2
@@ -159,7 +159,7 @@ Name=Ground
 Definition=Ground
 Shape=Ground
 Mask=1793
-Used=554
+Used=560
 memo=Ground
 Label Offset=0,0,0,0
 PinCnt=1
@@ -181,7 +181,7 @@ Pin="2P",14,0,-14,13
 Pin="2M",14,6,-14,-1
 
 [Circuit]
-Window Placement=2,3, -1,-1, -8,-31, 208,208,2126,760
+Window Placement=2,3, -1,-1, -8,-31, 0,78,1911,630
 Default Object=Color=#000080
 Default Object Font=Height=-32,FStyle=0,Color=#36C25C,Name=Ubuntu Mono
 Default Object Apply Border To Text=No
@@ -257,7 +257,7 @@ Style=8192
 
 [Attr]
 ON=10,-26,RESISTANCE
-V={Rload}
+V=50
 Style=8192
 
 [Attr]
@@ -824,7 +824,7 @@ Style=8192
 
 [Attr]
 ON=13,33,RESISTANCE
-V={Rload}
+V=50
 Style=8192
 
 [Attr]
@@ -1596,7 +1596,7 @@ Style=8192
 
 [Attr]
 ON=-30,-20,RESISTANCE
-V={Rload}
+V=50
 Style=8192
 
 [Attr]
@@ -1621,7 +1621,7 @@ Style=8192
 
 [Attr]
 ON=9,-9,RESISTANCE
-V={Rload}
+V=50
 Style=8192
 
 [Attr]
@@ -2388,7 +2388,7 @@ JustifyV=Bottom
 CBorder=None
 
 [Grid Text]
-Text=".param L 66n"
+Text=".param L 68n"
 Px=1960,520
 GridSnap=True
 JustifyH=Left
@@ -2396,7 +2396,7 @@ JustifyV=Bottom
 CBorder=None
 
 [Grid Text]
-Text=".param Rpars 122m"
+Text=".param Rpars 0.7"
 Px=1960,496
 GridSnap=True
 JustifyH=Left
@@ -2405,7 +2405,7 @@ CBorder=None
 
 [Grid Text]
 Text="PDT is the power dissipated in the circuit (in Watts)"
-Px=1392,776
+Px=1496,792
 Color=#000000
 GridSnap=True
 JustifyH=Left
@@ -2414,7 +2414,7 @@ CBorder=None
 
 [Grid Text]
 Text="PST is the amount of power stored in the reactive components (in Watts)"
-Px=1392,752
+Px=1496,768
 Color=#000000
 GridSnap=True
 JustifyH=Left
@@ -2911,13 +2911,13 @@ Enable=True
 Name=Main
 A.PrintPreview=On,0,0,1,1
 PrinterScale=1
-SB 0=369,267
+SB 0=0,576
 Scale 0=1.3333333333333333
 Scale 1=1
 Scale 2=1
 SB 3=0,32
 Scale 3=1.3333333333333333
-Px=1700,683
+Px=848,1139
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
@@ -13737,6 +13737,7 @@ Options=LINEARX,LINEARY
 Range Grid X=2e-7
 Range Grid Y=4e-32
 Enable=Enable
+CS=Normal
 Line Color=#FF0000
 Text Color=#FF0000
 Rainbow=True
@@ -13764,6 +13765,7 @@ Options=LINEARX,LINEARY
 Range Grid X=2e-7
 Range Grid Y=4e-32
 Enable=Enable
+CS=Normal
 Line Color=#FF0000
 Text Color=#FF0000
 Rainbow=False
@@ -13909,9 +13911,9 @@ Rainbow=False
 LWdth=3
 VFmtX=3
 VFmtY=3
-ScaleFactorX="None"
+ScaleFactorX="Meg"
 ScaleFactorY="None"
-ScaleUnitsX="Auto"
+ScaleUnitsX="Hz"
 ScaleUnitsY="Auto"
 SFmtX=2
 SFmtY=2
@@ -13943,9 +13945,9 @@ Rainbow=False
 LWdth=3
 VFmtX=3
 VFmtY=3
-ScaleFactorX="None"
+ScaleFactorX="Meg"
 ScaleFactorY="None"
-ScaleUnitsX="None"
+ScaleUnitsX="Hz"
 ScaleUnitsY="None"
 SFmtX=2
 SFmtY=2
@@ -14108,9 +14110,9 @@ Rainbow=True
 LWdth=3
 VFmtX=3
 VFmtY=3
-ScaleFactorX="None"
+ScaleFactorX="Meg"
 ScaleFactorY="None"
-ScaleUnitsX="Auto"
+ScaleUnitsX="Hz"
 ScaleUnitsY="Auto"
 SFmtX=2
 SFmtY=2
@@ -14141,9 +14143,9 @@ Rainbow=True
 LWdth=2
 VFmtX=3
 VFmtY=3
-ScaleFactorX="None"
+ScaleFactorX="Meg"
 ScaleFactorY="None"
-ScaleUnitsX="None"
+ScaleUnitsX="Hz"
 ScaleUnitsY="Auto"
 SFmtX=2
 SFmtY=2

@@ -1,0 +1,7 @@
+Function                                  1    
+Fall_Time(v(IN),1,2,0.6,1.4)                10n
+Rise_Time(v(IN),1,2,296.5e-3,692.5e-3)         
+Y_Level(v(N10),1,1,9.92U)              246.987m
+Y_Level(v(N10),1,1,10.08u)             741.975m
+Y_Level(v(IN),1,1,9.92u)                   500m
+Y_Level(v(IN),1,1,10.08u)                  1.5 

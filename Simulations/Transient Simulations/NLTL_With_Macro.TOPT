@@ -1,0 +1,46 @@
+********************************************************************************
+***                       Micro-Cap 12.2.0.3 (64 bit)                        ***
+***                                                                          ***
+***                                                                          ***
+***             Transient Analysis Optimizer of NLTL_With_Macro              ***
+***                          6/14/2020 12:43:41 AM                           ***
+********************************************************************************
+
+Find:
+   V1(pulse.tr) Low=150n High=500n 
+
+That:
+   Equates Rise_Time(v(IN),1,1,-.3,.3) To=200n
+
+Objective Function = Sum of the differences between the values of "That Expression" and the "To" values.
+
+Minimizing the Objective Function
+
+Start With:
+   Existing
+
+Powell:
+   Start with:V1(pulse.tr)=200n 
+   Best: V1(pulse.tr)=333.333333n Percent=5.843561n
+Hooke:
+   Start with:V1(pulse.tr)=200n 
+   Best: V1(pulse.tr)=333.333519n Percent=55.57997u
+Levenberg-Marquardt:
+   Start with:V1(pulse.tr)=200n 
+   Best: V1(pulse.tr)=333.333333n Percent=119.114008f
+Differential Evolution:
+   Start with:V1(pulse.tr)=200n 
+   Best: V1(pulse.tr)=333.333329n Percent=5.554073u
+
+Best so far Levenberg-Marquardt: V1(pulse.tr)=333.333333n Percent=119.114008f
+
+
+Final Result:
+   Levenberg-Marquardt
+   Start:   V1(pulse.tr)=200n 
+   Result:   V1(pulse.tr)=333.333333n Percent=119.114008f
+
+Info:
+   Time=24.016 sec
+   RMS Error=0
+   Percent Error=119.114008f
