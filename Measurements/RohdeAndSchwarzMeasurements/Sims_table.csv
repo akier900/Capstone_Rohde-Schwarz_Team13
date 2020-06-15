@@ -1,0 +1,10 @@
+﻿Board 1 Simulations,,,,,,
+Wave Type,Amplitude (Volts),Offset (Volts),Input Risetime (nS),Input Falltime (nS),Output Risetime (nS),Output Falltime (nS)
+Square,1Vpp,0,10,10,9.186,11.261
+Square,1Vpp,0.5,10,10,9.18,11.019
+Square,1Vpp,1,10,10,9.178,10.832
+Square,1Vpp,1.5,10,10,9.191,10.7
+Square,1Vpp,2,10,10,9.285,10.694
+Square,1Vpp,2.5,10,10,9.376,10.696
+Square,1Vpp,3,10,10,9.45,10.698
+Trap,1Vpp,0,200,200,198.242,201.794

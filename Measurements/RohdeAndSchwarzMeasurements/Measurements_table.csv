@@ -1,0 +1,10 @@
+﻿Board 1 Measurements,,,,,,
+Wave Type,Amplitude (Volts),Offset (Volts),Input Risetime (nS),Input Falltime (nS),Output Risetime (nS),Output Falltime (nS)
+Square,1Vpp,0,10.522,10.352,5.9004,9.563
+Square,1Vpp,0.5,10.522,10.352,5.9004,9.561
+Square,1Vpp,1,10.133,10.07,6.6826,8.282
+Square,1Vpp,1.5,10.037,9.9755,6.736,7.9952
+Square,1Vpp,2,9.7556,9.6713,6.7021,7.7307
+Square,1Vpp,2.5,9.7082,9.6261,6.831,7.7035
+Square,1Vpp,3,9.674,9.6033,7.022,7.8376
+Trap,1Vpp,0,195.09,198.64,137.12,143.45
